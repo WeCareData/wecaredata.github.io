@@ -1,0 +1,6 @@
+# Server
+source: "site"
+host: "localhost"
+baseurl: ""
+url: "https://wecaredata.github.io"
+encoding: UTF-8
