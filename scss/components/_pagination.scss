@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+// Parameters
+$padding-y-pagination: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+$padding-x-pagination: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+
+$pagination-border-width: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$pagination-border-radius: get-lib-value($element-box-model, border-radius, $size-element-current) !default;
+$pagination-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$pagination-hover-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+
+$pagination-focus-box-shadow: 0 0 0 get-lib-value($element-box-model, border-width, focus) get-lib-value($lib-theme-palette, $theme-current, interactive-01) !default;
+
+$pagination-bg: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
+$pagination-hover-bg: get-lib-value($lib-theme-palette, $theme-current, hover-ui) !default;
+
+$pagination-color: get-lib-value($lib-theme-palette, $theme-current, link-01) !default;
+$pagination-hover-color: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+
+
+$pagination-focus-outline: 0 !default;
+
+
+$pagination-active-color: get-lib-value($lib-theme-palette, $theme-current, text-04) !default;
+$pagination-active-bg: get-lib-value($lib-theme-palette, $theme-current, interactive-01) !default;
+$pagination-active-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+
+$pagination-disabled-color: get-lib-value($lib-theme-palette, $theme-current, disabled-03) !default;
+$pagination-disabled-bg: get-lib-value($lib-theme-palette, $theme-current, disabled-01) !default;
+$pagination-disabled-border-color: get-lib-value($lib-theme-palette, $theme-current, disabled-02) !default;
+
+
+$pagination-line-height: 1.25 !default;
+
+
+// Pagination
+
+@mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  .page-link {
+    padding: $padding-y $padding-x;
+    @include font-size($font-size);
+    line-height: $line-height;
+  }
+
+  .page-item {
+    &:first-child {
+      .page-link {
+        @include border-left-radius($border-radius);
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        @include border-right-radius($border-radius);
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  @include list-unstyled();
+  @include border-radius();
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: $padding-y-pagination $padding-x-pagination;
+  margin-left: -$pagination-border-width;
+  line-height: $pagination-line-height;
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  &:hover {
+    z-index: 2;
+    color: $pagination-hover-color;
+    text-decoration: none;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+  }
+
+  &:focus {
+    z-index: 3;
+    outline: $pagination-focus-outline;
+    box-shadow: $pagination-focus-box-shadow;
+  }
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+      @include border-left-radius($pagination-border-radius);
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      @include border-right-radius($pagination-border-radius);
+    }
+  }
+
+  &.active .page-link {
+    z-index: 3;
+    color: $pagination-active-color;
+    background-color: $pagination-active-bg;
+    border-color: $pagination-active-border-color;
+  }
+
+  &.disabled .page-link {
+    color: $pagination-disabled-color;
+    pointer-events: none;
+    // Opinionated: remove the "hand" cursor set previously for .page-link
+    cursor: auto;
+    background-color: $pagination-disabled-bg;
+    border-color: $pagination-disabled-border-color;
+  }
+}
+
+//
+// Sizing
+//
+
+@each $size in $lib-size-element {
+  .pagination-#{$size} {
+    padding: get-lib-value($element-box-model, padding-y, $size) get-lib-value($element-box-model, padding-x, $size);
+    @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size}));
+    line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+    @include border-radius(get-lib-value($element-box-model, border-radius, $size));
+  }
+}

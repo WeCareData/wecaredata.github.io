@@ -1,0 +1,271 @@
+//
+// NavBar
+//
+
+// Parameters
+//// Padding
+$padding-y-navbar: get-lib-value($lib-spacing, spacing, 0) !default;
+$padding-x-navbar: get-lib-value($lib-spacing, spacing, 16) !default;
+$margin-x-navbar-brand: $width-grid-gutter / 2 !default;
+$padding-x-navbar-nav-link: get-lib-value($lib-spacing, spacing, 8) !default;
+//// Color
+$text-color-navbar-nav-link-hover: get-lib-value($lib-theme-palette, $theme-current, hover-primary-text);
+$text-color-navbar-nav-link: get-lib-value($lib-theme-palette, $theme-current, text-01);
+$text-color-navbar-brand: get-lib-value($lib-theme-palette, $theme-current, interactive-01);
+//// Font
+$font-size-navbar-brand: get-lib-value($lib-text-style, font-size, heading-03) !default;
+$font-size-navbar-nav-link: get-lib-value($lib-text-style, font-size, body-text-#{$size-element-current});
+$line-height-navbar-brand: get-lib-value($lib-text-style, line-height, heading-03) !default;
+$line-height-navbar-nav-link: get-lib-value($lib-text-style, line-height, body-text-xl);
+//// Icon
+$navbar-toggler-icon-bg: $text-color-navbar-nav-link;
+$bg-image-toggler-icon: str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23");
+//// Calc
+$padding-y-navbar-brand: ($line-height-navbar-nav-link + $nav-link-padding-y * 2 - $line-height-navbar-brand)/2;
+
+// Navbar
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding: $padding-y-navbar $padding-x-navbar;
+
+  %container-flex-properties {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-end;
+    justify-content: space-between;
+  }
+
+  > .container,
+  > .container-fluid {
+    @extend %container-flex-properties;
+  }
+
+  @each $breakpoint, $container-max-width in $lib-width-container-max {
+    > .container#{breakpoint-infix($breakpoint,$lib-width-container-max)} {
+      @extend %container-flex-properties;
+    }
+  }
+}
+
+// Navbar brand
+.navbar-brand {
+  display: inline-block;
+  padding-top: $padding-y-navbar-brand;
+  padding-bottom: $padding-y-navbar-brand;
+  margin-right: $margin-x-navbar-brand;
+  @include font-size($font-size-navbar-brand);
+  line-height: $line-height-navbar-brand;
+  white-space: nowrap;
+  color: $text-color-navbar-brand;
+  @include hover-focus {
+    color: $text-color-navbar-brand;
+    text-decoration: none;
+  }
+}
+
+// Navbar nav
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: $font-size-navbar-nav-link;
+    line-height: $line-height-navbar-nav-link;
+    color: $text-color-navbar-nav-link;
+
+    @include hover {
+      color: $text-color-navbar-nav-link-hover;
+    }
+
+    &.disabled {
+      color: get-lib-value($lib-theme-palette, $theme-current, disabled-02);
+    }
+  }
+
+  .show > .nav-link,
+  .active > .nav-link,
+  .nav-link.show,
+  .nav-link.active {
+    color: get-lib-value($lib-theme-palette, $theme-current, link-01);
+  }
+
+  .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
+
+// Navbar text
+.navbar-text {
+  display: inline-block;
+  padding-top: get-lib-value($element-box-model, padding-y, $size-element-current);
+  padding-bottom: get-lib-value($element-box-model, padding-y, $size-element-current);
+  color: get-lib-value($lib-theme-palette, $theme-current, text-02);
+
+  a {
+    color: get-lib-value($lib-theme-palette, $theme-current, text-01);
+
+    @include hover-focus {
+      color: get-lib-value($lib-theme-palette, $theme-current, hover-primary-text);
+    }
+  }
+}
+
+// Responsive navbar
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar-toggler {
+  padding: get-lib-value($element-box-model, padding-y, $size-element-current) get-lib-value($element-box-model, padding-x, $size-element-current);
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-sm));
+  line-height: 1;
+  background-color: transparent; // remove default button style
+  border: get-lib-value($element-box-model, border-width, $size-element-current) solid get-lib-value($lib-theme-palette, $theme-current, ui-03); // remove default button style
+  color: get-lib-value($lib-theme-palette, $theme-current, text-01);
+  @include border-radius(get-lib-value($element-box-model, border-radius, md));
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+  //  background-image: $bg-image-toggler-icon;
+}
+
+.navbar-expand {
+  @each $breakpoint in map-keys($lib-grid-breakpoint) {
+    $next: breakpoint-next($breakpoint, $lib-grid-breakpoint);
+    $infix: breakpoint-infix($next, $lib-grid-breakpoint);
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        %container-navbar-expand-#{$breakpoint} {
+          padding-right: 0;
+          padding-left: 0;
+        }
+
+        > .container,
+        > .container-fluid {
+          @extend %container-navbar-expand-#{$breakpoint};
+        }
+
+        @each $size, $container-max-width in $lib-width-container-max {
+          > .container#{breakpoint-infix($size,$lib-width-container-max)} {
+            @extend %container-navbar-expand-#{$breakpoint};
+          }
+        }
+      }
+      @include media-breakpoint-up($next) {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: get-lib-value($element-box-model, padding-y, $size-element-current);
+            padding-left: get-lib-value($element-box-model, padding-y, $size-element-current);
+          }
+        }
+        %container-nesting-#{$breakpoint} {
+          flex-wrap: nowrap;
+        }
+
+        > .container,
+        > .container-fluid {
+          @extend %container-nesting-#{$breakpoint};
+        }
+
+        @each $size, $container-max-width in $lib-width-container-max {
+          > .container#{breakpoint-infix($size, $lib-width-container-max)} {
+            @extend %container-nesting-#{$breakpoint};
+          }
+        }
+        .navbar-collapse {
+          display: flex !important;
+          flex-basis: auto;
+        }
+        .navbar-toggler {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@each $theme in $lib-theme {
+  .navbar-#{$theme} {
+    .navbar-brand {
+      color: get-lib-value($lib-theme-palette, $theme, interactive-01);
+
+      @include hover-focus() {
+        color: get-lib-value($lib-theme-palette, $theme, interactive-01);
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: get-lib-value($lib-theme-palette, $theme, text-01);
+
+        @include hover-focus() {
+          color: get-lib-value($lib-theme-palette, $theme, hover-primary-text);
+        }
+
+        &.disabled {
+          color: get-lib-value($lib-theme-palette, $theme, disabled-02);
+        }
+      }
+
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: get-lib-value($lib-theme-palette, $theme, link-01);
+      }
+    }
+
+    .navbar-toggler {
+      color: get-lib-value($lib-theme-palette, $theme, text-01);
+      border-color: get-lib-value($lib-theme-palette, $theme, ui-03);
+    }
+
+    .navbar-toggler-icon {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{get-lib-value($lib-theme-palette, $theme, text-01)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>"));
+    }
+
+    .navbar-text {
+      color: get-lib-value($lib-theme-palette, $theme, text-01);
+
+      a {
+        color: get-lib-value($lib-theme-palette, $theme, text-01);
+
+        @include hover-focus() {
+          color: get-lib-value($lib-theme-palette, $theme, hover-primary-text);
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,196 @@
+@charset "utf-8";
+//
+// Typography
+//
+@import '../core/config';
+@import '../core/function';
+// 计算字体大小
+@function calc-font-size($step) {
+  @if $step == 1 {
+    @return $font-size-base;
+  } @else {
+    @return calc-font-size($step - 1) + (floor(($step - 2) / 4) + 1) * 2 / 16; // Yn = Yn-1 + {INT[(n-2)/4] + 1} * 2
+  }
+}
+
+// 计算行高大小
+@function calc-line-height($step) {
+  @if $step == 1 {
+    @return $line-height-base;
+  } @else {
+    @return calc-line-height($step - 1) + (floor(($step - 2) / 4) + 1) * 2 / 16; // Yn = Yn-1 + {INT[(n-2)/4] + 1} * 2
+  }
+}
+
+// 生成字体大小库并进行取值
+$lib-font-size: ();
+@for $i from 1 through 24 {
+  $lib-font-size: append(
+                  $lib-font-size,
+                  calc-font-size($i)
+  );
+}
+
+@function get-font-size-value($step) {
+  @return nth($lib-font-size, $step);
+}
+
+// 生成行高库并进行取值
+$lib-line-height: ();
+@for $i from 1 through 24 {
+  $lib-line-height: append(
+                  $lib-line-height,
+                  calc-line-height($i)
+  );
+}
+
+@function get-line-height-value($step) {
+  @return nth($lib-line-height, $step);
+}
+
+// 库[文本属性]
+$lib-text-property: (
+  // 字体家族
+        font-family:(
+                sans-serif: $font-family-sans-serif,
+                monospace: $font-family-monospace
+        ),
+  // 字体大小
+        font-size: (
+                10: get-font-size-value(1),
+                12: get-font-size-value(2),
+                14: get-font-size-value(3),
+                16: get-font-size-value(4),
+                18: get-font-size-value(5),
+                22: get-font-size-value(6),
+                26: get-font-size-value(7),
+                30: get-font-size-value(8),
+                34: get-font-size-value(9),
+                40: get-font-size-value(10),
+                46: get-font-size-value(11),
+                52: get-font-size-value(12),
+                58: get-font-size-value(13),
+                66: get-font-size-value(14),
+                74: get-font-size-value(15),
+                82: get-font-size-value(16),
+                90: get-font-size-value(17),
+        ),
+  // 字体粗细
+        font-weight:(
+                lighter: lighter,
+                light: $font-weight-base * .75,
+                regular: $font-weight-base * 1,
+                bold: $font-weight-base * 1.5,
+                bolder: bolder
+        ),
+  // 字符间距
+        letter-spacing:(
+                sm: $letter-spacing-rem-base * -4,
+                md: $letter-spacing-rem-base * 0,
+                lg: $letter-spacing-rem-base * 1,
+                xl: $letter-spacing-rem-base * 2
+        ),
+  // 行高
+        line-height:(
+                12: get-line-height-value(1),
+                14: get-line-height-value(2),
+                16: get-line-height-value(3),
+                18: get-line-height-value(4),
+                20: get-line-height-value(5),
+                24: get-line-height-value(6),
+                28: get-line-height-value(7),
+                32: get-line-height-value(8),
+                36: get-line-height-value(9),
+                42: get-line-height-value(10),
+                48: get-line-height-value(11),
+                54: get-line-height-value(12),
+                60: get-line-height-value(13),
+                68: get-line-height-value(14),
+                76: get-line-height-value(15),
+                84: get-line-height-value(16),
+                92: get-line-height-value(17),
+                102: get-line-height-value(18),
+                112: get-line-height-value(19),
+                122: get-line-height-value(20),
+        )
+) !default;
+
+// 库[文本样式]
+$lib-text-style: (
+        font-family:(
+                sans-serif: $font-family-sans-serif,
+                monospace: $font-family-monospace,
+                null:null
+        ),
+        font-size:(
+                display-01 :get-lib-value($lib-text-property, font-size, 52),
+                display-02 :get-lib-value($lib-text-property, font-size, 52),
+                display-03 :get-lib-value($lib-text-property, font-size, 90),
+                display-04 :get-lib-value($lib-text-property, font-size, 90),
+                heading-01 :get-lib-value($lib-text-property, font-size, 14),
+                heading-02 :get-lib-value($lib-text-property, font-size, 16),
+                heading-03 :get-lib-value($lib-text-property, font-size, 18),
+                heading-04 :get-lib-value($lib-text-property, font-size, 22),
+                heading-05 :get-lib-value($lib-text-property, font-size, 26),
+                heading-06 :get-lib-value($lib-text-property, font-size, 30),
+                heading-07 :get-lib-value($lib-text-property, font-size, 34),
+                body-text-sm :get-lib-value($lib-text-property, font-size, 12),
+                body-text-md :get-lib-value($lib-text-property, font-size, 14),
+                body-text-lg :get-lib-value($lib-text-property, font-size, 16)
+        ),
+        font-weight:(
+                display-01 :get-lib-value($lib-text-property, font-weight, light),
+                display-02 :get-lib-value($lib-text-property, font-weight, bold),
+                display-03 :get-lib-value($lib-text-property, font-weight, light),
+                display-04 :get-lib-value($lib-text-property, font-weight, bold),
+                heading-01 :get-lib-value($lib-text-property, font-weight, bold),
+                heading-02 :get-lib-value($lib-text-property, font-weight, bold),
+                heading-03 :get-lib-value($lib-text-property, font-weight, regular),
+                heading-04 :get-lib-value($lib-text-property, font-weight, regular),
+                heading-05 :get-lib-value($lib-text-property, font-weight, regular),
+                heading-06 :get-lib-value($lib-text-property, font-weight, light),
+                heading-07 :get-lib-value($lib-text-property, font-weight, light),
+                body-text-light :get-lib-value($lib-text-property, font-weight, light),
+                body-text-regular :get-lib-value($lib-text-property, font-weight, regular),
+                body-text-bold :get-lib-value($lib-text-property, font-weight, bold)
+        ),
+        letter-spacing:(
+                display-01 :get-lib-value($lib-text-property, letter-spacing, md),
+                display-02 :get-lib-value($lib-text-property, letter-spacing, md),
+                display-03 :get-lib-value($lib-text-property, letter-spacing, sm),
+                display-04 :get-lib-value($lib-text-property, letter-spacing, sm),
+                heading-01 :get-lib-value($lib-text-property, letter-spacing, lg),
+                heading-02 :get-lib-value($lib-text-property, letter-spacing, md),
+                heading-03 :get-lib-value($lib-text-property, letter-spacing, md),
+                heading-04 :get-lib-value($lib-text-property, letter-spacing, md),
+                heading-05 :get-lib-value($lib-text-property, letter-spacing, md),
+                heading-06 :get-lib-value($lib-text-property, letter-spacing, md),
+                heading-07 :get-lib-value($lib-text-property, letter-spacing, md),
+                body-text-sm :get-lib-value($lib-text-property, letter-spacing, md),
+                body-text-md :get-lib-value($lib-text-property, letter-spacing, lg),
+                body-text-lg :get-lib-value($lib-text-property, letter-spacing, xl)
+        ),
+        line-height:(
+                display-01 :get-lib-value($lib-text-property, line-height, 60),
+                display-02 :get-lib-value($lib-text-property, line-height, 60),
+                display-03 :get-lib-value($lib-text-property, line-height, 102),
+                display-04 :get-lib-value($lib-text-property, line-height, 102),
+                heading-01 :get-lib-value($lib-text-property, line-height, 18),
+                heading-02 :get-lib-value($lib-text-property, line-height, 16),
+                heading-03 :get-lib-value($lib-text-property, line-height, 20),
+                heading-04 :get-lib-value($lib-text-property, line-height, 28),
+                heading-05 :get-lib-value($lib-text-property, line-height, 32),
+                heading-06 :get-lib-value($lib-text-property, line-height, 42),
+                heading-07 :get-lib-value($lib-text-property, line-height, 54),
+                body-text-xs :get-lib-value($lib-text-property, line-height, 16),
+                body-text-sm :get-lib-value($lib-text-property, line-height, 18),
+                body-text-md :get-lib-value($lib-text-property, line-height, 20),
+                body-text-lg :get-lib-value($lib-text-property, line-height, 24),
+                body-text-xl :get-lib-value($lib-text-property, line-height, 28)
+        ),
+        text-decoration:(
+                link:none,
+                link-hover:none,
+                none:none
+        )
+) !default;

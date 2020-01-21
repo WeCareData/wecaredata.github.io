@@ -1,0 +1,442 @@
+@charset "utf-8";
+//
+// Grid
+//
+@import '../core/config';
+@import '../core/function';
+@import 'spacing';
+
+// 页面宽度
+$width-page-xs: $size-base-global * 20 !default; // 320px
+$width-page-sm: $size-base-global * 42 !default; // 672px
+$width-page-md: $size-base-global * 66 !default; // 1056px
+$width-page-lg: $size-base-global * 82 !default; // 1312px
+$width-page-xl: $size-base-global * 99 !default; // 1584px
+
+// 页面边距
+$margin-x-page: $size-base-global !default; // 16px
+$padding-x-page: $size-base-global !default; // 16px
+
+// 间隔宽度
+$width-grid-gutter: get-lib-value($lib-spacing, spacing, 32);
+$width-grid-gutter-condensed: get-lib-value($lib-spacing, spacing, 2);
+
+// 库[屏幕宽度]
+$lib-screen-width: (
+        phone: (
+                320: $size-base-space * 40,
+                480: $size-base-space * 60,
+                540: $size-base-space * 67.5,
+                640: $size-base-space * 80,
+                720: $size-base-space * 90,
+                750: $size-base-space * 93.75,
+                768: $size-base-space * 96,
+                800: $size-base-space * 100,
+                828: $size-base-space * 103.5,
+                854: $size-base-space * 106.75,
+                960: $size-base-space * 120,
+                1080: $size-base-space * 135,
+                1125: $size-base-space * 140.625,
+                1242: $size-base-space * 155.25,
+                1280: $size-base-space * 160,
+                1440: $size-base-space * 180,
+                1920: $size-base-space * 240,
+                2560: $size-base-space * 320,
+                2960: $size-base-space * 370
+        ),
+        pad: (
+                600: $size-base-space * 75,
+                768: $size-base-space * 96,
+                800: $size-base-space * 100,
+                900: $size-base-space * 112.5,
+                1024: $size-base-space * 128,
+                1080: $size-base-space * 135,
+                1200: $size-base-space * 150,
+                1280: $size-base-space * 160,
+                1536: $size-base-space * 192,
+                1600: $size-base-space * 200,
+                1920: $size-base-space * 240,
+                2048: $size-base-space * 256,
+                2160: $size-base-space * 270,
+                2560: $size-base-space * 320,
+                2732: $size-base-space * 341.5,
+                2736: $size-base-space * 342
+        ),
+        pc: (
+                768: $size-base-space * 96,
+                1080: $size-base-space * 135,
+                1280: $size-base-space * 160,
+                1366: $size-base-space * 170.75,
+                1440: $size-base-space * 180,
+                1600: $size-base-space * 200,
+                1680: $size-base-space * 210,
+                1920: $size-base-space * 240,
+                1921: $size-base-space * 240.125,
+                2160: $size-base-space * 270,
+                2304: $size-base-space * 288,
+                2560: $size-base-space * 320,
+                2880: $size-base-space * 360,
+                3000: $size-base-space * 375,
+                3840: $size-base-space * 480,
+                4096: $size-base-space * 512,
+                5120: $size-base-space * 640
+        )
+) !default;
+
+// 库[网格断点]
+$lib-grid-breakpoint: (
+        0: 0,
+        xs: $width-page-xs,
+        sm: $width-page-sm,
+        md: $width-page-md,
+        lg: $width-page-lg,
+        xl: $width-page-xl
+) !default;
+
+// 库[容器最大宽度]
+$lib-width-container-max: (
+        xs: $width-page-xs - ($padding-x-page * 2),
+        sm: $width-page-sm - ($padding-x-page * 2) - ($margin-x-page * 2),
+        md: $width-page-md - ($padding-x-page * 2) - ($margin-x-page * 2),
+        lg: $width-page-lg - ($padding-x-page * 2) - ($margin-x-page * 2),
+        xl: $width-page-xl - ($padding-x-page * 2) - (($margin-x-page * 1.5) * 2)
+) !default;
+
+// 库[网格断点]
+$lib-grid-system: (
+        xs: (
+                columns: 4,
+                margin: 0,
+                width: $width-page-xs,
+                width-container-max:$width-page-xs - ($padding-x-page * 2)
+        ),
+        sm: (
+                columns: 8,
+                margin: $margin-x-page,
+                width: $width-page-sm,
+                width-container-max:$width-page-sm - ($padding-x-page * 2) - ($margin-x-page * 2)
+        ),
+        md: (
+                columns: 16,
+                margin: $margin-x-page,
+                width: $width-page-md,
+                width-container-max:$width-page-md - ($padding-x-page * 2) - ($margin-x-page * 2)
+        ),
+        lg: (
+                columns: 16,
+                margin: $margin-x-page,
+                width: $width-page-lg,
+                width-container-max:$width-page-lg - ($padding-x-page * 2) - ($margin-x-page * 2)
+        ),
+        xl: (
+                columns: 16,
+                margin: $margin-x-page * 1.5,
+                width: $width-page-xl,
+                width-container-max:$width-page-xl - ($padding-x-page * 2) - (($margin-x-page * 1.5) * 2)
+        )
+) !default;
+
+// 列数
+$grid-columns: 16 !default;
+
+@function breakpoint-next($name, $breakpoints: $lib-grid-breakpoint, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $lib-grid-breakpoint) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $lib-grid-breakpoint) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $lib-grid-breakpoint) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+@function grid-breakpoint-next($name, $breakpoints: $lib-grid-system, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @if $n != null and $n < length($breakpoint-names) {
+    @return nth($breakpoint-names, $n + 1);
+  }
+  @return null;
+}
+
+@function grid-breakpoint-prev($name, $breakpoints: $lib-grid-system, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @if $n != null and $n > 1 {
+    @return nth($breakpoint-names, $n - 1);
+  }
+  @return null;
+}
+
+@function grid-breakpoint-smallest($name, $breakpoints: $lib-grid-system) {
+  @return index(map-keys($breakpoints), $name) == 1;
+}
+
+@function grid-breakpoint-largest-name($breakpoints: $lib-grid-system) {
+  $total-breakpoints: length($breakpoints);
+  @return map-key-by-index($breakpoints, $total-breakpoints);
+}
+
+@function grid-breakpoint-infix($name) {
+  @return '-#{$name}';
+}
+
+@mixin grid-breakpoint-up($name, $breakpoints: $lib-grid-system) {
+  @if type-of($name) == 'number' {
+    @media (min-width: $name) {
+      @content;
+    }
+  } @else if map-has-key($breakpoints, $name) {
+    $breakpoint: map-get($breakpoints, $name);
+    $width: map-get($breakpoint, width);
+    @if grid-breakpoint-smallest($name, $breakpoints) {
+      @content;
+    } @else {
+      @media (min-width: $width) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})';
+  }
+}
+
+@mixin grid-breakpoint-down($name, $breakpoints: $lib-grid-system) {
+  @if type-of($name) == 'number' {
+    @media (max-width: $name) {
+      @content;
+    }
+  } @else if map-has-key($breakpoints, $name) {
+    $breakpoint: map-get($breakpoints, $name);
+    $width: map-get($breakpoint, width);
+    @if grid-breakpoint-smallest($name, $breakpoints) {
+      @content;
+    } @else {
+      @media (max-width: $width) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})';
+  }
+}
+
+@mixin grid-breakpoint-between($lower, $upper, $breakpoints: $lib-grid-system) {
+  $is-number-lower: type-of($lower) == 'number';
+  $is-number-upper: type-of($upper) == 'number';
+  $min: if($is-number-lower, $lower, map-get($breakpoints, $lower));
+  $max: if($is-number-upper, $upper, map-get($breakpoints, $upper));
+
+  @if $min and $max {
+    $min-width: if(not $is-number-lower and $min, map-get($min, width), $min);
+    $max-width: if(not $is-number-upper and $max, map-get($max, width), $max);
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else if $min != null and $max == null {
+    @include grid-breakpoint-up($lower) {
+      @content;
+    }
+  } @else if $min == null and $max != null {
+    @include grid-breakpoint-down($upper) {
+      @content;
+    }
+  } @else {
+    @error 'Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map-keys($breakpoints)}).';
+  }
+}
+
+@mixin grid-breakpoint($name, $breakpoints: $lib-grid-system) {
+  @include grid-breakpoint-up($name, $breakpoints) {
+    @content;
+  }
+}
+
+@mixin grid-largest-breakpoint($breakpoints: $lib-grid-system) {
+  @include grid-breakpoint(grid-breakpoint-largest-name()) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $lib-grid-breakpoint) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+//
+@mixin media-breakpoint-down($name, $breakpoints: $lib-grid-breakpoint) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+//
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $lib-grid-breakpoint) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+//
+@mixin media-breakpoint-only($name, $breakpoints: $lib-grid-breakpoint) {
+  $min: breakpoint-min($name, $breakpoints);
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Container
+// Mixins Part
+@mixin make-container($gutter: $width-grid-gutter) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-row($gutter: $width-grid-gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $lib-width-container-max, $breakpoints: $lib-grid-breakpoint) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-col-ready($gutter: $width-grid-gutter) {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $width-grid-gutter, $breakpoints: $lib-grid-breakpoint) {
+  // Common properties for all breakpoints
+  %grid-column {
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    position: relative;
+    width: 100%;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+
+    .col#{$infix},
+    .col#{$infix}-auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flex-box columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        max-width: 100%; // Reset earlier grid tiers
+        width: auto;
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .order#{$infix}-first {
+        order: -1;
+      }
+
+      .order#{$infix}-last {
+        order: $columns + 1;
+      }
+
+      @for $i from 0 through $columns {
+        .order#{$infix}-#{$i} {
+          order: $i;
+        }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == '' and $i == 0) { // Avoid emitting useless .offset-0
+          .offset#{$infix}-#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

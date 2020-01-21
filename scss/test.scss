@@ -1,0 +1,217 @@
+// Color Design Way: Triad
+// hsl mode
+@import "core/vendor-tiny-color";
+
+
+$WCAG-Contrast-Text: 4.5;
+$WCAG-Contrast-UI: 3.1;
+$WCAG-Contrast-Threshold: $WCAG-Contrast-Text;
+
+
+@function tint($color,  $percent) {
+  @return mix(#ffffff, $color, $percent);
+}
+
+$color-brand: hsl(24, 88, 40);
+
+$palette-series: 8;
+$palette-span: 10;
+
+$color-palette-hue-step: 2;
+$color-palette-saturation-step: 8;
+$color-palette-lightness-step: 8;
+
+@function calc-color-palette($color, $i) {
+  $color-base-i: 6;
+  $hue: hue($color);
+  $saturation: saturation($color);
+  $lightness: lightness($color);
+  // Calculate Hue Value
+  @if ($hue >= 60 and $hue <= 240) {
+    @if ($i < $color-base-i) {
+      $hue: $hue - $color-palette-hue-step * ($color-base-i - $i);
+    } @else if ($i == $color-base-i) {
+      $hue: $hue;
+    } @else if ($i > $color-base-i) {
+      $hue: $hue + $color-palette-hue-step * ($i - $color-base-i);
+    }
+  } @else {
+    @if ($i < $color-base-i) {
+      $hue: $hue + $color-palette-hue-step * ($color-base-i - $i);
+    } @else if ($i == $color-base-i) {
+      $hue: $hue;
+    } @else if ($i > $color-base-i) {
+      $hue: $hue - $color-palette-hue-step * ($i - $color-base-i);
+    }
+  }
+  @if ($hue < 0) {
+    $hue: $hue +360;
+  } @else if ($hue >= 360) {
+    $hue: $hue - 360;
+  }
+
+  @if ($hue == 0 and $saturation == 0) {
+    $saturation: $saturation;
+  }
+
+  @if ($i < $color-base-i) {
+    $saturation: $saturation - $color-palette-saturation-step * ($color-base-i - $i);
+  } @else if ($i == $color-base-i) {
+    $saturation: $saturation;
+  } @else if ($i > $color-base-i) {
+    $saturation: $saturation + $color-palette-saturation-step * ($i - $color-base-i);
+  }
+  @if ($saturation > 100) {
+    $saturation: 100;
+  }
+  @if ($i == 1 and $saturation > 10) {
+    $saturation: 10;
+  }
+  @if ($saturation < 6) {
+    $saturation: 6;
+  }
+  @if ($i < $color-base-i) {
+    $lightness: $lightness + $color-palette-lightness-step * ($color-base-i - $i);
+  } @else if ($i == $color-base-i) {
+    $lightness: $lightness;
+  } @else if ($i > $color-base-i) {
+    $lightness: $lightness - $color-palette-lightness-step * ($i - $color-base-i) * 2;
+  }
+  @return hsl($hue, $saturation, $lightness);
+}
+
+@for $i from 1 to 11 {
+  .test-#{$i} {
+    color: calc-color-palette($color-brand, $i);
+    hue: hue(calc-color-palette($color-brand, $i));
+    saturation: saturation(calc-color-palette($color-brand, $i));
+    lightness: lightness(calc-color-palette($color-brand, $i));
+  }
+}
+
+$hueStep: 2;
+$saturationStep: 16; // 饱和度阶梯，浅色部分
+$saturationStep2: 5; // 饱和度阶梯，深色部分
+$brightnessStep1: 5; // 亮度阶梯，浅色部分
+$brightnessStep2: 15; // 亮度阶梯，深色部分
+$lightColorCount: 5; // 浅色数量，主色上
+$darkColorCount: 4; // 深色数量，主色下
+
+@function getHue($h,$s,$v,$i,$light) {
+  $hue: null;
+  @if ($h >= 60  and $h <= 240) {
+    @if ($light == true) {
+      $hue: $h - $hueStep * $i
+    } @else {
+      $hue: $h + $hueStep * $i
+    }
+  } @else {
+    @if ($light == true) {
+      $hue: $h + $hueStep * $i
+    } @else {
+      $hue: $h - $hueStep * $i
+    }
+  }
+  @if ($hue < 0) {
+    $hue: $hue + 360;
+  } @else if ($hue >= 360) {
+    $hue: $hue - 360;
+  }
+
+  @return $hue
+}
+@function getSaturation($h,$s,$v, $i, $light) {
+  $saturation: 0;
+  // grey color don't change saturation
+  @if ($h == 0 and $s == 0) {
+    @return $s;
+  }
+  @if ($light == true) {
+    $saturation: $s  - $saturationStep * $i;
+  } @else if ($i == $darkColorCount) {
+    $saturation: $s  + $saturationStep;
+  } @else {
+    $saturation: $s  + $saturationStep2 * $i;
+  }
+  // 边界值修正
+  @if ($saturation > 100) {
+    $saturation: 100;
+  }
+
+  // 第一格的 s 限制在 6-10 之间
+  @if ($light == true and $i == $lightColorCount and $saturation > 10) {
+    $saturation: 10;
+  }
+  @if ($saturation < 6) {
+    $saturation: 6;
+  }
+  @return round($saturation);
+}
+
+@function getValue($h,$s,$v, $i, $light) {
+  @if ($light == true) {
+    @return ($v   + $brightnessStep1 * $i) ;
+  }
+  @return ($v  - $brightnessStep2 * $i) ;
+}
+
+@function generateColor($color,$level,$light) {
+
+  $hsv: ch-color-to-hsv($color);
+
+  $v: nth($hsv, 3);
+  $s: nth($hsv, 2);
+  $h: nth($hsv, 1);
+
+  //@debug $h, $s, $v ;
+
+  $adjustHue: round(getHue($h, $s, $v, $level, $light));
+  $adjustSaturation: getSaturation($h, $s, $v, $level, $light);
+  $adjustLight: getValue($h, $s, $v, $level, $light);
+  //@debug $h;
+  //@debug $s;
+  //@debug $v;
+  //@debug $adjustHue, $adjustSaturation, $adjustLight;
+  @return ch-hsv-to-color($adjustHue, $adjustSaturation, $adjustLight);
+}
+
+@function tint_black(
+  $color,
+  $percent
+) {
+  @return mix(#000, $color, $percent);
+}
+
+
+
+@for $i from 5 to 8 {
+  @if $i < 6 {
+    $status: true;
+    $step: 6 - $i;
+    .test-#{$i} {
+      color: generateColor($color-brand, $step, $status);
+      hue: hue(generateColor($color-brand, $step, $status));
+      saturation: saturation(generateColor($color-brand, $step, $status));
+      lightness: lightness(generateColor($color-brand, $step, $status));
+    }
+  }
+  @if $i == 6 {
+    .test-#{$i} {
+      color: $color-brand;
+      hue: hue($color-brand);
+      saturation: saturation($color-brand);
+      lightness: lightness($color-brand);
+    }
+
+  }
+  @if $i > 6 {
+    $status: false;
+    $step: $i - 6;
+    .test-#{$i} {
+      color: generateColor($color-brand, $step, $status);
+      hue: hue(generateColor($color-brand, $step, $status));
+      saturation: saturation(generateColor($color-brand, $step, $status));
+      lightness: lightness(generateColor($color-brand, $step, $status));
+    }
+  }
+}

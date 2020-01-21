@@ -1,0 +1,380 @@
+@import '../core/function';
+@import '../core/vendor-rfs';
+@import '../library/color';
+@import '../library/spacing';
+@import '../library/typography';
+
+//
+// Reboot
+//
+
+// CSS Reboot [Start]
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: get-lib-value($lib-text-style, line-height, body-text-lg);
+  -webkit-tap-highlight-color: rgba(get-lib-value($lib-theme-palette, $theme-current, text-01), 0);
+  -webkit-text-size-adjust: 100%;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+// Body
+body {
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
+  background-color: get-lib-value($lib-theme-palette, $theme-current, ui-background);
+  color: get-lib-value($lib-theme-palette, $theme-current, text-01);
+  font-family: get-lib-value($lib-text-style, font-family, sans-serif);
+  font-weight: get-lib-value($lib-text-style, font-weight, body-text-regular);
+  line-height: get-lib-value($lib-text-style, line-height, body-text-lg);
+  margin: 0;
+  text-align: left;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+// Content grouping
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  margin-top: 0;
+}
+
+// Reset margins on paragraphs
+p {
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  margin-top: 0;
+}
+
+// Abbreviations
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: 0;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  margin-top: 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: get-lib-value($lib-text-style, font-weight, body-text-bold);
+}
+
+dd {
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 get-lib-value($lib-spacing, layout, 8);
+}
+
+b,
+strong {
+  font-weight: get-lib-value($lib-text-style, font-weight, body-text-bold);
+}
+
+small {
+  @include font-size(75%);
+}
+
+sub,
+sup {
+  @include font-size(75%);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+// Links
+a {
+  background-color: transparent;
+  color: get-lib-value($lib-theme-palette, $theme-current, link-01);
+  text-decoration: get-lib-value($lib-text-style, text-decoration, link);
+
+  &:hover {
+    color: get-lib-value($lib-theme-palette, $theme-current, hover-primary-text);
+    text-decoration: get-lib-value($lib-text-style, text-decoration, link-hover);
+  }
+}
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Code
+pre,
+code,
+kbd,
+samp {
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
+  font-family: $font-family-monospace;
+}
+
+pre {
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  margin-top: 0;
+  overflow: auto;
+}
+
+// Figures
+figure {
+  margin: 0 0 get-lib-value($lib-spacing, layout, 8);
+}
+
+// Images and content
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  caption-side: bottom;
+  color: get-lib-value($lib-theme-palette, $theme-current, text-01);
+  padding-bottom: get-lib-value($lib-spacing, spacing, 4);
+  padding-top: get-lib-value($lib-spacing, spacing, 4);
+  text-align: left;
+}
+
+th {
+  text-align: inherit;
+}
+
+// Forms
+label {
+  display: inline-block;
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+}
+
+// Remove the default `border-radius` that macOS Chrome adds.
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 1px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  @include font-size(inherit);
+  font-family: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+// Remove the inheritance of word-wrap in Safari.
+select {
+  word-wrap: normal;
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+// Opinionated: add "hand" cursor to non-disabled button elements.
+@if $enable-pointer-cursor-for-buttons {
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+// 1. Correct the text wrapping in Edge and IE.
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+legend {
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
+  color: inherit;
+  display: block;
+  line-height: inherit;
+  margin-bottom: get-lib-value($lib-spacing, layout, 8);
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+  width: 100%;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: none;
+  outline-offset: -2px;
+}
+
+// Remove the inner padding in Chrome and Safari on macOS.
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  cursor: pointer;
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+// Custom Settings
+// Add Margin for <i> Icons
+i {
+  margin-right: get-lib-value($lib-spacing, spacing, 4);
+}
+
+// CSS Reboot [End]

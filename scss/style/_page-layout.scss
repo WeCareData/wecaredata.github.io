@@ -1,0 +1,104 @@
+html {
+  height: 100% !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.masthead {
+  background-color: get-lib-value($lib-theme-palette, $theme-current, ui-02);
+  box-shadow: get-lib-value($lib-layer, box-shadow-layer, sticky-nav);
+  @supports (position: sticky) {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: get-lib-value($lib-layer, z-index, sticky);
+  }
+}
+
+.mastbody {
+
+  section {
+    @include make-container();
+  }
+
+  .page-header {
+    padding-top: get-lib-value($lib-spacing, layout, 16);
+    padding-bottom: get-lib-value($lib-spacing, layout, 16);
+    border-bottom: get-lib-value($element-box-model, border-width, $size-element-current) solid get-lib-value($lib-theme-palette, $theme-current, ui-03);
+    background-color: get-lib-value($lib-theme-palette, $theme-current, ui-01);
+
+    div {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    h6 {
+      margin-right: $padding-x-page;
+      margin-bottom: 0;
+    }
+  }
+
+  .page-body {
+    padding-top: get-lib-value($lib-spacing, layout, 32);
+    padding-bottom: get-lib-value($lib-spacing, layout, 32);
+    background-color: get-lib-value($lib-theme-palette, $theme-current, ui-02);
+  }
+}
+
+.mastfoot {
+  margin-top: auto !important;
+  padding-top: get-lib-value($lib-spacing, spacing, 16);
+  padding-bottom: get-lib-value($lib-spacing, spacing, 16);
+  background-color: get-lib-value($lib-theme-palette, $theme-current, ui-04);
+}
+
+// Layout with Sidebar
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  @include font-size($font-size-navbar-brand);
+  line-height: $line-height-navbar-brand;
+  padding-top: $padding-y-navbar-brand;
+  padding-bottom: $padding-y-navbar-brand;
+  border-bottom: 1px solid get-lib-value($lib-theme-palette,$theme-current,ui-03);
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

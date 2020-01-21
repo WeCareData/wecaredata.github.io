@@ -1,0 +1,274 @@
+//
+// Tables
+//
+
+// Parameters
+$margin-y-table: get-lib-value($lib-spacing, layout, 16) !default;
+$text-color-table: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+
+$table-cell-padding-x: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+$table-cell-padding-y: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+$table-cell-padding-sm: .3rem !default;
+
+$table-color: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
+$table-bg: null !default;
+$table-accent-bg: rgba($color-absolute-black, .05) !default;
+$table-hover-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+$table-hover-bg: get-lib-value($lib-theme-palette, $theme-current, hover-ui) !default;
+$table-active-bg: $table-hover-bg !default;
+
+$table-border-width: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$table-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+
+$table-head-bg: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$table-head-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+
+$table-striped-order: odd !default;
+
+$table-caption-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+
+$table-bg-level: -9 !default;
+$table-border-level: -6 !default;
+
+$border-width-table: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+
+// Mixins
+@mixin table-row-variant($state, $background, $border: null) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table-#{$state} {
+    &,
+    > th,
+    > td {
+      background-color: $background;
+    }
+
+    @if $border != null {
+      th,
+      td,
+      thead th,
+      tbody + tbody {
+        border-color: $border;
+      }
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover {
+    $hover-background: darken($background, 5%);
+
+    .table-#{$state} {
+      @include hover() {
+        background-color: $hover-background;
+
+        > td,
+        > th {
+          background-color: $hover-background;
+        }
+      }
+    }
+  }
+}
+
+//
+// Basic Bootstrap table
+//
+
+.table {
+  width: 100%;
+  margin-bottom: $margin-y-table;
+  color: $text-color-table;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  th,
+  td {
+    padding: $table-cell-padding-y $table-cell-padding-x;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (1 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody {
+    border-bottom: $table-border-width solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (1 * $table-border-width) solid $table-border-color;
+  }
+
+  tr:last-child {
+    border-bottom: $table-border-width solid $table-border-color;
+  }
+}
+
+//
+// Condensed table w/ half padding
+//
+
+@each $size in $lib-size-element {
+  @if $enable-component-sizing {
+    .table-#{$size} {
+      th, td {
+        padding: get-lib-value($element-box-model, padding-y, $size) get-lib-value($element-box-model, padding-x, $size);
+        @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size}));
+        line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+      }
+    }
+  }
+}
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: 1 * $table-border-width;
+    }
+  }
+}
+
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    border: 0;
+  }
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  tbody tr:nth-of-type(#{$table-striped-order}) {
+    background-color: $table-accent-bg;
+  }
+}
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  tbody tr {
+    @include hover() {
+      color: $table-hover-color;
+      background-color: $table-hover-bg;
+    }
+  }
+}
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+@each $color, $value in $lib-color-interactive {
+  @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+}
+
+@include table-row-variant(active, $table-active-bg);
+
+// Dark styles
+//
+// Same table markup, but inverted color scheme: dark background and light text.
+
+// Table Theme
+@each $table-theme in $lib-theme {
+  .table-#{$table-theme} {
+    color: get-lib-value($lib-theme-palette, $table-theme, text-01);
+    background-color: get-lib-value($lib-theme-palette, $table-theme, ui-background);
+
+    th, td {
+      border-top-color: get-lib-value($lib-theme-palette, $table-theme, ui-04);
+      background-color: get-lib-value($lib-theme-palette, $table-theme, ui-02);
+      color: get-lib-value($lib-theme-palette, $table-theme, text-01);
+    }
+
+    thead th {
+      color: get-lib-value($lib-theme-palette, $table-theme, text-01);
+      background-color: get-lib-value($lib-theme-palette, $table-theme, ui-01)
+    }
+
+    tbody + tbody {
+      border-top: $border-width-table solid get-lib-value($lib-theme-palette, $table-theme, ui-04);
+    }
+
+    tbody tr {
+      &:last-child {
+        border-bottom: $border-width-table solid get-lib-value($lib-theme-palette, $table-theme, ui-04);
+      }
+    }
+
+    &.table-striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: get-lib-value($lib-theme-palette, $table-theme, ui-01);
+      }
+    }
+
+    &.table-hover {
+      tbody tr {
+        @include hover {
+          color: get-lib-value($lib-theme-palette, $table-theme, text-01);
+          background-color: get-lib-value($lib-theme-palette, $table-theme, hover-row);
+        }
+      }
+    }
+
+    .table-bordered {
+      border: $border-width-table solid get-lib-value($lib-theme-palette, $table-theme, ui-04);
+
+      th, td {
+        border: $border-width-table solid get-lib-value($lib-theme-palette, $table-theme, ui-04);
+      }
+
+      thead {
+        th, td {
+          border-bottom-width: $border-width-table;
+        }
+      }
+    }
+  }
+}
+
+// Responsive tables
+//
+// Generate series of `.table-responsive-*` classes for configuring the screen
+// size of where your table will overflow.
+
+.table-responsive {
+  @each $breakpoint in map-keys($lib-grid-breakpoint) {
+    $next: breakpoint-next($breakpoint, $lib-grid-breakpoint);
+    $infix: breakpoint-infix($next, $lib-grid-breakpoint);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        // Prevent double border on horizontal scroll due to use of `display: block;`
+        > .table-bordered {
+          border: 0;
+        }
+      }
+    }
+  }
+}

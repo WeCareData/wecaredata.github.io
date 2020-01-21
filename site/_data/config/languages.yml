@@ -17,3 +17,13 @@
   code: ja
   description: Bootstrap 4 日本語リファレンス
   url: https://getbootstrap.jp/
+
+- id: gb
+  name: English
+  flag: 🇬🇧
+- id: zh_cn
+  name: 简体中文
+  flag: 🇨🇳
+- id: fi
+  name: Suomen
+  flag: 🇫🇮

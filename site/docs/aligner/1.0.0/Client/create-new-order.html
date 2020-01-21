@@ -1,0 +1,630 @@
+---
+project: Aligner
+role: Client
+group: Order
+unique-name: Create New Order
+title: Create New Order
+permalink: /Client/Order/Create-New-Order
+
+layout: MSHF-PGHB
+
+enable-multi-language: true
+enable-user-menu: true
+enable-notification: true
+
+toc: false
+---
+
+<div class="stepper-wrapper">
+    <ul class="nav nav-tabs stepper-nav" id="CreateCaseStepIndicator" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="indicate-1" data-toggle="tab" href="#step-1" role="tab" aria-controls="step-1" aria-selected="true">Step 1<br />
+                <small>General Information</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="indicate-2" data-toggle="tab" href="#step-2" role="tab" aria-controls="step-2" aria-selected="false">Step 2<br />
+                <small>Upload Files</small>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" id="indicate-3" data-toggle="tab" href="#step-3" role="tab" aria-controls="step-3" aria-selected="false">Step 3<br />
+                <small>Diagnostic Information & Instructions</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="indicate-4" data-toggle="tab" href="#step-4" role="tab" aria-controls="step-4" aria-selected="false">Step 4<br />
+                <small>Submit</small>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content stepper-content">
+        <div class="tab-pane stepper-pane fade show active" id="step-1" role="tabpanel" aria-labelledby="indicate-1">
+            <h4>General Information</h4>
+            <h1>Patient Informations</h1>
+            <div class="form-row mb-16">
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="InputPatientName">Name</label>
+                        </div>
+                        <input type="text" class="form-control" id="InputPatientName" value="Elizabeth Lemon">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectPatientGender">Gender</label>
+                        </div>
+                        <select class="custom-select" id="SelectPatientGender">
+                            <option>Male</option>
+                            <option selected>Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="InputPatientBirthday">Date of birth</label>
+                        </div>
+                        <input type="date" class="form-control" id="InputPatientBirthday" value="09/11/1971">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Patient Re-Appointment Date</div>
+                        </div>
+                        <input class="form-control" type="date" value="2019-10-12">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-16">
+                <label class="label-01" for="TextareaPatientCheifComplain">Patient's Chief Complain</label>
+                <textarea class="form-control" id="TextareaPatientCheifComplain" rows="8" placeholder="Please fill this area to help the designers to understand more clear about the case">1) Crowned upper and lower anterior teeth
+2) Narrow arches
+                    </textarea>
+            </div>
+            <button type="button" class="btn btn-md btn-primary" data-toggle="tab" href="#step-2" role="tab" aria-controls="step-2" aria-selected="true">Next</button>
+        </div>
+        <div class="tab-pane fade" id="step-2" role="tabpanel" aria-labelledby="indicate-2">
+            <h4>Upload Files</h4>
+            <div class="row mb-16">
+                <div class="col-4">
+                    <h1>Portrait Photos<span class="text-danger">*</span></h1>
+                    <div class="row">
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-3by4">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Front Face">
+                                    <title>Front Face</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".75rem">Front Face</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-3by4">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Front Face Smile</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-3by4">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Profile</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h1>Intraoral Photos<span class="text-danger">*</span></h1>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".1em">Upper Dentition</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row mb-16 mt-16">
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Left</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Occlusal Front</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Right</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Lower Dentition</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h1>X-rays<span class="helper-text-01">(Optional)</span></h1>
+                    <div class="embed-responsive embed-responsive-5by4 mb-16">
+                        <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Ceph</text>
+                        </svg>
+                    </div>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <svg class="bd-placeholder-img embed-responsive-item" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#868e96"></rect>
+                            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Pano</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>Scans or Impressions & etc.</h2>
+            <div class="row mb-16">
+                <div class="col">
+                    <h1>Option 1: Upload Jaw Scanning Data</h1>
+                    <div class="form-row">
+                        <div class="col-auto">
+                            <div class="form-group">
+                                <div class="custom-file mb-8">
+                                    <input type="file" class="custom-file-input" id="ScanMaxillary"> <label class="custom-file-label" for="ScanMaxillary">Maxillary Scan File</label>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="ScanMandibular"> <label class="custom-file-label" for="ScanMandibular">Mandibular Scan File</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1>Option 2: Send by logistics</h1>
+                    <p class="body-long-01">Please send plaster dental models to us via courier or express delivery and fill in the courier number below if you currently don't have STL files above. We will handle the case for you
+                        asap.</p>
+                    <div class="input-group mb-8">
+                        <div class="input-group-prepend">
+                            <select class="custom-select">
+                                <option>Select Provider</option>
+                                <option>UPS</option>
+                                <option>DHL</option>
+                                <option>Fedex</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control" value="4727873457476450672489">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-sm btn-secondary sw-btn-prev mr-8">Previous</button>
+                <button class="btn btn-sm btn-primary sw-btn-next">Next</button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="step-3" role="tabpanel" aria-labelledby="indicate-3">
+            <h4>Diagnostic Information & Instructions</h4>
+            <div class="row">
+                <div class="col">
+                    <h2>Treatment Target</h2>
+                    <div class="form-group mb-16">
+                        <label class="label-01 sr-only" for="TextareaTreatmentPurpose">Treatment Target & RX Instructions</label>
+                        <textarea class="form-control" id="TextareaTreatmentPurpose" rows="6" placeholder="Please fill this area to help the designers to understand more clear about the case"></textarea>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>Treatment Decision</h2>
+                    <div class="form-row mb-8">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectTreatmentDuration">Treatment Duration</label>
+                                </div>
+                                <select class="custom-select" id="SelectTreatmentDuration">
+                                    <option>Recommended</option>
+                                    <option selected>Limit</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" placeholder="steps" id="InputTreatmentDurationSteps">
+                        </div>
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectWearSchedule">Wear Schedule</label>
+                                </div>
+                                <select class="custom-select" id="SelectWearSchedule">
+                                    <option>3 Weeks</option>
+                                    <option selected>2 Weeks</option>
+                                    <option>1 Weeks</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mb-8">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectTreatmentArch">Treatment Arch</label>
+                                </div>
+                                <select class="custom-select" id="SelectTreatmentArch">
+                                    <option selected>Both Arch</option>
+                                    <option>Maxillary</option>
+                                    <option>Mandibular</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectOverTreatment">Over Treatment</label>
+                                </div>
+                                <select class="custom-select" id="SelectOverTreatment">
+                                    <option selected>No</option>
+                                    <option>Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-auto mb-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectStepMaxMovement">Max. Movement Per Step</label>
+                                </div>
+                                <select class="custom-select" id="SelectStepMaxMovement">
+                                    <option selected>Distance</option>
+                                    <option>0.15 mm</option>
+                                    <option>0.20 mm</option>
+                                    <option>0.25 mm</option>
+                                </select> <select class="custom-select" id="SelectMaxMovementAngle">
+                                <option selected>Degree</option>
+                                <option>1°</option>
+                                <option>2°</option>
+                                <option>3°</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col-auto mb-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="SelectMaxIPR">Max. IPR</label>
+                                </div>
+                                <select class="custom-select" id="SelectMaxIPR">
+                                    <option selected>IPR Value</option>
+                                    <option>0.50 mm</option>
+                                    <option>0.60 mm</option>
+                                    <option>0.70 mm</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-16">
+            <h2>Type of mal-occlusion</h2>
+            <div class="btn-toolbar mb-16">
+                <div class="btn-group btn-group-sm btn-group-toggle mr-8" data-toggle="buttons" role="group" aria-label="normal case" id="createdCheckboxbtn">
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_crowded">Crowding</label> <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_interval">Spacing</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_deep_draping">Overbite</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_deep_overjet">Anterior overjet</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_II_I">Class II division 1</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_II_II">Class II division 2</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_III">Class III</label> <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_both_edge">Edge
+                    to
+                    edge
+                    occlusion</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_opening_and_closing">Open Bite</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_anterior_crossbite">Anterior Crossbite</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_posterior_teeth">Posterior Crossbite</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_expanal_dental_arch">Narrow Arch</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_periodontal">Swollen Periphery</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_inflammation">Oral Inflammation</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_osteoporosis">Osteoporosis</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_tmj_problems">TMJ Problems</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_gagtooth">Protrusion</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_smile_line_not_neat">Smile line discrepancy</label>
+                    <label class="btn btn-outline-secondary"><input type="checkbox" autocomplete="off" id="is_tooth_abnormlities">Tooth Deformity</label>
+                </div>
+            </div>
+            <hr class="mb-16">
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <h1>Mid-line</h1>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectMidlineUpper">Upper</label>
+                            </div>
+                            <select class="custom-select" id="SelectMidlineUpper">
+                                <option>Retention</option>
+                                <optgroup label="Adjust">
+                                    <option>Shift to left</option>
+                                    <option>Shift to right</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectMidlineLower">Lower</label>
+                            </div>
+                            <select class="custom-select" id="SelectMidlineLower">
+                                <option>Retention</option>
+                                <optgroup label="Adjust">
+                                    <option>Shift to left</option>
+                                    <option>Shift to right</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <h1>Anchorage</h1>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectAnchorageLeft">Left</label>
+                            </div>
+                            <select class="custom-select" id="SelectAnchorageLeft">
+                                <option>Strong</option>
+                                <option>Moderate</option>
+                                <option>Mild</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectAnchorageRight">Right</label>
+                            </div>
+                            <select class="custom-select" id="SelectAnchorageRight">
+                                <option>Strong</option>
+                                <option>Moderate</option>
+                                <option>Mild</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <h1>Bites</h1>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectMidlineUpper">Anterior Overbite</label>
+                            </div>
+                            <select class="custom-select" id="SelectAnteriorOverbite">
+                                <option>Retention</option>
+                                <optgroup label="Adjust">
+                                    <option>Normal</option>
+                                    <option>Mild</option>
+                                    <option>Midrange</option>
+                                    <option>Severe</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectDeepOverbite">Deep Overbite</label>
+                            </div>
+                            <select class="custom-select" id="SelectDeepOverbite">
+                                <option>Retention</option>
+                                <optgroup label="Intrude Upper and Lower anterior teeth">
+                                    <option>Normal</option>
+                                    <option>Overbite Level 1</option>
+                                    <option>Overbite Level 2</option>
+                                    <option>Overbite Level 3</option>
+                                </optgroup>
+                                <optgroup label="Intrude Upper anterior teeth">
+                                    <option>Normal</option>
+                                    <option>Overbite Level 1</option>
+                                    <option>Overbite Level 2</option>
+                                    <option>Overbite Level 3</option>
+                                </optgroup>
+                                <optgroup label="Intrude Lower anterior teeth">
+                                    <option>Normal</option>
+                                    <option>Overbite Level 1</option>
+                                    <option>Overbite Level 2</option>
+                                    <option>Overbite Level 3</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <h1>Molar Relationship</h1>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectMolarRelationLeft">Left</label>
+                            </div>
+                            <select class="custom-select" id="SelectMolarRelationLeft">
+                                <option>Retention</option>
+                                <optgroup label="Adjust">
+                                    <option>Neutral</option>
+                                    <option>Mesioclusion</option>
+                                    <option>Distal</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectMolarRelationRight">Right</label>
+                            </div>
+                            <select class="custom-select" id="SelectMolarRelationRight">
+                                <option>Retention</option>
+                                <optgroup label="Adjust">
+                                    <option>Neutral</option>
+                                    <option>Mesioclusion</option>
+                                    <option>Distal</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <h1>Crowding</h1>
+                        <div class="input-group mb-8">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectCrowdingLeft">Left</label>
+                            </div>
+                            <select class="custom-select" id="SelectCrowdingLeft">
+                                <option>No</option>
+                                <optgroup label="Crowd Removed By">
+                                    <option>Arch expansion</option>
+                                    <option>IPR</option>
+                                    <option>Lip Expansion</option>
+                                    <option>Distalization of Molars</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="SelectCrowdingRight">Right</label>
+                            </div>
+                            <select class="custom-select" id="SelectCrowdingRight">
+                                <option>No</option>
+                                <optgroup label="Crowd Removed By">
+                                    <option>Arch expansion</option>
+                                    <option>IPR</option>
+                                    <option>Lip Expansion</option>
+                                    <option>Distalization of Molars</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-row mb-16">
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectMissingTooth">Tooth Missing</label>
+                        </div>
+                        <select class="custom-select" id="SelectMissingTooth">
+                            <option selected>Yes</option>
+                            <option>None</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectExtractTooth">Tooth Extraction</label>
+                        </div>
+                        <select class="custom-select" id="SelectExtractTooth">
+                            <option selected>Extraction</option>
+                            <option>Non-Extraction</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectTreatmentArch">Unmovable Tooth</label>
+                        </div>
+                        <input type="text" class="form-control" value="#13,#15,#24">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+            </div>
+            <div class="form-row mb-16">
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectTreatmentArch">Tooth Needs Space</label>
+                        </div>
+                        <input type="text" class="form-control" value="#13,#15,#24">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectTreatmentArch">No IPR on Selected Tooth</label>
+                        </div>
+                        <input type="text" class="form-control" value="#13,#15,#24">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="SelectTreatmentArch">Tooth with Attachments</label>
+                        </div>
+                        <input type="text" class="form-control" value="#13,#15,#24">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-sm"><i class="icon-edit"></i>Define</a>
+                </div>
+            </div>
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-sm btn-secondary sw-btn-prev mr-8">Previous</button>
+                <button class="btn btn-sm btn-primary sw-btn-next">Next</button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="step-4" role="tabpanel" aria-labelledby="indicate-4">
+            <p class="body-long-01">We'll prepare a treatment setup representing out best attempt to achieve your prescribed goals. If you've requested that we limit the duration of treatment, this may restrict or prevent some of your other prescribed goals. In case of conflict, we will prioritize restrictions on treatment duration.</p>
+            <p class="body-long-01">When you receive the treatment setup, you'll see the number of planned steps and the cost of planned steps and the cost of both pricing options. If you choose Flex, you will revieve only the aligners represented in the setup any revisions, replacements, or retainers will be sold separately. If you choose Ulimited, the cost of aligners and retainers will be covered for five full years (<a href="#">Click here for details</a>).</p>
+            <p class="body-long-01">You pay nothing now. You are under no obligation to continue the case, but if you do, the appropriate lab fee will be due when you approve the treatment setup.</p>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                <label class="form-check-label" for="exampleCheck1">I have read and agree to the <span class="text-primary">Terms and conditions</span>.</label>
+            </div>
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-sm btn-secondary sw-btn-prev mr-8">Previous</button>
+                <button class="btn btn-sm btn-primary sw-btn-next mr-8">Submit</button>
+                <button class="btn btn-sm btn-primary sw-btn-next">Save to draft</button>
+            </div>
+        </div>
+    </div>
+</div>

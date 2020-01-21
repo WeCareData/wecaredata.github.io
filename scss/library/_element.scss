@@ -1,0 +1,39 @@
+@charset "utf-8";
+// 组件 Box Model 设置
+$element-box-model: (
+        margin-x:(
+                sm:get-lib-value($lib-spacing, layout, 8),
+                md:get-lib-value($lib-spacing, layout, 16),
+                lg:get-lib-value($lib-spacing, layout, 24)
+        ),
+        margin-y:(
+                sm:get-lib-value($lib-spacing, layout, 8),
+                md:get-lib-value($lib-spacing, layout, 16),
+                lg:get-lib-value($lib-spacing, layout, 24)
+        ),
+        padding-x:(
+                sm:get-lib-value($lib-spacing, spacing, 4),
+                md:get-lib-value($lib-spacing, spacing, 8),
+                lg:get-lib-value($lib-spacing, spacing, 16)
+        ),
+        padding-y:(
+                sm:get-lib-value($lib-spacing, spacing, 2),
+                md:get-lib-value($lib-spacing, spacing, 4),
+                lg:get-lib-value($lib-spacing, spacing, 8)
+        ),
+        border-width:(
+                sm:$border-width-base,
+                md:$border-width-base,
+                lg:$border-width-base,
+                focus:0,
+                0:0
+        ),
+        border-radius:(
+                sm :get-lib-value($lib-spacing, spacing, 2),
+                md :get-lib-value($lib-spacing, spacing, 4),
+                lg :get-lib-value($lib-spacing, spacing, 8),
+                pill :$size-base-space * 100,
+                round :50%,
+                0:0
+        )
+);

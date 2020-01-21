@@ -11,6 +11,7 @@ timezone: Pacific/Beijing
 # Site
 title: up.Smart
 description: Connect digital dental world.
+organization: WeCareData
 author: James Sean
 lang: zh_cn
 logo: /logo-robotcaradata.svg

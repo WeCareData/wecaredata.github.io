@@ -1,0 +1,400 @@
+//
+// Forms
+//
+
+// Parameters
+// Box Properties
+//// Dimensions
+////// Width
+$width-grid-gutter-form: get-lib-value($lib-spacing, spacing, 8) !default;
+$width-grid-gutter-form-item: get-lib-value($lib-spacing, spacing, 24) !default;
+////// Height
+//// Margins
+$margin-y-form-element: get-lib-value($element-box-model, margin-y, $size-element-current) !default;
+$margin-x-form-element: get-lib-value($element-box-model, margin-x, $size-element-current) !default;
+$margin-y-form-group: $margin-y-form-element !default;
+$margin-y-form-item: $margin-y-form-element / 4 !default;
+$margin-x-form-item: $margin-x-form-element / 4 !default;
+$margin-x-form-element: $margin-x-form-element / 2 !default;
+//// Padding
+$padding-y-form-element: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+$padding-x-form-element: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+//// Borders
+$border-color-form-element: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$border-color-form-element-focus: lighten(get-lib-value($lib-theme-palette, $theme-current, focus), 25%) !default;
+$border-width-form-element: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$border-width-form-element-focus: get-lib-value($element-box-model, border-width, focus) !default;
+////// Border Radius
+$border-radius-form-element: get-lib-value($element-box-model, border-radius, $size-element-current) !default;
+//// Box Shadows
+$box-shadow-form-element: inset 0 1px 1px rgba($black, .075) !default;
+$box-shadow-form-element-focus: 0 0 0 $border-width-form-element-focus $border-color-form-element-focus !default;
+// Visual
+//// Backgrounds
+$bg-color-form-element: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
+$bg-color-form-element-hover: get-lib-value($lib-theme-palette, $theme-current, hover-ui) !default;
+$bg-color-form-element-disabled: get-lib-value($lib-theme-palette, $theme-current, disabled-01) !default;
+$bg-color-form-element-focus: $bg-color-form-element !default;
+//// Colors
+$text-color-form-element: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+$text-color-form-element-placeholder: get-lib-value($lib-theme-palette, $theme-current, text-03) !default;
+$text-color-form-element-plaintext: $text-color-form-element !default;
+$text-color-form-element-disabled: get-lib-value($lib-theme-palette, $theme-current, disabled-02) !default;
+$text-color-form-element-focus: $text-color-form-element !default;
+//// Typographical Properties
+////// Font
+$font-family-form-element: null !default;
+$font-size-form-element: get-lib-value($lib-text-style, font-size, body-text-#{$size-element-current}) !default;
+$font-weight-form-element: get-lib-value($lib-text-style, font-weight, body-text-regular) !default;
+////// Text
+$line-height-form-element: get-lib-value($lib-text-style, line-height, body-text-#{$size-element-current}) !default;
+// Motion Properties
+//// Transitions
+$transition-form-element: border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+//// Calc Result
+$input-height-border: $border-width-form-element * 2 !default; // get-lib-value($element-box-model, border-width, $size)
+$input-height-inner: add($line-height-form-element, $padding-y-form-element * 2) !default;
+$input-height-inner-half: add($line-height-form-element / 2, $padding-y-form-element) !default;
+$input-height-inner-quarter: add($line-height-form-element / 4, $padding-y-form-element / 2) !default;
+$calc-height-form-element: add($line-height-form-element, add($padding-y-form-element * 2, $input-height-border, false)) !default;
+
+// Form control focus state
+//
+// Generate a customized focus state and for any input with the specified color,
+// which defaults to the `$input-focus-border-color` variable.
+//
+// We highly encourage you to not customize the default value, but instead use
+// this to tweak colors on an as-needed basis. This aesthetic change is based on
+// WebKit's default styles, but applicable to a wider range of browsers. Its
+// usability and accessibility should be taken into account with any change.
+//
+// Example usage: change the default blue border and shadow to white for better
+// contrast against a dark gray background.
+@mixin form-control-focus($ignore-warning: false) {
+  &:focus {
+    color: $text-color-form-element-focus;
+    background-color: $bg-color-form-element-focus;
+    border-color: $border-color-form-element-focus;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $box-shadow-form-element, $box-shadow-form-element-focus;
+    } @else {
+      box-shadow: $box-shadow-form-element-focus;
+    }
+  }
+  @include deprecate("The `form-control-focus()` mixin", "v4.4.0", "v5", $ignore-warning);
+}
+
+//
+// Textual form controls
+//
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: $calc-height-form-element;
+  padding: $padding-y-form-element $padding-x-form-element;
+  font-family: $font-family-form-element;
+  @include font-size($font-size-form-element);
+  font-weight: $font-weight-form-element;
+  line-height: $line-height-form-element;
+  color: $text-color-form-element;
+  background-color: $bg-color-form-element;
+  background-clip: padding-box;
+  border: $border-width-form-element solid $border-color-form-element;
+
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @include border-radius($border-radius-form-element, 0);
+
+  @include box-shadow($box-shadow-form-element);
+  @include transition($transition-form-element);
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Remove select outline from select box in FF
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $text-color-form-element;
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus($ignore-warning: true);
+
+  // Placeholder
+  &::placeholder {
+    color: $text-color-form-element-placeholder;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    background-color: $bg-color-form-element-disabled;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+}
+
+select.form-control {
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398.
+    color: $text-color-form-element;
+    background-color: $bg-color-form-element;
+  }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.form-control-file,
+.form-control-range {
+  display: block;
+  width: 100%;
+}
+
+//
+// Labels
+//
+
+// For use with horizontal and inline forms, when you need the label (or legend)
+// text to align with the form controls.
+.col-form-label {
+  padding-top: add($padding-y-form-element, $border-width-form-element);
+  padding-bottom: add($padding-y-form-element, $border-width-form-element);
+  margin-bottom: 0; // Override the `<label>/<legend>` default
+  @include font-size(inherit); // Override the `<legend>` default
+  line-height: $line-height-form-element;
+}
+
+@each $size in $lib-size-element {
+  .col-form-label-#{$size} {
+    padding-top: add(get-lib-value($element-box-model, padding-y, $size), get-lib-value($element-box-model, border-width, $size));
+    padding-bottom: add(get-lib-value($element-box-model, padding-y, $size), get-lib-value($element-box-model, border-width, $size));
+    @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size}));
+    line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+  }
+}
+
+// Readonly controls as plain text
+//
+// Apply class to a readonly input to make it appear like regular plain
+// text (without any border, background color, focus indicator)
+
+.form-control-plaintext {
+  display: block;
+  width: 100%;
+  padding: $padding-y-form-element 0;
+  margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+  @include font-size($font-size-form-element);
+  line-height: $line-height-form-element;
+  color: $text-color-form-element-plaintext;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: $border-width-form-element 0;
+
+  &.form-control-sm,
+  &.form-control-lg {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+//
+// Repeated in `_input_group.scss` to avoid Sass extend issues.
+@each $size in $lib-size-element {
+  $line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+  $height-padding-y: get-lib-value($element-box-model, padding-y, $size);
+  $height-border-y: get-lib-value($element-box-model, border-width, $size);
+  $height: add($line-height, add($height-padding-y, $height-border-y, false));
+  .form-control-#{$size} {
+    height: $height;
+    padding: get-lib-value($element-box-model, padding-y, $size) get-lib-value($element-box-model, padding-x, $size);
+    @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size}));
+    line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+    @include border-radius(get-lib-value($element-box-model, border-radius, $size));
+  }
+}
+
+// stylelint-disable-next-line no-duplicate-selectors
+select.form-control {
+  &[size],
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  margin-bottom: $margin-y-form-group;
+}
+
+.form-text {
+  display: block;
+  margin-top: $margin-y-form-item;
+}
+
+// Form grid
+//
+// Special replacement for our grid system's `.row` for tighter form layouts.
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$width-grid-gutter-form / 2;
+  margin-left: -$width-grid-gutter-form / 2;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: $width-grid-gutter-form / 2;
+    padding-left: $width-grid-gutter-form / 2;
+  }
+}
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.form-check {
+  position: relative;
+  display: block;
+  padding-left: $width-grid-gutter-form-item;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: $margin-y-form-item;
+  margin-left: -$width-grid-gutter-form-item;
+
+  // Use [disabled] and :disabled for workaround https://github.com/twbs/bootstrap/issues/28247
+  &[disabled] ~ .form-check-label,
+  &:disabled ~ .form-check-label {
+    color: $text-color-form-element-disabled;
+  }
+}
+
+.form-check-label {
+  margin-bottom: 0; // Override default `<label>` bottom margin
+}
+
+.form-check-inline {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0; // Override base .form-Certification
+  margin-right: $margin-x-form-element;
+
+  // Undo .form-Certification-input defaults and add some `margin-right`.
+  .form-check-input {
+    position: static;
+    margin-top: 0;
+    margin-right: $margin-x-form-item;
+    margin-left: 0;
+  }
+}
+
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center; // Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
+
+  // Because we use flex, the initial sizing of checkboxes is collapsed and
+  // doesn't occupy the full-width (which is what we want for xs grid tier),
+  // so we force that here.
+  .form-check {
+    width: 100%;
+  }
+
+  // Kick in the inline
+  @include media-breakpoint-up(sm) {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    // Inline-block all the things for "inline"
+    .form-group {
+      display: flex;
+      flex: 0 0 auto;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    // Allow folks to *not* use `.form-group`
+    .form-control {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    // Make static controls behave like regular ones
+    .form-control-plaintext {
+      display: inline-block;
+    }
+
+    .input-group,
+    .custom-select {
+      width: auto;
+    }
+
+    // Remove default margin on radios/checkboxes that were used for stacking, and
+    // then undo the floating of radios and checkboxes to match.
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      padding-left: 0;
+    }
+    .form-check-input {
+      position: relative;
+      flex-shrink: 0;
+      margin-top: 0;
+      margin-right: $margin-x-form-item;
+      margin-left: 0;
+    }
+
+    .custom-control {
+      align-items: center;
+      justify-content: center;
+    }
+    .custom-control-label {
+      margin-bottom: 0;
+    }
+  }
+}

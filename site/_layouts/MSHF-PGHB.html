@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include layout/head.html %}
+</head>
+<body>
+{% include layout/masthead.html %}
+<main id="content" role="main" class="mastbody">
+    <section class="page-header">
+        <div>
+            <h6>{{ page.title }}</h6>
+            <nav class="nav">
+                {% for nav-page-links in site.data.nav.pages[page.role][page.unique-name] %}
+                {% if page.role == "Guest" %}
+                <a class="nav-link" href="{{ site.url }}/{{ nav-page-links.url | replace: " ", "-" }}">
+                <i class="{{ nav-page-links.icon }}"></i>{{ nav-page-links.title }}
+                </a>
+                {% else %}
+                <a class="nav-link" href="{{ site.url }}/{{ page.role }}/{{ nav-page-links.url | replace: " ", "-" }}">
+                    <i class="{{ nav-page-links.icon }}"></i>{{ nav-page-links.title }}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </nav>
+        </div>
+    </section>
+    <section class="page-body">
+        {{ content }}
+    </section>
+</main>
+{% include layout/mastfoot.html %}
+</body>
+</html>

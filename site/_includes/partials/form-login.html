@@ -1,6 +1,5 @@
-<form class="w-50 m-auto" id="form-login" name="form-login">
-    <img class="mb-32" src="{{ site.url_root }}/images/brand/RobotCareData-solid.svg" alt="" width="72" height="72">
-
+<form class="w-50 m-auto box-shadow-md px-16 py-32" id="form-login" name="form-login">
+    <h4 class="mb-32">ai.smart Aligner</h4>
     <div class="input-group mb-16">
         <div class="input-group-prepend">
             <label class="input-group-text" for="InputLoginUsername"><i class="icon-user"></i></label>
@@ -26,6 +25,6 @@
 <script type="text/javascript">
     function LoginRedirect() {
         var username = document.getElementById('InputLoginUsername').value;
-        window.location.href="{{ site.url_base }}/{{ page.project }}/"+username;
+        window.location.href="{{ site.baseurl }}/"+username;
     }
 </script>
