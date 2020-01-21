@@ -1,5 +1,5 @@
 aligner:
-  Client:
+  client:
   - name: Home
     title: Home
     url: ""
@@ -9,17 +9,17 @@ aligner:
   - name: Help
     title: Help
     url: Help
-Manufacturer:
-  - name: Home
-    title: Home
-    url: ""
-  - name: Order
-    title: Order
-    url: Order
-Expert:
-  - name: Home
-    title: Home
-    url: ""
-  - name: Order
-    title: Order
-    url: Order
+  manufacturer:
+    - name: Home
+      title: Home
+      url: ""
+    - name: Order
+      title: Order
+      url: Order
+  expert:
+    - name: Home
+      title: Home
+      url: ""
+    - name: Order
+      title: Order
+      url: Order

@@ -6,7 +6,7 @@ port: 4000
 baseurl:
 url: "https://wecaredata.github.io"
 encoding: UTF-8
-timezone: Pacific/Beijing
+#timezone: Pacific/Beijing
 
 # Site
 title: up.Smart
