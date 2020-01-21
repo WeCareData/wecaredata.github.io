@@ -1,18 +1,63 @@
-- name: 100
-  hex: "#f8f9fa"
-- name: 200
-  hex: "#e9ecef"
-- name: 300
-  hex: "#dee2e6"
-- name: 400
-  hex: "#ced4da"
-- name: 500
-  hex: "#adb5bd"
-- name: 600
-  hex: "#868e96"
-- name: 700
-  hex: "#495057"
-- name: 800
-  hex: "#343a40"
-- name: 900
-  hex: "#212529"
+gray:
+  - name: 10
+    hex: ""
+  - name: 20
+    hex: ""
+  - name: 30
+    hex: ""
+  - name: 40
+    hex: ""
+  - name: 50
+    hex: ""
+  - name: 60
+    hex: ""
+  - name: 70
+    hex: ""
+  - name: 80
+    hex: ""
+  - name: 90
+    hex: ""
+  - name: 100
+    hex: ""
+gray-warm:
+  - name: 10
+    hex: ""
+  - name: 20
+    hex: ""
+  - name: 30
+    hex: ""
+  - name: 40
+    hex: ""
+  - name: 50
+    hex: ""
+  - name: 60
+    hex: ""
+  - name: 70
+    hex: ""
+  - name: 80
+    hex: ""
+  - name: 90
+    hex: ""
+  - name: 100
+    hex: ""
+gray-cool:
+  - name: 10
+    hex: ""
+  - name: 20
+    hex: ""
+  - name: 30
+    hex: ""
+  - name: 40
+    hex: ""
+  - name: 50
+    hex: ""
+  - name: 60
+    hex: ""
+  - name: 70
+    hex: ""
+  - name: 80
+    hex: ""
+  - name: 90
+    hex: ""
+  - name: 100
+    hex: ""

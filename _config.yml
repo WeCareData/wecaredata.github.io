@@ -1,6 +1,50 @@
 # Server
 source: "site"
+#destination: ./_gh_pages
 host: "localhost"
-baseurl: ""
+port: 4000
+baseurl:
 url: "https://wecaredata.github.io"
 encoding: UTF-8
+timezone: Pacific/Beijing
+
+# Site
+title: up.Smart
+description: Connect digital dental world.
+author: James Sean
+lang: zh_cn
+logo: /logo-robotcaradata.svg
+
+# Theme
+#theme: jekyll-theme-robotcaredata
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - docs/4.4/assets/scss
+
+# Dependencies
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  auto_ids: true
+
+# Permalinks
+permalink: pretty
+
+# Plugins
+Plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-seo-tag
+
+# Plugins - TOC Settings
+min_level: 2
+max_level: 4
+no_toc_selection_class:
+  - "bd-callout"
+  - "bd-example"

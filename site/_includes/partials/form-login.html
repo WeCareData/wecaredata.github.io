@@ -1,0 +1,31 @@
+<form class="w-50 m-auto" id="form-login" name="form-login">
+    <img class="mb-32" src="{{ site.url_root }}/images/brand/RobotCareData-solid.svg" alt="" width="72" height="72">
+
+    <div class="input-group mb-16">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="InputLoginUsername"><i class="icon-user"></i></label>
+        </div>
+        <input type="text" class="form-control" id="InputLoginUsername" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required autofocus>
+    </div>
+
+    <div class="input-group mb-16">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="InputLoginPassword"><i class="icon-lock"></i></label>
+        </div>
+        <input type="password" class="form-control" id="InputLoginPassword" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+    </div>
+    <div class="checkbox mb-16">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+    </div>
+    <button class="btn btn-md btn-primary btn-block" type="button" name="ButtonLogin" onclick="LoginRedirect()">Login</button>
+    <p class="mt-8 mb-16 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</p>
+</form>
+
+<script type="text/javascript">
+    function LoginRedirect() {
+        var username = document.getElementById('InputLoginUsername').value;
+        window.location.href="{{ site.url_base }}/{{ page.project }}/"+username;
+    }
+</script>

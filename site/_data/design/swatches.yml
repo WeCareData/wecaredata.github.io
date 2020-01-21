@@ -1,26 +1,36 @@
-- name: blue
-  hex: "#007bff"
-- name: indigo
-  hex: "#6610f2"
-- name: purple
-  hex: "#6f42c1"
-- name: pink
-  hex: "#e83e8c"
 - name: red
-  hex: "#dc3545"
+  hex: "FF0505"
+  hsl: 0, 100, 51
 - name: orange
-  hex: "#fd7e14"
+  hex: "FF7F0F"
+  hsl: 28, 100, 53
 - name: yellow
-  hex: "#ffc107"
+  hex: "FFE70F"
+  hsl: 54, 100, 53
+- name: lime
+  hex: "7AF005"
+  hsl: 90, 96, 48
 - name: green
-  hex: "#28a745"
-- name: teal
-  hex: "#20c997"
+  hex: "0AFF0A"
+  hsl: 120, 92, 52
+- name: spring
+  hex: "05E684"
+  hsl: 154, 96, 46
 - name: cyan
-  hex: "#17a2b8"
-- name: white
-  hex: "#fff"
-- name: gray
-  hex: "#868e96"
-- name: gray-dark
-  hex: "#343a40"
+  hex: "00E3EB"
+  hsl: 182, 100, 46
+- name: azure
+  hex: "0A85FF"
+  hsl: 210, 100, 52
+- name: blue
+  hex: "0A85FF"
+  hsl: 240, 98, 53
+- name: violet
+  hex: "8300F5"
+  hsl: 272, 100, 48
+- name: magenta
+  hex: "EB00EB"
+  hsl: 300, 100, 46
+- name: rose
+  hex: "F5007A"
+  hsl: 330, 100, 48
