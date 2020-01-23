@@ -1,8 +1,10 @@
-# Ignore Jekyll Files
+# Jekyll
 _site/
-.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Sass
+.sass-cache/
 
 # OS or Editor folders
 ._*
