@@ -1,0 +1,104 @@
+# Jekyll Global
+source: "site"
+destination: ./_site
+#collections_dir: .
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+sass:
+  sass_dir: _sass
+collections:
+  posts:
+    output: true
+
+# Handling Reading
+safe: false
+#include: [".htaccess"]
+exclude: ["Gemfile", "Gemfile.lock", "node_modules"]
+keep_files: [".git", ".svn"]
+encoding: utf-8
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Filtering Content
+show_drafts: false
+limit_posts: 0
+future: false
+unpublished: false
+profile: true
+
+# Plugins
+whitelist: []
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-seo-tag
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Serving
+detach: false
+livereload: true
+port: 4000
+host: 127.0.0.1
+baseurl: ""
+url: "https://wecaredata.github.io"
+show_dir_listing: false
+
+# Outputting
+permalink: pretty
+paginate_path: /page:num
+timezone: Asia/Shanghai
+
+quiet: false
+verbose: false
+defaults: []
+
+liquid:
+  strict_variables: false
+  strict_filters: false
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids: true
+  entity_output: as_char
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  show_warnings: true
+
+# Site
+title: up.Smart
+description: Connect digital dental world.
+organization: WeCareData
+author: James Sean
+email: james.sean.pro@gmail.com
+lang: zh_CN
+logo: /logo-robotcaradata.svg
+
+# Theme
+#theme: jekyll-theme-robotcaredata
+
+# Plugins - TOC Settings
+min_level: 2
+max_level: 4
+no_toc_selection_class:
+  - "bd-callout"
+  - "bd-example"
+
+# Version Control
+version_aligner: 1.0.0
+version_design_language: 1.0.0
