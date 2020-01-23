@@ -1,33 +1,29 @@
 <header class="masthead">
     <nav class="navbar navbar-expand-sm">
-
-        {% if page.project != null %}
-        <a class="navbar-brand" href="{{ site.baseurl }}/{{ page.project | replace: " ", "_" }}">{{ page.project }}</a>
-        {% else %}
+    {% if page.project != null %}
+        <a class="navbar-brand" href="{{ site.baseurl }}/{{ page.project | replace: " ", "-" }}">{{ page.project }}</a>
+    {% else %}
         <a class="navbar-brand" href="{{ site.baseurl }}">{{ site.title }}</a>
-        {% endif %}
-
+    {% endif %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                {% for nav-links in site.data.nav.navbar.[page.project].[page.role] %}
-
-                    {% if nav-links.sub-nav != null %}
+            {% for nav-links in site.data.nav.navbar.[page.project].[page.role] %}
+                {% if nav-links.sub-nav != null %}
                 <li class="nav-item dropdown {% if page.group == nav-links.name %}active{% endif %}">
                     <a class="nav-link dropdown-toggle" href="#" id="{{ nav-links.name }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ nav-links.title }}
+                    {{ nav-links.title }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-left" aria-labelledby="{{ nav-links.name }}">
-                        {% for sub-nav-links in nav-links.sub-nav %}
-                            {% if page.role != "Guest" %}
+                    {% for sub-nav-links in nav-links.sub-nav %}
+                        {% if page.role != "Guest" %}
                         <a class="dropdown-item {% if page.unique-name == sub-nav-links.name %}active{% endif %}" href="{{ site.baseurl }}/{{ page.project | replace: " ", "-" }}/{{ page.role }}/{{ nav-links.url | replace: " ", "-" }}/{{ sub-nav-links.url | replace: " ", "-" }}">{{ sub-nav-links.title }}</a>
-                            {% else %}
+                        {% else %}
                         <a class="dropdown-item {% if page.unique-name == sub-nav-links.name %}active{% endif %}" href="{{ site.baseurl }}/{{ page.project | replace: " ", "-" }}/{{ nav-links.url | replace: " ", "-" }}/{{ sub-nav-links.url | replace: " ", "-" }}">{{ sub-nav-links.title }}</a>
-                            {% endif %}
-                        {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                     </div>
                 </li>
                     {% else %}

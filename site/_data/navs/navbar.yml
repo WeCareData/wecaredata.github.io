@@ -1,14 +1,14 @@
 aligner:
   client:
-  - name: Home
-    title: Home
-    url: ""
-  - name: Order
-    title: Order
-    url: Order
-  - name: Help
-    title: Help
-    url: Help
+    - name: Home
+      title: Home
+      url: ""
+    - name: Order
+      title: Order
+      url: Order
+    - name: Help
+      title: Help
+      url: Help
   manufacturer:
     - name: Home
       title: Home

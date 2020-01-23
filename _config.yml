@@ -3,17 +3,18 @@ source: "site"
 #destination: ./_gh_pages
 host: "localhost"
 port: 4000
-baseurl:
+baseurl: ""
 url: "https://wecaredata.github.io"
 encoding: UTF-8
-#timezone: Pacific/Beijing
+timezone: Asia/Shanghai
 
 # Site
 title: up.Smart
 description: Connect digital dental world.
 organization: WeCareData
 author: James Sean
-lang: zh_cn
+email: james.sean.pro@gmail.com
+lang: zh_CN
 logo: /logo-robotcaradata.svg
 
 # Theme
@@ -49,3 +50,7 @@ max_level: 4
 no_toc_selection_class:
   - "bd-callout"
   - "bd-example"
+
+# Version Control
+version_aligner: 1.0.0
+version_design_language: 1.0.0
