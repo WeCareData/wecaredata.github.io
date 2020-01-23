@@ -1,5 +1,5 @@
 # Jekyll Global
-source: ./site
+source: .
 destination: ./_site
 #collections_dir: .
 plugins_dir: _plugins
