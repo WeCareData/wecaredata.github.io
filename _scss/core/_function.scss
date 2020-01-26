@@ -1,0 +1,108 @@
+// 从 Map 函数取值
+@function get-lib-value($lib, $property, $key) {
+  @if map-has-key($lib, $property) {
+    @if map-has-key(map-get($lib, $property), $key) {
+      @return map-get(map-get($lib, $property), $key);
+    } @else {
+      @warn "#{$lib} Error: #{$key} does not exist in #{$property}'s property-key";
+    }
+  } @else {
+    @warn "#{$lib} Error: #{$property} does not exist in property-name";
+  }
+}
+
+// Map: Provide a map and index, and get back the relevant key value
+@function map-key-by-index($map, $index) {
+  $keys: map-keys($map);
+  @return nth($keys, $index);
+}
+
+// 取 Map 函数最后一个值
+@function map-last-item($map) {
+  $total-length: length($map);
+  @return map-get($map, map-key-by-index($map, $total-length));
+}
+
+// Map: Ascending the items
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null or unit($num) == "%" {
+    } @else if not comparable($prev-num, $num) {
+      @warn "Invalid value of #{$map-name}: Maps's key value must be listed by ascending, key '#{$key}'' value #{$num} could not compare with the last key '#{$prev-key}''s value #{$prev-num}!";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value of #{$map-name}: Maps's key value must be listed by ascending, key '#{$key}'' value #{$num} is smaller than '#{$prev-key}'' value #{$prev-num}!";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Map: Set the first item's value to 0
+@mixin _assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
+  $values: map-values($map);
+  $first-value: nth($values, 1);
+  @if $first-value != 0 {
+    @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+  }
+}
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// See https://codepen.io/kevinweber/pen/dXWoRw
+@function escape-svg($string) {
+  @if str-index($string, "data:image/svg+xml") {
+    @each $char, $encoded in $escaped-characters {
+      $string: str-replace($string, $char, $encoded);
+    }
+  }
+
+  @return $string;
+}
+
+// Return valid calc
+@function add($value1, $value2, $return-calc: true) {
+  @if $value1 == null {
+    @return $value2;
+  }
+
+  @if $value2 == null {
+    @return $value1;
+  }
+
+  @if type-of($value1) == number and type-of($value2) == number and comparable($value1, $value2) {
+    @return $value1 + $value2;
+  }
+
+  @return if($return-calc == true, calc(#{$value1} + #{$value2}), $value1 + unquote(" + ") + $value2);
+}
+
+@function subtract($value1, $value2, $return-calc: true) {
+  @if $value1 == null and $value2 == null {
+    @return null;
+  }
+
+  @if $value1 == null {
+    @return -$value2;
+  }
+
+  @if $value2 == null {
+    @return $value1;
+  }
+
+  @if type-of($value1) == number and type-of($value2) == number and comparable($value1, $value2) {
+    @return $value1 - $value2;
+  }
+
+  @return if($return-calc == true, calc(#{$value1} - #{$value2}), $value1 + unquote(" - ") + $value2);
+}
+

@@ -5,20 +5,26 @@
 .jekyll-metadata
 
 # Sass
-.sass-cache/
+/_scss/.sass-cache/
 
-# Webstorm
-/.idea/
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
 
 # OS or Editor folders
 ._*
 .cache
-.DS_Store
 .project
 .settings
+
+# Webstorm
+/.idea/
+
+# Sublime
 .sublime-project
 .sublime-workspace
-Thumbs.db
 
 # Folders to ignore
 /node_modules/

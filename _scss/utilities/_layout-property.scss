@@ -1,0 +1,201 @@
+@charset "utf-8";
+// Layout Properties
+
+//
+// Layout Properties Display
+//
+
+// Parameters
+$display-values: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
+
+@each $breakpoint in map-keys($lib-grid-breakpoint) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $lib-grid-breakpoint);
+    @each $value in $display-values {
+      .d#{$infix}-#{$value} {
+        display: $value !important;
+      }
+    }
+  }
+}
+
+@media print {
+  @each $value in $display-values {
+    .d-print-#{$value} {
+      display: $value !important;
+    }
+  }
+}
+
+//
+// Layout Properties Float
+//
+
+// Mixins
+@mixin float-left {
+  float: left !important;
+  @include deprecate("The `float-left` mixin", "v4.3.0", "v5");
+}
+
+@mixin float-right {
+  float: right !important;
+  @include deprecate("The `float-right` mixin", "v4.3.0", "v5");
+}
+
+@mixin float-none {
+  float: none !important;
+  @include deprecate("The `float-none` mixin", "v4.3.0", "v5");
+}
+
+@each $breakpoint in map-keys($lib-grid-breakpoint) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $lib-grid-breakpoint);
+    .float#{$infix}-left {
+      float: left !important;
+    }
+    .float#{$infix}-right {
+      float: right !important;
+    }
+    .float#{$infix}-none {
+      float: none !important;
+    }
+  }
+}
+
+//
+// Layout Properties Clear Fix
+//
+
+// Mixins
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+//
+// Layout Properties Visibility
+//
+
+// Mixins
+@mixin invisible($visibility) {
+  visibility: $visibility !important;
+  @include deprecate("`invisible()`", "v4.3.0", "v5");
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+//
+// Layout Properties Visibility Screen Reader
+//
+
+// Mixins
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
+
+//
+// Layout Properties Overflow
+//
+
+$overflows: auto, hidden !default;
+
+//
+// Resize anything
+//
+
+// Mixins
+@mixin resizable($direction) {
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+  resize: $direction; // Options: horizontal, vertical, both
+}
+
+@each $value in $overflows {
+  .overflow-#{$value} {
+    overflow: $value !important;
+  }
+}
+
+//
+// Layout Properties - Position
+//
+
+// Parameters
+$positions: static, relative, absolute, fixed, sticky !default;
+
+@each $position in $positions {
+  .position-#{$position} {
+    position: $position !important;
+  }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: get-lib-value($lib-layer, z-index, fixed);
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: get-lib-value($lib-layer, z-index, fixed);
+}
+
+.sticky-top {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+    z-index: get-lib-value($lib-layer, z-index, sticky);
+  }
+}
+
+.sticky-bottom {
+  @supports (position: sticky) {
+    position: sticky;
+    bottom: 0;
+    z-index: get-lib-value($lib-layer, z-index, sticky);
+  }
+}

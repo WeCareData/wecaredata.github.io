@@ -1,0 +1,33 @@
+//
+// Horizontal dividers
+//
+
+// Parameters
+$nav-divider-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$nav-divider-margin-y: get-lib-value($lib-spacing, spacing, 8) !default;
+
+// Mixins
+// Dividers (basically an hr) within dropdowns and nav lists
+@mixin nav-divider($color: $nav-divider-color, $margin-y: $nav-divider-margin-y, $ignore-warning: false) {
+  height: 0;
+  margin: $margin-y 0;
+  overflow: hidden;
+  border-top: 1px solid $color;
+  @include deprecate("The `nav-divider()` mixin", "v4.4.0", "v5", $ignore-warning);
+}
+
+//
+// Horizontal rules
+//
+
+// Parameters
+$hr-margin-y: get-lib-value($lib-spacing, spacing, 8) !default;
+$hr-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03); //rgba($color-absolute-black, .1) !default;
+$hr-border-width: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+
+hr {
+  margin-top: $hr-margin-y;
+  margin-bottom: $hr-margin-y;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}

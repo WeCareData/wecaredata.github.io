@@ -1,0 +1,46 @@
+// 尺寸单位
+$size-base-global: 1rem !default; // 1rem/16px
+$size-base-space: $size-base-global / 2 !default; // .5rem/8px
+// 元素大小
+$lib-size-element: ("sm", "md", "lg") !default;
+$size-element-current: "md" !default;
+// 默认边框宽度
+$border-width-base: $size-base-global / 16 !default;
+// 主题
+$lib-theme: ("white", "light", "dark", "black") !default;
+$theme-current: "white" !default;
+// 绝对黑白色
+$color-absolute-white: #fff !default;
+$color-absolute-black: #000 !default;
+// WCAG 元素对比
+$wcag-contrast-text: 4.5;
+$wcag-contrast-ui: 3.1;
+// 文本
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, " Segoe UI ", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", " Helvetica Neue ", Helvetica, Arial, " Noto Sans ", sans-serif, " Apple Color Emoji ", " Segoe UI Emoji ", " Segoe UI Symbol ", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, " Liberation Mono ", " Courier New ", monospace !default;
+$font-size-base: $size-base-global * .625 !default;
+$font-weight-base: 400 !default;
+$letter-spacing-rem-base: $size-base-global / 100 !default;
+$line-height-base: $size-base-global * .75 !default;
+// 功能模块
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+$enable-hover-media-query: true !default;
+$enable-grid-classes: true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: true !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: false !default;
+$enable-component-sizing: true;
+// SVG
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+) !default;

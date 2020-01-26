@@ -1,0 +1,29 @@
+{
+  "name": "wecaredata.github.io",
+  "version": "1.0.0",
+  "description": "WeCareData Projects",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeCareData/wecaredata.github.io.git"
+  },
+  "author": "James Sean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeCareData/wecaredata.github.io/issues"
+  },
+  "homepage": "https://github.com/WeCareData/wecaredata.github.io#readme",
+  "dependencies": {
+    "stylelint-scss": "^3.13.0"
+  },
+  "devDependencies": {
+    "stylelint": "^13.0.0",
+    "stylelint-order": "^4.0.0"
+  }
+}

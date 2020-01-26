@@ -1,0 +1,138 @@
+//
+// Navs
+//
+
+// Parameters
+$nav-link-padding-y: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+$nav-link-padding-x: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+$font-size-nav-link-md: get-lib-value($lib-text-style, font-size, body-text-md);
+$line-height-nav-link-md: get-lib-value($lib-text-style, line-height, body-text-md);
+$nav-link-disabled-color: get-lib-value($lib-theme-palette, $theme-current, disabled-02) !default;
+$nav-tabs-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$nav-tabs-border-width: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$nav-tabs-border-radius: get-lib-value($element-box-model, border-radius, md) !default;
+$nav-tabs-link-hover-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03); //$gray-200 $gray-200 $nav-tabs-border-color !default;
+$nav-tabs-link-active-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default; //?
+$nav-tabs-link-active-bg: get-lib-value($lib-theme-palette, $theme-current, field-02) !default; //?
+$nav-tabs-link-active-border-color: get-lib-value($lib-theme-palette, $theme-current, ui-03); //$gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+$nav-pills-border-radius: get-lib-value($element-box-model, border-radius, pill) !default;
+$nav-pills-link-active-color: get-lib-value($lib-theme-palette, $theme-current, text-04) !default;
+$nav-pills-link-active-bg: get-lib-value($lib-theme-palette, $theme-current, interactive-01) !default;
+$padding-y-tab-pane: get-lib-value($element-box-model, padding-x, $size-element-current);
+$padding-x-tab-pane: get-lib-value($element-box-model, padding-y, $size-element-current);
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  font-size: $font-size-nav-link-md;
+  line-height: $line-height-nav-link-md;
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &.disabled {
+    color: $nav-link-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// Tabs
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+  .nav-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  .nav-link {
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+    @include hover-focus {
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+  }
+
+  .dropdown-menu {
+    margin-top: -$nav-tabs-border-width;
+    @include border-top-radius(0);
+  }
+}
+
+// Pills
+.nav-pills {
+  .nav-link {
+    @include border-radius($nav-pills-border-radius);
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+}
+
+//
+// Justified variants
+//
+
+.nav-fill {
+  .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.nav-justified {
+  .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}
+
+.tab-content {
+  .tab-pane {
+    padding: $padding-y-tab-pane $padding-x-tab-pane;
+    border-left: $nav-tabs-border-width solid $nav-tabs-border-color;
+    border-right: $nav-tabs-border-width solid $nav-tabs-border-color;
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+    border-top: none;
+    min-height: 200px;
+  }
+}

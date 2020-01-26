@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include layouts/head.html %}
+</head>
+<body>
+{% include layouts/masthead.html %}
+<main class="mastbody">
+  <section class="page-header">
+    <div>
+      <h6>{{ page.title }}</h6>
+      <nav class="nav">
+
+      </nav>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="row">
+      <div class="col-3">
+        {{ content | toc_only }}
+      </div>
+      <div class="col-13">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+</main>
+{% include layouts/mastfoot.html %}
+</body>
+</html>

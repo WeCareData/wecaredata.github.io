@@ -1,0 +1,8 @@
+aligner:
+  - group: v1.x
+    versions:
+      - version: 1.0.0
+design system:
+  - group: v1.x
+    versions:
+      - version: 1.0.0

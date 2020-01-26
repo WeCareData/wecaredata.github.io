@@ -1,0 +1,194 @@
+---
+project: aligner
+role: client
+group: homepage
+unique-name: Home
+title: Home
+
+permalink: /aligner/client
+layout: ms-hbf
+
+enable-multi-language: true
+enable-user-menu: true
+enable-notification: true
+toc: false
+---
+
+<div class="col-12 offset-2">
+    <div class="row mb-16">
+        <div class="col mr-auto">
+            <h4>Welcome, <span class="text-primary" id="OrganizationName">{% for contacts in site.data.demo.accounts[page.role] %}{{ contacts.organization }}{% endfor %}</span></h4>
+        </div>
+        <div class="col-auto">
+            <a role="button" class="btn btn-md btn-primary btn-block" href="Order/Create-New-Order" id="newDesignOrderBtn"><i class="icon-plus-sign"></i>Create</a>
+        </div>
+    </div>
+    <div class="card-group mb-16">
+        <div class="card">
+            <div class="card-body">
+                <p class="label-01 mb-0">Need Approved</p>
+                <h6 class="mb-0">123</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="label-01 mb-0">In Production</p>
+                <h6 class="mb-0">123</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="label-01 mb-0">Sent Out</p>
+                <h6 class="mb-0">534</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="label-01 mb-0">Recieved</p>
+                <h6 class="mb-0">645</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="label-01 mb-0">Finished</p>
+                <h6 class="mb-0">273</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-16">
+        <div class="card-group col-16">
+            <div class="card">
+                <h1 class="card-header">Case Need Approved</h1>
+                <div class="card-body">
+                    <table class="table table-sm table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Patient</th>
+                            <th>Created Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="Order/Order-Details">8534873773</a></td>
+                            <td>First, Last</td>
+                            <td>2019-01-18</td>
+                        </tr>
+                        <tr>
+                            <td><a href="Order/Order-Details">8534873773</a></td>
+                            <td>First, Last</td>
+                            <td>2019-01-18</td>
+                        </tr>
+                        <tr>
+                            <td><a href="Order/Order-Details">8534873773</a></td>
+                            <td>First, Last</td>
+                            <td>2019-01-18</td>
+                        </tr>
+                        <tr>
+                            <td><a href="Order/Order-Details">8534873773</a></td>
+                            <td>First, Last</td>
+                            <td>2019-01-18</td>
+                        </tr>
+                        <tr>
+                            <td><a href="Order/Order-Details">8534873773</a></td>
+                            <td>First, Last</td>
+                            <td>2019-01-18</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a class="card-link" href="Order" id="BtnMoreCaseToApproval"><i
+                            class="icon-plus-sign"
+                    ></i>More</a>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-header">Coming Case</h1>
+                <div class="card-body">
+                    <table class="table table-sm table-hover" id="ajaxTbl">
+                        <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Patient</th>
+                            <th scope="col">Tracking Infomation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>First, Last</td>
+                            <td>32432_1334</td>
+                        </tr>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>First, Last</td>
+                            <td>32432_1334</td>
+                        </tr>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>First, Last</td>
+                            <td>32432_1334</td>
+                        </tr>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>First, Last</td>
+                            <td>32432_1334</td>
+                        </tr>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>First, Last</td>
+                            <td>32432_1334</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a
+                            class="card-link" href="Order" id="BtnMoreCaseToRecieve"
+                    ><i class="icon-plus-sign"></i>More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="card-header">Order Activities</h1>
+        <div class="card-body">
+            <table class="table table-sm table-hover">
+                <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Current Status</th>
+                    <th>Updated Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="Order/Order-Details">8534873773</a></td>
+                    <td>Order be recieved</td>
+                    <td>2019-01-18 10:10:10</td>
+                </tr>
+                <tr>
+                    <td><a href="Order/Order-Details">8534873773</a></td>
+                    <td>Order be recieved</td>
+                    <td>2019-01-18 10:10:10</td>
+                </tr>
+                <tr>
+                    <td><a href="Order/Order-Details">8534873773</a></td>
+                    <td>Order be recieved</td>
+                    <td>2019-01-18 10:10:10</td>
+                </tr>
+                <tr>
+                    <td><a href="Order/Order-Details">8534873773</a></td>
+                    <td>Order be recieved</td>
+                    <td>2019-01-18 10:10:10</td>
+                </tr>
+                <tr>
+                    <td><a href="Order/Order-Details">8534873773</a></td>
+                    <td>Order be recieved</td>
+                    <td>2019-01-18 10:10:10</td>
+                </tr>
+                </tbody>
+            </table>
+            <a class="card-link" href="Order" id="BtnMoreCaseActivity"><i
+                    class="icon-plus-sign"
+            ></i>More</a>
+        </div>
+    </div>
+</div>

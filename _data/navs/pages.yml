@@ -1,0 +1,33 @@
+aligner:
+  Client:
+    Order:
+      - name: Create New Order
+        title: Create New Order
+        url: Order/Create New Order
+        icon: icon-plus
+  Create New Order:
+    - name: Back
+      title: Back
+      url: Order
+      icon: icon-arrow-left
+  Order Details:
+    - name: Back
+      title: Back
+      url: Order
+      icon: icon-arrow-left
+    - name: Create New Order
+      title: Create New Order
+      url: Create New Order
+      icon: icon-plus
+  Manufacturer:
+    Order Details:
+      - name: Back
+        title: Back
+        url: Order
+        icon: icon-arrow-left
+  Expert:
+    Order Details:
+      - name: Back
+        title: Back
+        url: Order
+        icon: icon-arrow-left

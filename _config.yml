@@ -7,7 +7,7 @@ layouts_dir: _layouts
 data_dir: _data
 includes_dir: _includes
 sass:
-  sass_dir: _sass
+  sass_dir: ./_sass
 collections:
   posts:
     output: true
@@ -15,7 +15,7 @@ collections:
 # Handling Reading
 safe: false
 #include: [".htaccess"]
-exclude: ["Gemfile", "Gemfile.lock", "node_modules"]
+exclude: ["Gemfile", "Gemfile.lock", "node_modules","README.md",".gitignore","LICENSE","CNAME"]
 keep_files: [".git", ".svn"]
 encoding: utf-8
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
@@ -34,6 +34,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jekyll-seo-tag
+  - jekyll-sass-converter
 
 # Conversion
 markdown: kramdown

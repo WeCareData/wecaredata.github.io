@@ -1,0 +1,195 @@
+//
+// List group
+//
+
+// Parameters
+//// Margin & Padding
+$padding-y-list-group-item: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+$padding-x-list-group-item: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+//// Border
+$border-color-list-group: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$border-color-list-group-active: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$border-width-list-group: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$border-radius-list-group: get-lib-value($element-box-model, border-radius, $size-element-current) !default;
+//// Background Color
+$list-group-bg: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
+$list-group-disabled-bg: get-lib-value($lib-theme-palette, $theme-current, disabled-01) !default;
+$list-group-hover-bg: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
+$list-group-active-bg: get-lib-value($lib-theme-palette, $theme-current, interactive-01) !default;
+$list-group-action-active-bg: get-lib-value($lib-theme-palette, $theme-current, hover-ui) !default;
+//// Color
+$list-group-color: null !default;
+$list-group-active-color: get-lib-value($lib-theme-palette, $theme-current, text-04) !default;
+$list-group-disabled-color: get-lib-value($lib-theme-palette, $theme-current, disabled-03) !default;
+
+$text-color-list-group-action: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+$text-color-list-group-action-hover: $text-color-list-group-action !default;
+$text-color-list-group-action-active: get-lib-value($lib-theme-palette, $theme-current, text-04) !default;
+
+// List Groups
+
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    &.list-group-item-action {
+      @include hover-focus() {
+        color: $color;
+        background-color: darken($background, 5%);
+      }
+
+      &.active {
+        color: get-lib-value($lib-theme-palette, $theme-current, text-04);
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}
+
+// Base class
+.list-group {
+  display: flex;
+  flex-direction: column;
+
+  // No need to set list-style: none; since .list-group-item is block level
+  padding-left: 0; // reset padding because ul and ol
+  margin-bottom: 0;
+}
+
+// Interactive list items
+.list-group-item-action {
+  width: 100%; // For `<button>`s (anchors become 100% by default though)
+  color: $text-color-list-group-action;
+  text-align: inherit; // For `<button>`s (anchors inherit)
+
+  // Hover state
+  @include hover-focus() {
+    z-index: 1; // Place hover/focus items above their siblings for proper border styling
+    color: $text-color-list-group-action-hover;
+    text-decoration: none;
+    background-color: $list-group-hover-bg;
+  }
+
+  &:active {
+    color: $text-color-list-group-action-active;
+    background-color: $list-group-action-active-bg;
+  }
+}
+
+// Individual list items
+//
+// Use on `li`s or `div`s within the `.list-group` parent.
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: $padding-y-list-group-item $padding-x-list-group-item;
+  color: $list-group-color;
+  background-color: $list-group-bg;
+  border: $border-width-list-group solid $border-color-list-group;
+
+  &:first-child {
+    @include border-top-radius($border-radius-list-group);
+  }
+
+  &:last-child {
+    @include border-bottom-radius($border-radius-list-group);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $list-group-disabled-color;
+    pointer-events: none;
+    background-color: $list-group-disabled-bg;
+  }
+
+  // Include both here for `<a>`s and `<button>`s
+  &.active {
+    z-index: 2; // Place active items above their siblings for proper border styling
+    color: $list-group-active-color;
+    background-color: $list-group-active-bg;
+    border-color: $border-color-list-group-active;
+  }
+
+  & + & {
+    border-top-width: 0;
+
+    &.active {
+      margin-top: -$border-width-list-group;
+      border-top-width: $border-width-list-group;
+    }
+  }
+}
+
+// Horizontal
+//
+// Change the layout of list group items from vertical (default) to horizontal.
+
+@each $breakpoint in map-keys($lib-grid-breakpoint) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $lib-grid-breakpoint);
+
+    .list-group-horizontal#{$infix} {
+      flex-direction: row;
+
+      .list-group-item {
+        &:first-child {
+          @include border-bottom-left-radius($border-radius-list-group);
+          @include border-top-right-radius(0);
+        }
+
+        &:last-child {
+          @include border-top-right-radius($border-radius-list-group);
+          @include border-bottom-left-radius(0);
+        }
+
+        &.active {
+          margin-top: 0;
+        }
+
+        & + .list-group-item {
+          border-top-width: $border-width-list-group;
+          border-left-width: 0;
+
+          &.active {
+            margin-left: -$border-width-list-group;
+            border-left-width: $border-width-list-group;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Flush list items
+//
+// Remove borders and border-radius to keep list group items edge-to-edge. Most useful within other component (e.g., cards).
+
+.list-group-flush {
+  .list-group-item {
+    border-right-width: 0;
+    border-left-width: 0;
+    @include border-radius(0);
+
+    &:first-child {
+      border-top-width: 0;
+    }
+  }
+
+  &:last-child {
+    .list-group-item:last-child {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@each $color, $value in $lib-color-interactive {
+  @include list-group-item-variant($color, theme-color-level($color, -9), theme-color-level($color, 6));
+}

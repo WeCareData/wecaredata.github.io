@@ -1,0 +1,12 @@
+- id: zh_cn
+  name: zh_cn
+  title: 简体中文
+  flag: sd
+- id: zh_tw
+  name: zh_tw
+  title: 繁体中文
+  flag: sd
+- id: en
+  name: english
+  title: English
+  flag: sd

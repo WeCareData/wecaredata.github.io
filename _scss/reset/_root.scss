@@ -1,0 +1,19 @@
+//
+// Root
+//
+@import '../library/color';
+@import '../library/grid';
+// CSS [Start]
+// CSS Root [Start]
+:root {
+  @each $color, $value in $lib-color-interactive {
+    --#{$color}: #{$value};
+  }
+  @each $bp, $value in $lib-grid-breakpoint {
+    --breakpoint-#{$bp}: #{$value};
+  }
+  --font-family-monospace: #{inspect($font-family-monospace)};
+  --font-family-sans-serif: #{inspect($font-family-sans-serif)};
+}
+
+// CSS Root [End]

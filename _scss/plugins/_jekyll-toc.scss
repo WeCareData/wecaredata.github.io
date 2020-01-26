@@ -1,0 +1,19 @@
+.section-nav {
+  padding-left: 0;
+  ul {
+  }
+}
+
+.toc-entry {
+  display: block;
+  a {
+    display: block;
+    padding: get-lib-value($element-box-model,padding-y,$size-element-current) get-lib-value($element-box-model,padding-x,$size-element-current);
+    color: get-lib-value($lib-theme-palette,$theme-current,text-01);
+
+    &:hover {
+      color: get-lib-value($lib-theme-palette,$theme-current,link-01);
+      text-decoration: none;
+    }
+  }
+}

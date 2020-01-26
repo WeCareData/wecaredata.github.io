@@ -1,0 +1,40 @@
+rcd design:
+  guest:
+    - name: home
+      title: 主页
+      url: rcd-design
+    - name: guidelines
+      title: 指引
+      url: rcd-design/guidelines
+      sub-nav:
+        - name: color
+          title: color
+          url: rcd-design/guidelines/color
+    - name: components
+      title: 组件
+      url: rcd-design/components
+aligner:
+  client:
+    - name: homepage
+      title: Home
+      url: aligner/client
+    - name: order
+      title: Order
+      url: aligner/client/order
+    - name: help
+      title: Help
+      url: aligner/client/help
+  manufacturer:
+    - name: homepage
+      title: Home
+      url: aligner/manufacturer
+    - name: order
+      title: Order
+      url: aligner/manufacturer/order
+  expert:
+    - name: homepage
+      title: Home
+      url: aligner/expert
+    - name: order
+      title: Order
+      url: aligner/expert/order

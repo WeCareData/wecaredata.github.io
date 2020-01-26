@@ -1,0 +1,411 @@
+//
+// Background
+//
+
+// Mixins
+// 渐变背景
+@mixin gradient-bg($color) {
+  @if $enable-gradients {
+    background: $color linear-gradient(180deg, mix($color-absolute-white, $color, 15%), $color) repeat-x;
+  } @else {
+    background-color: $color;
+  }
+}
+
+@mixin gradient-x($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-y($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-directional($start-color: $gray-700, $end-color: $gray-800, $deg: 45deg) {
+  background-image: linear-gradient($deg, $start-color, $end-color);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-x-three-colors($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+}
+
+@mixin gradient-y-three-colors($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+}
+
+@mixin gradient-radial($inner-color: $gray-700, $outer-color: $gray-800) {
+  background-image: radial-gradient(circle, $inner-color, $outer-color);
+  background-repeat: no-repeat;
+}
+
+@mixin gradient-striped($color: rgba($color-absolute-white, .15), $angle: 45deg) {
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+
+// 背景颜色变异
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 8%) !important;
+    }
+  }
+}
+
+// 背景渐变变异
+@mixin bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color linear-gradient(180deg, mix(get-lib-value($lib-theme-palette, $theme-current, ui-background), $color, 15%), $color) repeat-x !important;
+  }
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+@each $color, $value in $lib-color-interactive {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $lib-color-interactive {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+  }
+}
+
+//
+// Typography
+//
+
+// Parameters
+$font-size-small: 75%;
+
+// Mixins
+// 定义文本样式
+@mixin define-text-style($font-size-value, $font-weight-value, $letter-spacing-value, $line-height-value) {
+  @include font-size(get-lib-value($lib-text-style, font-size, $font-size-value));
+  font-weight: get-lib-value($lib-text-style, font-weight, $font-weight-value);
+  letter-spacing: get-lib-value($lib-text-style, letter-spacing, $letter-spacing-value);
+  line-height: get-lib-value($lib-text-style, line-height, $line-height-value);
+}
+
+// 重置文本样式
+@mixin reset-text {
+  font-family: get-lib-value($lib-text-style, font-family, sans-serif);
+  font-weight: get-lib-value($lib-text-style, font-weight, body-text-regular);
+  line-height: get-lib-value($lib-text-style, line-height, body-text-md);
+  font-style: normal;
+  text-align: left; // Fallback for where `start` is not supported
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+}
+
+@mixin text-emphasis-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    color: $color !important;
+  }
+  @if $emphasized-link-hover-darken-percentage != 0 {
+    a#{$parent} {
+      @include hover-focus() {
+        color: darken($color, $emphasized-link-hover-darken-percentage) !important;
+      }
+    }
+  }
+  @include deprecate("`text-emphasis-variant()`", "v4.4.0", "v5", $ignore-warning);
+}
+
+// 隐藏文本
+@mixin text-hide($ignore-warning: false) {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+
+  @include deprecate("`text-hide()`", "v4.1.0", "v5", $ignore-warning);
+}
+
+// 文本溢出缩略展示
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Font
+//// Font Family
+.text-monospace {
+  font-family: get-lib-value($lib-text-property, font-family, monospace) !important;
+}
+
+//// Font Weight
+.font-weight-light {
+  font-weight: get-lib-value($lib-text-property, font-weight, light) !important;
+}
+
+.font-weight-lighter {
+  font-weight: get-lib-value($lib-text-property, font-weight, lighter) !important;
+}
+
+.font-weight-regular {
+  font-weight: get-lib-value($lib-text-property, font-weight, regular) !important;
+}
+
+.font-weight-bold {
+  font-weight: get-lib-value($lib-text-property, font-weight, bold) !important;
+}
+
+.font-weight-bolder {
+  font-weight: get-lib-value($lib-text-property, font-weight, bolder) !important;
+}
+
+//// Font Style
+.font-italic {
+  font-style: italic !important;
+}
+
+// Text
+//// Text Align
+@each $breakpoint in map-keys($lib-grid-breakpoint) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $lib-grid-breakpoint);
+
+    .text#{$infix}-left {
+      text-align: left !important;
+    }
+    .text#{$infix}-right {
+      text-align: right !important;
+    }
+    .text#{$infix}-center {
+      text-align: center !important;
+    }
+  }
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+//// Text Color
+.text-white {
+  color: get-lib-value($lib-theme-palette, $theme-current, ui-02) !important;
+}
+
+.text-muted {
+  color: get-lib-value($lib-theme-palette, $theme-current, disabled-02) !important;
+}
+
+@each $color, $value in $lib-color-interactive {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+//// Text Transformation
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+//// Text Vertical Align
+.align-baseline {
+  vertical-align: baseline !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+//// Text White Space
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+// Truncate Text 缩略显示文本
+.text-truncate {
+  @include text-truncate;
+}
+
+// 展示标题
+.display-01 {
+  @include define-text-style(display-01, display-01, display-01, display-01);
+}
+
+.display-02 {
+  @include define-text-style(display-02, display-02, display-02, display-02);
+}
+
+.display-03 {
+  @include define-text-style(display-03, display-03, display-03, display-03);
+}
+
+.display-04 {
+  @include define-text-style(display-04, display-04, display-04, display-04);
+}
+
+// Html 标题
+h1, h2, h3, h4, h5, h6, h7,
+.h1, .h2, .h3, .h4, .h5, .h6, .h7 {
+  margin-bottom: get-lib-value($lib-spacing, layout, "sm");
+  font-family: get-lib-value($lib-text-style, font-family, null);
+  color: get-lib-value($lib-theme-palette, $theme-current, text-01);
+}
+
+h1, .h1 {
+  @include define-text-style(heading-01, heading-01, heading-01, heading-01);
+}
+
+h2, .h2 {
+  @include define-text-style(heading-02, heading-02, heading-02, heading-02);
+}
+
+h3, .h3 {
+  @include define-text-style(heading-03, heading-03, heading-03, heading-03);
+}
+
+h4, .h4 {
+  @include define-text-style(heading-04, heading-04, heading-04, heading-04);
+}
+
+h5, .h5 {
+  @include define-text-style(heading-05, heading-05, heading-05, heading-05);
+}
+
+h6, .h6 {
+  @include define-text-style(heading-06, heading-06, heading-06, heading-06);
+}
+
+h7, .h7 {
+  @include define-text-style(heading-07, heading-07, heading-07, heading-07);
+}
+
+// Html 段落
+.body-short-01 {
+  @include define-text-style(body-text-md, body-text-regular, body-text-md, body-text-sm);
+}
+
+.body-short-02 {
+  @include define-text-style(body-text-lg, body-text-regular, body-text-sm, body-text-lg);
+}
+
+.body-long-01 {
+  @include define-text-style(body-text-md, body-text-regular, body-text-md, body-text-md);
+}
+
+.body-long-02 {
+  @include define-text-style(body-text-lg, body-text-regular, body-text-sm, body-text-xl);
+}
+
+.code-01 {
+  @include define-text-style(body-text-sm, body-text-regular, body-text-lg, body-text-xs);
+}
+
+.code-02 {
+  @include define-text-style(body-text-md, body-text-regular, body-text-lg, body-text-md);
+}
+
+.label-01 {
+  @include define-text-style(body-text-sm, body-text-regular, body-text-lg, body-text-xs);
+}
+
+.helper-text-01 {
+  @include define-text-style(body-text-sm, body-text-regular, body-text-lg, body-text-xs);
+}
+
+// 段落缩紧
+.lead {
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
+  font-weight: get-lib-value($lib-text-style, font-weight, body-text-regular);
+}
+
+// 文本行内样式
+small, .small {
+  @include font-size($font-size-small);
+  font-weight: get-lib-value($lib-text-property, font-weight, regular);
+}
+
+mark, .mark {
+  padding: get-lib-value($lib-spacing, layout, "sm");
+  background-color: get-lib-value($lib-theme-palette, $theme-current, ui-03);
+}
+
+// Misc - Builds on `abbr`
+.initialism {
+  @include font-size(90%);
+  text-transform: uppercase;
+}
+
+.blockquote {
+  margin-bottom: $size-base-space;
+  @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
+}
+
+.blockquote-footer {
+  display: block;
+  @include font-size($font-size-small);
+  color: get-lib-value($lib-theme-palette, $theme-current, text-02);
+
+  &::before {
+    content: "\2014\00A0"; // em dash, nbsp
+  }
+}
+
+// Stretched link
+
+.stretched-link {
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    // Just in case `pointer-events: none` is set on a parent
+    pointer-events: auto;
+    content: "";
+    // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
