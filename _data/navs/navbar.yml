@@ -7,12 +7,88 @@ rcd-design:
       title: 指引
       url: rcd-design/guidelines
       sub-nav:
-        - name: color
-          title: color
+        - name: rcd-design-guidelines-color
+          title: 颜色
           url: rcd-design/guidelines/color
+        - name: rcd-design-guidelines-typography
+          title: 字体
+          url: rcd-design/guidelines/typography
     - name: components
       title: 组件
       url: rcd-design/components
+      sub-nav:
+        - name: rcd-design-components-alert
+          title: 警告框
+          url: rcd-design/components/alert
+        - name: rcd-design-components-badge
+          title: 徽章
+          url: rcd-design/components/badge
+        - name: rcd-design-components-breadcrumb
+          title: 面包屑导航
+          url: rcd-design/components/breadcrumb
+        - name: rcd-design-components-button
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-button-group
+          title: 按钮组
+          url: rcd-design/components/button-group
+        - name: rcd-design-components-card
+          title: 卡片
+          url: rcd-design/components/card
+        - name: rcd-design-components-carousel
+          title: 走马灯
+          url: rcd-design/components/carousel
+        - name: rcd-design-components-collapse
+          title: 折叠
+          url: rcd-design/components/collapse
+        - name: rcd-design-components-dropdown
+          title: 下拉菜单
+          url: rcd-design/components/dropdown
+        - name: rcd-design-components-form
+          title: 表单
+          url: rcd-design/components/form
+        - name: rcd-design-components-input-group
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-jumbotron
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-list-group
+          title: 列表组
+          url: rcd-design/components/list-group
+        - name: rcd-design-components-media-object
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-modal
+          title: 按钮
+          url: rcd-design/components/modal
+        - name: rcd-design-components-nav
+          title: 导航
+          url: rcd-design/components/nav
+        - name: rcd-design-components-navbar
+          title: 导航栏
+          url: rcd-design/components/navbar
+        - name: rcd-design-components-pagination
+          title: 分页导航
+          url: rcd-design/components/pagination
+        - name: rcd-design-components-popover
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-progress
+          title: 进度条
+          url: rcd-design/components/progress
+        - name: rcd-design-components-scrollspy
+          title: 按钮
+          url: rcd-design/components/button
+        - name: rcd-design-components-spinner
+          title: 按钮
+          url: rcd-design/components/spinner
+        - name: rcd-design-components-toast
+          title: 按钮
+          url: rcd-design/components/toast
+        - name: rcd-design-components-tooltip
+          title: 按钮
+          url: rcd-design/components/tooltip
 aligner:
   client:
     - name: homepage

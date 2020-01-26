@@ -4,7 +4,7 @@ group: guidelines
 
 user-role: guest
 
-unique-name: rcd-design-guidelines-grid
+unique-name: rcd-design-guidelines-color
 title: 颜色
 
 permalink: /rcd-design/guidelines/color
@@ -23,12 +23,12 @@ toc: true
   {% for color in site.data.design.swatches %}
   <div class="col mb-8">
     <div class="py-4 px-8 swatch-{{ color.name }}">
-      <p>{{ color.name | capitalize }}</p>
-      <small>{{ color.hex }}</small>
+      <p class="body-short-01 mb-0">{{ color.name | capitalize }}</p>
+      <small>#{{ color.hex }}</small>
     </div>
     {% for i in (1..10) %}
     <div class="py-4 px-8 swatch-{{ color.name}}-{{ i }}0">
-      {{ color.name | capitalize }}
+      <small>{{ color.name | capitalize }}-{{ i }}0</small>
     </div>
     {% endfor %}
   </div>
