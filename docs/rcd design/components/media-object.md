@@ -1,16 +1,18 @@
 ---
-project: RCD Design
-role: Guest
-group: Components
-unique-name: Media Object
-title: 多媒体
-permalink: /RCD-Design/Components/Media-Object
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-media-object
+title: 媒体对象
+
+permalink: /rcd-design/components/media-object
 layout: ms-hbf-pg-hb-toc
 
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

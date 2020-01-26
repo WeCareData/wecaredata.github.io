@@ -36,10 +36,10 @@ rcd-design:
           title: 卡片
           url: rcd-design/components/card
         - name: rcd-design-components-carousel
-          title: 走马灯
+          title: 轮播器
           url: rcd-design/components/carousel
         - name: rcd-design-components-collapse
-          title: 折叠
+          title: 折叠面板
           url: rcd-design/components/collapse
         - name: rcd-design-components-dropdown
           title: 下拉菜单
@@ -48,19 +48,19 @@ rcd-design:
           title: 表单
           url: rcd-design/components/form
         - name: rcd-design-components-input-group
-          title: 按钮
-          url: rcd-design/components/button
+          title: 输入框组
+          url: rcd-design/components/input-group
         - name: rcd-design-components-jumbotron
-          title: 按钮
-          url: rcd-design/components/button
+          title: 巨幕
+          url: rcd-design/components/jumbotron
         - name: rcd-design-components-list-group
           title: 列表组
           url: rcd-design/components/list-group
         - name: rcd-design-components-media-object
-          title: 按钮
-          url: rcd-design/components/button
+          title: 媒体对象
+          url: rcd-design/components/media-object
         - name: rcd-design-components-modal
-          title: 按钮
+          title: 弹出器
           url: rcd-design/components/modal
         - name: rcd-design-components-nav
           title: 导航
@@ -72,22 +72,22 @@ rcd-design:
           title: 分页导航
           url: rcd-design/components/pagination
         - name: rcd-design-components-popover
-          title: 按钮
-          url: rcd-design/components/button
+          title: POP 提示
+          url: rcd-design/components/popover
         - name: rcd-design-components-progress
           title: 进度条
           url: rcd-design/components/progress
         - name: rcd-design-components-scrollspy
-          title: 按钮
-          url: rcd-design/components/button
+          title: 滚动器
+          url: rcd-design/components/scrollspy
         - name: rcd-design-components-spinner
-          title: 按钮
+          title: 旋转器
           url: rcd-design/components/spinner
         - name: rcd-design-components-toast
-          title: 按钮
+          title: 弹出提示框
           url: rcd-design/components/toast
         - name: rcd-design-components-tooltip
-          title: 按钮
+          title: 冒泡提示
           url: rcd-design/components/tooltip
 aligner:
   client:

@@ -1,17 +1,18 @@
 ---
-title: Collapse
-description: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
-permalink: /design-language/components/collapse
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-collapse
+title: 折叠面板
+
+permalink: /rcd-design/components/collapse
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

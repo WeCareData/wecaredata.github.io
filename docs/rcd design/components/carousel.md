@@ -1,17 +1,18 @@
 ---
-title: Carousel
-description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
-permalink: /design-language/components/carousel
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-carousel
+title: 轮播器
+
+permalink: /rcd-design/components/carousel
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

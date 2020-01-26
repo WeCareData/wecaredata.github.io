@@ -1,17 +1,18 @@
 ---
-title: Dropdown
-description: Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.
-permalink: /design-language/components/dropdown
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-dropdown
+title: 下拉菜单
+
+permalink: /rcd-design/components/dropdown
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

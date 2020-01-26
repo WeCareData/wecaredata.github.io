@@ -1,17 +1,18 @@
 ---
-title: Modal
-description: Use Bootstrap's JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.
-permalink: /design-language/components/modal
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-modal
+title: 弹出器
+
+permalink: /rcd-design/components/modal
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

@@ -1,17 +1,18 @@
 ---
-title: Input group
-description: Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
-permalink: /design-language/components/input-group
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-input-group
+title: 输入框组
+
+permalink: /rcd-design/components/input-group
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

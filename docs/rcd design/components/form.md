@@ -1,17 +1,18 @@
 ---
-title: Form
-description: Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
-permalink: /design-language/components/form
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-form
+title: 表单
+
+permalink: /rcd-design/components/form
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

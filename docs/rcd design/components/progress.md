@@ -1,17 +1,18 @@
 ---
-title: Progress
-description: Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.
-permalink: /design-language/components/progress
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-progress
+title: 进度条
+
+permalink: /rcd-design/components/progress
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

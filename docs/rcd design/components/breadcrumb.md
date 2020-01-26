@@ -1,17 +1,18 @@
 ---
-name: Breadcrumb
-title: 面包屑导航
-permalink: "/RCD-Design/Components/Breadcrumb"
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-breadcrumb
+title: 徽章
+
+permalink: /rcd-design/components/breadcrumb
 layout: ms-hbf-pg-hb-toc
 
-project: RCD Design
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

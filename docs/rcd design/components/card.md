@@ -1,17 +1,18 @@
 ---
-title: Card
-description: Bootstrap's cards provide a flexible and extensible content container with multiple variants and options.
-permalink: /design-language/components/card
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-card
+title: 卡片
+
+permalink: /rcd-design/components/card
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 
@@ -63,8 +64,8 @@ Subtitles are used by adding a `.card-subtitle` to a `<h*>` tag. If the `.card-t
 {% capture example %}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <h4 class="card-title">Card title</h4>
+    <h3 class="card-subtitle mb-2 text-muted">Card subtitle</h3>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
@@ -437,14 +438,15 @@ Cards include various options for customizing their backgrounds, borders, and co
 Use [text and background utilities]({{ site.url_root }}/docs/{{ site.docs_version }}/utilities/colors/) to change the appearance of a card.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
-<div class="card{% unless color.name == "light" %} text-white{% endunless %} bg-{{ color.name }} mb-3" style="max-width: 18rem;">
+{% for color in site.data.colors.interactive %}
+<div class="card {% unless color.name == "light" %} text-white{% endunless %} bg-{{ color.name }} mb-4" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
     <h5 class="card-title">{{ color.name | capitalize }} card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-</div>{% endfor %}
+</div>
+{% endfor %}
 {% endcapture %}
 {% include partials/example.html content=example %}
 
@@ -455,7 +457,7 @@ Use [text and background utilities]({{ site.url_root }}/docs/{{ site.docs_versio
 Use [border utilities]({{ site.url_root }}/docs/{{ site.docs_version }}/utilities/borders/) to change just the `border-color` of a card. Note that you can put `.text-{color}` classes on the parent `.card` or a subset of the card's contents as shown below.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <div class="card border-{{ color.name }} mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body{% unless color.name == "light" %} text-{{ color.name }}{% endunless %}">

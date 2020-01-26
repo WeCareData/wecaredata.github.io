@@ -1,17 +1,18 @@
 ---
-name: Button
-title: 按钮
-permalink: "/RCD-Design/Components/Button"
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-button
+title: 按钮
+
+permalink: /rcd-design/components/button
 layout: ms-hbf-pg-hb-toc
 
-project: RCD Design
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 
@@ -20,7 +21,7 @@ toc: true
 按钮包括多个预定义的按钮样式，每个样式都有自己的语义目的，另外还有一些额外的功能可以用于更多的控制。
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <button type="button" class="btn btn-{{ color.name }}">{{ color.name | capitalize }}</button>{% endfor %}
 
 <button type="button" class="btn btn-link">Link</button>
@@ -53,7 +54,7 @@ If you don't want the button text to wrap, you can add the `.text-nowrap` class 
 In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <button type="button" class="btn btn-outline-{{ color.name }}">{{ color.name | capitalize }}</button>{% endfor %}
 {% endcapture %}
 {% include partials/example.html content=example %}

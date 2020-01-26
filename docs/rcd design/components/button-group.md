@@ -1,17 +1,18 @@
 ---
-name: Button Group
-title: 按钮组
-permalink: "/RCD-Design/Components/Button-Group"
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-button-group
+title: 按钮组
+
+permalink: /rcd-design/components/button-group
 layout: ms-hbf-pg-hb-toc
 
-project: RCD Design
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

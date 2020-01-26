@@ -1,17 +1,18 @@
 ---
-title: Scrollspy
-description: Automatically update Bootstrap navigation or list group components based on scroll position to indicate which link is currently active in the viewport.
-permalink: /design-language/components/scrollspy
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-scrollspy
+title: 滚动器
+
+permalink: /rcd-design/components/scrollspy
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

@@ -1,17 +1,18 @@
 ---
-title: Jumbotron
-description: Lightweight, flexible component for showcasing hero unit style content.
-permalink: /design-language/components/jumbotron
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-jumbotron
+title: 巨幕
+
+permalink: /rcd-design/components/jumbotron
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

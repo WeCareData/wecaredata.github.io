@@ -19,9 +19,9 @@ $dropdown-box-shadow: 0 .5rem 1rem rgba($color-absolute-black, .175) !default;
 $dropdown-link-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
 $dropdown-link-hover-color: darken(get-lib-value($lib-theme-palette, $theme-current, text-01), 5%) !default;
 $dropdown-link-hover-bg: get-lib-value($lib-theme-palette, $theme-current, hover-ui) !default;
-
-$dropdown-link-active-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
-$dropdown-link-active-bg: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
+// TODO
+$dropdown-link-active-color: get-lib-value($lib-theme-palette, $theme-current, text-04) !default;
+$dropdown-link-active-bg: get-lib-value($lib-theme-palette, $theme-current, interactive-03) !default;
 
 $dropdown-link-disabled-color: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
 

@@ -1,17 +1,18 @@
 ---
-title: Toast
-description: Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.
-permalink: /design-language/components/toast
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-toast
+title: 弹出提示框
+
+permalink: /rcd-design/components/toast
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

@@ -1,17 +1,18 @@
 ---
-title: Spinner
-description: Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.
-permalink: /design-language/components/spinner
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-spinner
+title: 旋转器
+
+permalink: /rcd-design/components/spinner
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

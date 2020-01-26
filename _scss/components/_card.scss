@@ -1,7 +1,3 @@
-//
-// Card
-//
-
 // Parameters
 $card-height: null !default;
 $card-columns-gap: $width-grid-gutter / 2 !default;
@@ -22,7 +18,7 @@ $card-inner-border-radius: subtract($card-border-radius, $card-border-width) !de
 //// Grid
 $card-columns-count: 3 !default;
 //// Background Color
-$card-cap-bg: get-lib-value($lib-theme-palette, $theme-current, ui-03) !default;
+$card-cap-bg: get-lib-value($lib-theme-palette, $theme-current, ui-02) !default;
 $card-bg: get-lib-value($lib-theme-palette, $theme-current, ui-background) !default;
 ////
 $card-cap-color: null !default;
@@ -130,7 +126,7 @@ $font-size-card-link: get-lib-value($lib-text-style, font-size, body-text-#{$siz
 //
 // Header navs
 //
-
+// TODO
 .card-header-tabs {
   margin-right: -$padding-x-card / 2;
   margin-bottom: -$padding-y-card;

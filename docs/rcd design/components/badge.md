@@ -1,17 +1,18 @@
 ---
-name: Badge
-title: 徽章
-permalink: "/RCD-Design/Components/Badge"
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-badge
+title: 徽章
+
+permalink: /rcd-design/components/badge
 layout: ms-hbf-pg-hb-toc
 
-project: RCD Design
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 
@@ -55,7 +56,7 @@ Unless the context is clear (as with the "Notifications" example, where it is un
 Add any of the below mentioned modifier classes to change the appearance of a badge.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <span class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</span>{% endfor %}
 {% endcapture %}
 {% include partials/example.html content=example %}
@@ -67,7 +68,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <span class="badge badge-pill badge-{{ color.name }}">{{ color.name | capitalize }}</span>{% endfor %}
 {% endcapture %}
 {% include partials/example.html content=example %}
@@ -77,7 +78,7 @@ Use the `.badge-pill` modifier class to make badges more rounded (with a larger 
 Using the contextual `.badge-*` classes on an `<a>` element quickly provide _actionable_ badges with hover and focus states.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <a href="#" class="badge badge-{{ color.name }}">{{ color.name | capitalize }}</a>{% endfor %}
 {% endcapture %}
 {% include partials/example.html content=example %}

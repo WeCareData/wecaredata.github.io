@@ -1,17 +1,18 @@
 ---
-title: Navs
-description: Documentation and examples for how to use Bootstrap's included navigation components.
-permalink: /design-language/components/nav
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-nav
+title: 导航
+
+permalink: /rcd-design/components/nav
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

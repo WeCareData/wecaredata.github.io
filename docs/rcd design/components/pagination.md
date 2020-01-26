@@ -1,17 +1,18 @@
 ---
-title: Pagination
-description: Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.
-permalink: /design-language/components/pagination
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-pagination
+title: 分页导航
+
+permalink: /rcd-design/components/pagination
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

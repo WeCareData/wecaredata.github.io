@@ -1,17 +1,18 @@
 ---
-title: Navbar
-description: Documentation and examples for Bootstrap's powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.
-permalink: /design-language/components/navbar
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-navbar
+title: 导航栏
+
+permalink: /rcd-design/components/navbar
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

@@ -1,17 +1,18 @@
 ---
-title: Popover
-description: Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.
-permalink: /design-language/components/popover
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-popover
+title: POP 提示
+
+permalink: /rcd-design/components/popover
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

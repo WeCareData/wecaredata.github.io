@@ -1,17 +1,18 @@
 ---
-title: Tooltip
-description: Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for animations and data-attributes for local title storage.
-permalink: /design-language/components/tooltip
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-tooltip
+title: 冒泡提示
+
+permalink: /rcd-design/components/tooltip
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 

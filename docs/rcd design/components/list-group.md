@@ -1,17 +1,18 @@
 ---
-title: List group
-description: List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
-permalink: /design-language/components/list-group
+project: rcd-design
+group: components
 
+user-role: guest
+
+unique-name: rcd-design-components-list-group
+title: 列表组
+
+permalink: /rcd-design/components/list-group
 layout: ms-hbf-pg-hb-toc
 
-project: Design Language
-role: Guest
-group: Components
-
+enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-
 toc: true
 ---
 
