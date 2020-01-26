@@ -1,5 +1,5 @@
 ---
-project: rcd design
+project: rcd-design
 group: guidelines
 
 user-role: guest
@@ -13,7 +13,7 @@ layout: ms-hbf-pg-hb-toc
 enable-multi-language: false
 enable-notification: false
 enable-user-menu: false
-toc: false
+toc: true
 ---
 
 <h2>彩色色板</h2>
@@ -23,8 +23,8 @@ toc: false
   {% for color in site.data.design.swatches %}
   <div class="col mb-8">
     <div class="py-4 px-8 swatch-{{ color.name }}">
-      <h2>{{ color.name | capitalize }}</h2>
-      <p>{{ color.hex }}</p>
+      <p>{{ color.name | capitalize }}</p>
+      <small>{{ color.hex }}</small>
     </div>
     {% for i in (1..10) %}
     <div class="py-4 px-8 swatch-{{ color.name}}-{{ i }}0">

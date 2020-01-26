@@ -1,4 +1,4 @@
-rcd design:
+rcd-design:
   guest:
     - name: home
       title: 主页
