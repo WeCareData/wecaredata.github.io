@@ -1,4 +1,4 @@
-Client:
+client:
   - name: Brooke Cheng
     username: Brooke Cheng
     password: 123456
@@ -7,7 +7,7 @@ Client:
     address: Beijing United Family Jiangguomen Clinic, 1 Xiushuijie, (between buildings 14/15, Jianwai Diplomatic Residence Compound) Chaoyang district
     website: http://beijing.ufh.com.cn
     telephone: 4008-919191
-Expert:
+expert:
   - name: Brooke Cheng
     username: Brooke Cheng
     password: 123456
@@ -16,7 +16,7 @@ Expert:
     address: Beijing United Family Jiangguomen Clinic, 1 Xiushuijie, (between buildings 14/15, Jianwai Diplomatic Residence Compound) Chaoyang district
     website: http://beijing.ufh.com.cn
     telephone: 4008-919191
-Manufacturer:
+manufacturer:
   - name: Maria Mckim
     username: Maria Mckim
     password: 123456
@@ -25,7 +25,7 @@ Manufacturer:
     address: 34 East 2nd Avenue, Vancouver, BC V5T 1B1, CA
     website: http://www.protecdental.com
     telephone: 01-45346567
-Admin:
+admin:
   - name: Maria Mckim
     username: Maria Mckim
     password: 123456

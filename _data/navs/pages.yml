@@ -3,12 +3,12 @@ aligner:
     Order:
       - name: Create New Order
         title: Create New Order
-        url: Order/Create New Order
+        url: aligner/order/Create New Order
         icon: icon-plus
   Create New Order:
     - name: Back
       title: Back
-      url: Order
+      url: aligner/order
       icon: icon-arrow-left
   Order Details:
     - name: Back

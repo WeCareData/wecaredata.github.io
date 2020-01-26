@@ -1,17 +1,18 @@
 ---
-project: Aligner
-role: Client
-group: Order
-unique-name: Order
-title: Order
-permalink: /Client/Order
+project: aligner
+group: order
 
+user-role: client
+
+unique-name: aligner-client-order
+title: Order
+
+permalink: /aligner/client/order
 layout: ms-hbf-pg-hb
 
 enable-multi-language: true
-enable-user-menu: true
 enable-notification: true
-
+enable-user-menu: true
 toc: false
 ---
 
@@ -125,118 +126,22 @@ toc: false
     </tr>
     </thead>
     <tbody>
+    {% for i in (1..8) %}
     <tr>
         <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
+        <td>7450567566737{{ i }}</td>
         <td>First, Last</td>
         <td>Crowded dentition</td>
         <td>2019-12-01</td>
         <td>2019-12-15</td>
         <td>None</td>
         <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
+        <td><a href="{{ site.baseurl }}/aligner/client/order/details"><i class="icon-eye-open"></i>View Details</a></td>
     </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="{Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
-    <tr>
-        <td><label class="form-check-label"><input type="checkbox"></label></td>
-        <td>74505675667371</td>
-        <td>First, Last</td>
-        <td>Crowded dentition</td>
-        <td>2019-12-01</td>
-        <td>2019-12-15</td>
-        <td>None</td>
-        <td>Treatment Plan Designing</td>
-        <td><a href="Order-Details"><i class="icon-eye-open"></i>View Details</a></td>
-    </tr>
+    {% endfor %}
     </tbody>
 </table>
+
 <nav aria-label="DataTablePagination">
     <ul class="pagination pagination-sm">
         <li class="page-item disabled">
