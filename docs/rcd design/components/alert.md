@@ -18,17 +18,10 @@ toc: true
 
 ## 交互样式
 
-{% highlight css %}
-.alert-{interactive-colors}
-interactive-colors: { {% for color in site.data.color.color-interactive %}{{ color.name }} | {% endfor %} }
-{% endhighlight %}
-
-警报是一组颜色控件（共八个颜色样式），可用于任何长度的文本，以及可选的关闭按钮，系统提供8个可用的正确的样式（如，.alert-success），如你还可以使用jQuery插件方法来解除内联元素。
-
-Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the eight **required** contextual classes (e.g., `.alert-success`). For inline dismissal, use the [alerts jQuery plugin](#dismissing).
+警报是一组颜色控件（共 8 个颜色样式），可用于任何长度的文本，以及可选的关闭按钮，系统提供8个可用的正确的样式（如，`.alert-success`），如你还可以使用[jQuery插件方法](#dismissing)来解除内联元素。
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <div class="alert alert-{{ color.name }}" role="alert">
   A simple {{ color.name }} alert—check it out!
 </div>
@@ -38,12 +31,12 @@ Alerts are available for any length of text, as well as an optional dismiss butt
 
 {% include partials/callout-warning-color-assistive-technologies.md %}
 
-### Link color
+### 超链接颜色
 
 Use the `.alert-link` utility class to quickly provide matching colored links within any alert.
 
 {% capture example %}
-{% for color in site.data.color.color-interactive %}
+{% for color in site.data.colors.interactive %}
 <div class="alert alert-{{ color.name }}" role="alert">
   A simple {{ color.name }} alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
 </div>
@@ -51,7 +44,7 @@ Use the `.alert-link` utility class to quickly provide matching colored links wi
 {% endcapture %}
 {% include partials/example.html content=example %}
 
-### Additional content
+## 额外附加内容
 
 Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
 
@@ -66,7 +59,7 @@ Alerts can also contain additional HTML elements like headings, paragraphs and d
 {% include partials/example.html content=example %}
 
 
-### Dismissing
+## 解除警告框
 
 Using the alert JavaScript plugin, it's possible to dismiss any alert inline. Here's how:
 

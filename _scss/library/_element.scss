@@ -2,9 +2,9 @@
 $element-box-model: (
   "margin-x":(
     zero:0,
-    sm:get-lib-value($lib-spacing, layout, "xs"),
-    md:get-lib-value($lib-spacing, layout, "sm"),
-    lg:get-lib-value($lib-spacing, layout, "md")
+    sm:get-lib-value($lib-spacing, layout, "sm"),
+    md:get-lib-value($lib-spacing, layout, "md"),
+    lg:get-lib-value($lib-spacing, layout, "lg")
   ),
   "margin-y":(
     zero:0,

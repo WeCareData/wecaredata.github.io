@@ -1,58 +1,53 @@
-@charset "utf-8";
-//
-// Alert
-//
-
-// Parameters
+// 参数
 //// Margins and Padding
-$margin-y-alert: get-lib-value($element-box-model, margin-y, $size-element-current) !default;
-$padding-x-alert: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
-$padding-y-alert: get-lib-value($element-box-model, padding-y, $size-element-current) !default;
-//// Border
-$border-width-alert: get-lib-value($element-box-model, border-width, $size-element-current) !default;
+$margin-y-alert:              get-lib-value($element-box-model, margin-y, $size-element-current) !default;
+$padding-x-alert:             get-lib-value($element-box-model, padding-x, $size-element-current) !default;
+$padding-y-alert:             get-lib-value($element-box-model, padding-y, $size-element-current) !default;
+//// 边框
+$border-width-alert:          get-lib-value($element-box-model, border-width, $size-element-current) !default;
 //// Border Radius
-$border-radius-alert: get-lib-value($element-box-model, border-radius, $size-element-current) !default;
-//// Text
-$font-weight-alert-link: get-lib-value($lib-text-style, font-weight, body-text-bold) !default;
+$border-radius-alert:         get-lib-value($element-box-model, border-radius, $size-element-current) !default;
+//// 文本
+$font-weight-alert-link:      get-lib-value($lib-text-style, font-weight, body-text-bold) !default;
 //// 变量赋值
-$alert-color-level: 6 !default;
-$alert-bg-level: -10 !default;
-$alert-border-level: -9 !default;
-// Calc
+$alert-color-level:           6 !default;
+$alert-bg-level:              -10 !default;
+$alert-border-level:          -9 !default;
+// 计算解除按钮位置
 $padding-x-alert-dismissible: get-lib-value($lib-text-style, font-size, body-text-#{$size-element-current}) / 2 + $padding-x-alert * 2;
 // Mixins
 @mixin alert-variant($background, $border, $color) {
-  color: $color;
+  color:        $color;
   @include gradient-bg($background);
   border-color: $border;
 
   hr {
-    border-top-color: darken($border, 5%);
+    border-top-color: darken($border, 8%);
   }
 
   .alert-link {
-    color: darken($color, 10%);
+    color: darken($color, 12%);
   }
 }
 
 // Base Style
 .alert {
-  position: relative;
-  padding: $padding-y-alert $padding-x-alert;
+  position:      relative;
+  padding:       $padding-y-alert $padding-x-alert;
   margin-bottom: $margin-y-alert;
-  border: $border-width-alert solid transparent;
+  border:        $border-width-alert solid transparent;
   @include border-radius($border-radius-alert);
   @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size-element-current}));
-  line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size-element-current});
+  line-height:   get-lib-value($lib-text-style, line-height, body-text-#{$size-element-current});
 }
 
 // Sizing
 @each $size in $lib-size-element {
   .alert-#{$size} {
+    padding:       get-lib-value($element-box-model, padding-y, $size) get-lib-value($element-box-model, padding-x, $size);
     margin-bottom: get-lib-value($element-box-model, margin-y, $size);
-    padding: get-lib-value($element-box-model, padding-y, $size) get-lib-value($element-box-model, padding-x, $size);
     @include font-size(get-lib-value($lib-text-style, font-size, body-text-#{$size}));
-    line-height: get-lib-value($lib-text-style, line-height, body-text-#{$size});
+    line-height:   get-lib-value($lib-text-style, line-height, body-text-#{$size});
     @include border-radius(get-lib-value($element-box-model, border-radius, $size));
   }
 }
@@ -67,20 +62,20 @@ $padding-x-alert-dismissible: get-lib-value($lib-text-style, font-size, body-tex
   font-weight: $font-weight-alert-link;
 }
 
-// Dismissible alerts
+// 解除警告框
 .alert-dismissible {
   padding-right: $padding-x-alert-dismissible;
-  // Adjust close link position
+  // 调整关闭按钮位置
   .close {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: $padding-y-alert $padding-x-alert;
-    color: inherit;
+    top:      0;
+    right:    0;
+    padding:  $padding-y-alert $padding-x-alert;
+    color:    inherit;
   }
 }
-
-// Interactive styles
+// TODO: Change Later
+// 交互样式
 @each $color, $value in $lib-color-interactive {
   .alert-#{$color} {
     @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));

@@ -94,11 +94,12 @@ logo: /logo-robotcaradata.svg
 #theme: jekyll-theme-robotcaredata
 
 # Plugins - TOC Settings
-min_level: 2
-max_level: 4
-no_toc_selection_class:
-  - "bd-callout"
-  - "bd-example"
+toc:
+  min_level: 2
+  max_level: 4
+  no_toc_selection_class:
+    - "bd-callout"
+    - "bd-example"
 
 # Version Control
 version_aligner: 1.0.0
