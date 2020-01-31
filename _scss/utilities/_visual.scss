@@ -1,8 +1,27 @@
-//
-// Background
-//
+// 背景色
+@each $key, $value in map-get($lib-theme-palette, $theme-current) {
+  .theme-#{$theme-current}-#{$key} {
+    color:get-color-yiq($value);
+    background-color: $value;
+  }
+}
+@each $key, $value in $lib-color-base {
+  .text-#{$key} {
+    color: $value;
+  }
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}
 
-// Mixins
+
+@each $color, $value in $lib-color-interactive {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+// 渐变色
 // 渐变背景
 @mixin gradient-bg($color) {
   @if $enable-gradients {
@@ -71,6 +90,7 @@
   background-color: transparent !important;
 }
 
+
 @each $color, $value in $lib-color-interactive {
   @include bg-variant(".bg-#{$color}", $value);
 }
@@ -80,6 +100,8 @@
     @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
   }
 }
+
+
 
 //
 // Typography
@@ -210,11 +232,6 @@ $font-size-small: 75%;
   color: get-lib-value($lib-theme-palette, $theme-current, disabled-02) !important;
 }
 
-@each $color, $value in $lib-color-interactive {
-  .text-#{$color} {
-    color: $value;
-  }
-}
 
 //// Text Transformation
 .text-lowercase {
@@ -286,9 +303,9 @@ $font-size-small: 75%;
 }
 
 // Html 标题
-h1, h2, h3, h4, h5, h6, h7,
-.h1, .h2, .h3, .h4, .h5, .h6, .h7 {
-  margin-bottom: get-lib-value($lib-spacing, layout, "sm");
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6, {
+  margin-bottom: get-lib-value($lib-spacing, layout, 1);
   font-family: get-lib-value($lib-text-style, font-family, null);
   color: get-lib-value($lib-theme-palette, $theme-current, text-01);
 }
@@ -315,10 +332,6 @@ h5, .h5 {
 
 h6, .h6 {
   @include define-text-style(heading-06, heading-06, heading-06, heading-06);
-}
-
-h7, .h7 {
-  @include define-text-style(heading-07, heading-07, heading-07, heading-07);
 }
 
 // Html 段落
@@ -367,7 +380,7 @@ small, .small {
 }
 
 mark, .mark {
-  padding: get-lib-value($lib-spacing, layout, "sm");
+  padding: get-lib-value($lib-spacing, layout, 1);
   background-color: get-lib-value($lib-theme-palette, $theme-current, ui-03);
 }
 

@@ -54,13 +54,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
-  margin-top: 0;
+  margin: 0;
 }
 
 // Reset margins on paragraphs
 p {
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
+  margin-bottom: 0;
   margin-top: 0;
 }
 
@@ -77,21 +76,20 @@ abbr[data-original-title] {
 address {
   font-style: normal;
   line-height: inherit;
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
+  margin-bottom: 0;
 }
 
 ol,
 ul,
 dl {
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
-  margin-top: 0;
+  margin: 0;
 }
 
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 dt {
@@ -99,12 +97,11 @@ dt {
 }
 
 dd {
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
-  margin-left: 0;
+  margin: 0;
 }
 
 blockquote {
-  margin: 0 0 get-lib-value($lib-spacing, layout, "xs");
+  margin: 0;
 }
 
 b,
@@ -169,14 +166,13 @@ samp {
 }
 
 pre {
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
-  margin-top: 0;
+  margin: 0;
   overflow: auto;
 }
 
 // Figures
 figure {
-  margin: 0 0 get-lib-value($lib-spacing, layout, "xs");
+  margin: 0;
 }
 
 // Images and content
@@ -210,7 +206,7 @@ th {
 // Forms
 label {
   display: inline-block;
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
+  margin: 0;
 }
 
 // Remove the default `border-radius` that macOS Chrome adds.
@@ -311,7 +307,7 @@ legend {
   color: inherit;
   display: block;
   line-height: inherit;
-  margin-bottom: get-lib-value($lib-spacing, layout, "xs");
+  margin: 0;
   max-width: 100%;
   padding: 0;
   white-space: normal;

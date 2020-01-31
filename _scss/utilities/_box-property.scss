@@ -1,10 +1,3 @@
-@charset "utf-8";
-// Box Properties
-
-//
-// Box Properties - Dimensions
-//
-
 $lib-size-percentage: (
         25: 25%,
         50: 50%,
@@ -66,22 +59,6 @@ $lib-size-percentage: (
         margin: $length !important;
       }
 
-      .mt#{$infix}-#{$size} {
-        margin-top: $length !important;
-      }
-
-      .mr#{$infix}-#{$size} {
-        margin-right: $length !important;
-      }
-
-      .mb#{$infix}-#{$size} {
-        margin-bottom: $length !important;
-      }
-
-      .ml#{$infix}-#{$size} {
-        margin-left: $length !important;
-      }
-
       .my#{$infix}-#{$size} {
         margin-top: $length !important;
         margin-bottom: $length !important;
@@ -91,25 +68,16 @@ $lib-size-percentage: (
         margin-right: $length !important;
         margin-left: $length !important;
       }
+
+      @each $direction, $dir-value in $property-direction {
+        .m#{$direction}#{$infix}-#{$size} {
+          margin-#{$dir-value}: $length;
+        }
+      }
+
       // Special margin utils
       .m#{$infix}-auto {
         margin: auto !important;
-      }
-
-      .mt#{$infix}-auto {
-        margin-top: auto !important;
-      }
-
-      .mr#{$infix}-auto {
-        margin-right: auto !important;
-      }
-
-      .mb#{$infix}-auto {
-        margin-bottom: auto !important;
-      }
-
-      .ml#{$infix}-auto {
-        margin-left: auto !important;
       }
 
       .my#{$infix}-auto {
@@ -121,6 +89,13 @@ $lib-size-percentage: (
         margin-right: auto !important;
         margin-left: auto !important;
       }
+
+      @each $direction, $dir-value in $property-direction {
+        .m#{$direction}#{$infix}-auto {
+          margin-#{$dir-value}: auto !important;
+        }
+      }
+
       // Negative margins
       @if $size != 0 {
         .m#{$infix}-n#{$size} {
@@ -157,9 +132,38 @@ $lib-size-percentage: (
   }
 }
 
-//
-// Box Properties - Padding
-//
+// Layout Margins
+@each $layout, $value in map-get($lib-spacing, layout) {
+  @if ($layout != 0) {
+    .layout-y#{$layout} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+    .layout-x#{$layout} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+    @each $direction, $dir-value in $property-direction {
+      .layout-#{$direction}#{$layout} {
+        margin-#{$dir-value}: $value;
+      }
+    }
+  } @else {
+    .layout-y0 {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+    .layout-x0 {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+    @each $direction, $dir-value in $property-direction {
+      .layout-#{$direction}0 {
+        margin-#{$dir-value}: 0;
+      }
+    }
+  }
+}
 
 // Box Properties - Padding
 @each $breakpoint in map-keys($lib-grid-breakpoint) {
