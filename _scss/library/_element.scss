@@ -25,9 +25,9 @@ $element-box-model: (
     lg:get-lib-value($lib-spacing, spacing, 8)
   ),
   "border-width":(
-    sm:$border-width-base,
-    md:$border-width-base,
-    lg:$border-width-base,
+    sm:$base-border-width,
+    md:$base-border-width,
+    lg:$base-border-width,
     focus:0,
     0:0
   ),
@@ -36,7 +36,7 @@ $element-box-model: (
     sm :get-lib-value($lib-spacing, spacing, 2),
     md :get-lib-value($lib-spacing, spacing, 4),
     lg :get-lib-value($lib-spacing, spacing, 8),
-    pill :$size-base-space * 100,
+    pill :$base-size-space * 100,
     round :50%
   )
 );

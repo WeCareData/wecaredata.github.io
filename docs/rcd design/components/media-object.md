@@ -31,7 +31,7 @@ Below is an example of a single media object. Only two classes are required—th
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture callout %}
 ##### Flexbug #12: Inline elements aren't treated as flex items
@@ -65,7 +65,7 @@ Media objects can be infinitely nested, though we suggest you stop at some point
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Alignment
 
@@ -81,7 +81,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <div class="media">
@@ -93,7 +93,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <div class="media">
@@ -105,7 +105,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Order
 
@@ -120,7 +120,7 @@ Change the order of content in media objects by modifying the HTML itself, or by
   {% include icons/placeholder.svg width="64" height="64" class="ml-3" %}
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Media list
 
@@ -151,4 +151,4 @@ Because the media object has so few structural requirements, you can also use th
   </li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}

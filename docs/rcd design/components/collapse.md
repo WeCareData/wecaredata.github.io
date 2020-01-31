@@ -47,7 +47,7 @@ You can use a link with the `href` attribute, or a button with the `data-target`
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Multiple targets
 
@@ -77,7 +77,7 @@ Multiple `<button>` or `<a>` can show and hide an element if they each reference
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Accordion example
 
@@ -130,7 +130,7 @@ Using the [card]({{ site.url_root }}/docs/{{ site.docs_version }}/components/car
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Accessibility
 

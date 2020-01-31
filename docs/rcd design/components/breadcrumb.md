@@ -5,7 +5,7 @@ group: components
 user-role: guest
 
 unique-name: rcd-design-components-breadcrumb
-title: 徽章
+title: 面包屑导航
 
 permalink: /rcd-design/components/breadcrumb
 layout: ms-hbf-pg-hb-toc
@@ -40,29 +40,33 @@ toc: true
   </ol>
 </nav>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Changing the separator
 
-Separators are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by changing `$breadcrumb-divider`. The [quote](https://sass-lang.com/documentation/functions/string#quote) function is needed to generate the quotes around a string, so if you want `>` as separator, you can use this:
+分隔符号是通过 [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) 和 [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content) 两个方法定义添加的。可以通过改变 `$breadcrumb-divider` 来改变分隔符号。需要通过 [quote](https://sass-lang.com/documentation/functions/string#quote) 函数来生成分隔符号，如果你想使用 `>` 作为分隔符号，你可以使用下述方式：
 
 ```scss
 $breadcrumb-divider: quote(">");
 ```
 
-It's also possible to use a **base64 embedded SVG icon**:
+也可以使用  **base64 embedded SVG icon**：
 
 ```scss
 $breadcrumb-divider: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
 ```
 
-The separator can be removed by setting `$breadcrumb-divider` to `none`:
+分隔符可以通过设置 `$breadcrumb-divider` 为 `none`：
 
 ```scss
 $breadcrumb-divider: none;
 ```
 
-## Accessibility
+## 无障碍处理
+
+为了为障碍浏览提供方便，针对面包屑这样具备导航功能的模块，建议添加一个有意义的标签即aria-label="breadcrumb"來描述<nav>元素，以及使用 aria-current="page"到这组导航的最后一个项目，以标明当前页面名称（路径）
+
+更多信息，敬请参阅 WAI-ARIA Authoring Practices for the breadcrumb pattern（面包屑导航的无障碍研究）。
 
 Since breadcrumbs provide a navigation, it's a good idea to add a meaningful label such as `aria-label="breadcrumb"` to describe the type of navigation provided in the `<nav>` element, as well as applying an `aria-current="page"` to the last item of the set to indicate that it represents the current page.
 

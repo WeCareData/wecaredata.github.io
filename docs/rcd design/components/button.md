@@ -26,7 +26,7 @@ toc: true
 
 <button type="button" class="btn btn-link">Link</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% include partials/callout-warning-color-assistive-technologies.md %}
 
@@ -47,7 +47,7 @@ If you don't want the button text to wrap, you can add the `.text-nowrap` class 
 <input class="btn btn-primary" type="submit" value="Submit">
 <input class="btn btn-primary" type="reset" value="Reset">
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Outline buttons
 
@@ -57,7 +57,7 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {% for color in site.data.colors.interactive %}
 <button type="button" class="btn btn-outline-{{ color.name }}">{{ color.name | capitalize }}</button>{% endfor %}
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Sizes
 
@@ -67,13 +67,13 @@ Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
 <button type="button" class="btn btn-secondary btn-lg">Large button</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <button type="button" class="btn btn-primary btn-sm">Small button</button>
 <button type="button" class="btn btn-secondary btn-sm">Small button</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Create block level buttons—those that span the full width of a parent—by adding `.btn-block`.
 
@@ -81,7 +81,7 @@ Create block level buttons—those that span the full width of a parent—by add
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
 <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Active state
 
@@ -91,7 +91,7 @@ Buttons will appear pressed (with a darker background, darker border, and inset 
 <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
 <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Disabled state
 
@@ -101,7 +101,7 @@ Make buttons look inactive by adding the `disabled` boolean attribute to any `<b
 <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
 <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Disabled buttons using the `<a>` element behave a bit different:
 
@@ -113,7 +113,7 @@ Disabled buttons using the `<a>` element behave a bit different:
 <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
 <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture callout %}
 ##### Link functionality caveat
@@ -135,7 +135,7 @@ Add `data-toggle="button"` to toggle a button's `active` state. If you're pre-to
   Single toggle
 </button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Checkbox and radio buttons
 
@@ -152,7 +152,7 @@ Note that pre-checked buttons require you to manually add the `.active` class to
   </label>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -167,7 +167,7 @@ Note that pre-checked buttons require you to manually add the `.active` class to
   </label>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Methods
 

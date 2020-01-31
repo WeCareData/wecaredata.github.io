@@ -53,7 +53,7 @@ Here's a carousel with slides only. Note the presence of the `.d-block` and `.w-
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### With controls
 
@@ -82,7 +82,7 @@ Adding in the previous and next controls:
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### With indicators
 
@@ -116,7 +116,7 @@ You can also add the indicators to the carousel, alongside the controls, too.
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### With captions
 
@@ -162,7 +162,7 @@ Add captions to your slides easily with the `.carousel-caption` element within a
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Crossfade
 
@@ -191,7 +191,7 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Individual `.carousel-item` interval
 
@@ -220,7 +220,7 @@ Add `data-interval=""` to a `.carousel-item` to change the amount of time to del
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 
 ## Usage

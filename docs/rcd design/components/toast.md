@@ -52,7 +52,7 @@ Toasts are as flexible as you need and have very little required markup. At a mi
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-light" %}
+{% include partials/example.html content=example hide_markup=true class="bg-light" %}
 
 ### Translucent
 
@@ -73,7 +73,7 @@ Toasts are slightly translucent, too, so they blend over whatever they might app
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-dark" %}
+{% include partials/example.html content=example hide_markup=true class="bg-dark" %}
 
 ### Stacking
 
@@ -108,7 +108,7 @@ When you have multiple toasts, we default to vertically stacking them in a reada
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-light" %}
+{% include partials/example.html content=example hide_markup=true class="bg-light" %}
 
 ## Placement
 
@@ -131,7 +131,7 @@ Place toasts with custom CSS as you need them. The top right is often used for n
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-dark" %}
+{% include partials/example.html content=example hide_markup=true class="bg-dark" %}
 
 For systems that generate more notifications, consider using a wrapping element so they can easily stack.
 
@@ -171,7 +171,7 @@ For systems that generate more notifications, consider using a wrapping element 
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-dark" %}
+{% include partials/example.html content=example hide_markup=true class="bg-dark" %}
 
 You can also get fancy with flexbox utilities to align toasts horizontally and/or vertically.
 
@@ -195,7 +195,7 @@ You can also get fancy with flexbox utilities to align toasts horizontally and/o
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-dark" %}
+{% include partials/example.html content=example hide_markup=true class="bg-dark" %}
 
 ## Accessibility
 
@@ -230,7 +230,7 @@ When using `autohide: false`, you must add a close button to allow users to dism
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example class="bg-light" %}
+{% include partials/example.html content=example hide_markup=true class="bg-light" %}
 
 ## JavaScript behavior
 

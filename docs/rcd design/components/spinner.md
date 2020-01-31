@@ -31,7 +31,7 @@ Use the border spinners for a lightweight loading indicator.
   <span class="sr-only">Loading...</span>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Colors
 
@@ -43,7 +43,7 @@ The border spinner uses `currentColor` for its `border-color`, meaning you can c
   <span class="sr-only">Loading...</span>
 </div>{% endfor %}
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture callout %}
 **Why not use `border-color` utilities?** Each border spinner specifies a `transparent` border for at least one side, so `.border-{color}` utilities would override that.
@@ -59,7 +59,7 @@ If you don't fancy a border spinner, switch to the grow spinner. While it doesn'
   <span class="sr-only">Loading...</span>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Once again, this spinner is built with `currentColor`, so you can easily change its appearance with [text color utilities][color]. Here it is in blue, along with the supported variants.
 
@@ -69,7 +69,7 @@ Once again, this spinner is built with `currentColor`, so you can easily change 
   <span class="sr-only">Loading...</span>
 </div>{% endfor %}
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Alignment
 
@@ -84,7 +84,7 @@ Use [margin utilities][margin] like `.m-5` for easy spacing.
   <span class="sr-only">Loading...</span>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Placement
 
@@ -99,7 +99,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <div class="d-flex align-items-center">
@@ -107,7 +107,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
   <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 #### Floats
 
@@ -118,7 +118,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 #### Text align
 
@@ -129,7 +129,7 @@ Use [flexbox utilities][flex], [float utilities][float], or [text alignment][tex
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Size
 
@@ -143,7 +143,7 @@ Add `.spinner-border-sm` and `.spinner-grow-sm` to make a smaller spinner that c
   <span class="sr-only">Loading...</span>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Or, use custom CSS or inline styles to change the dimensions as needed.
 
@@ -155,7 +155,7 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
   <span class="sr-only">Loading...</span>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Buttons
 
@@ -171,7 +171,7 @@ Use spinners within buttons to indicate an action is currently processing or tak
   Loading...
 </button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <button class="btn btn-primary" type="button" disabled>
@@ -183,7 +183,7 @@ Use spinners within buttons to indicate an action is currently processing or tak
   Loading...
 </button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 
 [color]:   {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/

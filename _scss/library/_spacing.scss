@@ -1,32 +1,32 @@
 // 库[间距]
 $lib-spacing: (
-  // Scale
-  "spacing":(
-    0: 0,
-    1: $size-base-space * .125,
-    2 :$size-base-space * .25,
-    4 :$size-base-space * .5,
-    8 :$size-base-space * 1,
-    12 :$size-base-space * 1.5,
-    16 :$size-base-space * 2,
-    24 :$size-base-space * 3,
-    32 :$size-base-space * 4,
-    40 :$size-base-space * 5,
-    48 :$size-base-space * 6,
-    64 :$size-base-space * 8,
-    80 :$size-base-space * 10,
-    96 :$size-base-space * 12
-  ),
-  // Layout
-  "layout":(
-    "zero":0,
-    "xs" :$size-base-space * 1,
-    "sm" :$size-base-space * 2,
-    "md" :$size-base-space * 3,
-    "lg" :$size-base-space * 4,
-    "xl" :$size-base-space * 6,
-    "2xl" :$size-base-space * 8,
-    "3xl" :$size-base-space * 12,
-    "4xl" :$size-base-space * 20
-  )
-) !default;
+                // Scale
+                  "spacing":(
+                      0: 0,
+                      1: $base-size-space * .125,
+                      2 :$base-size-space * .25,
+                      4 :$base-size-space * .5,
+                      8 :$base-size-space * 1,
+                      12 :$base-size-space * 1.5,
+                      16 :$base-size-space * 2,
+                      24 :$base-size-space * 3,
+                      32 :$base-size-space * 4,
+                      40 :$base-size-space * 5,
+                      48 :$base-size-space * 6,
+                      64 :$base-size-space * 8,
+                      80 :$base-size-space * 10,
+                      96 :$base-size-space * 12
+                  ),
+                // Layout
+                  "layout":(
+                      "zero":0,
+                      "xs" :$base-size-space * 1,
+                      "sm" :$base-size-space * 2,
+                      "md" :$base-size-space * 3,
+                      "lg" :$base-size-space * 4,
+                      "xl" :$base-size-space * 6,
+                      "2xl" :$base-size-space * 8,
+                      "3xl" :$base-size-space * 12,
+                      "4xl" :$base-size-space * 20
+                  )
+              ) !default;

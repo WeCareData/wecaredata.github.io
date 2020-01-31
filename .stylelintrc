@@ -31,7 +31,7 @@
     ],
     "function-url-no-scheme-relative": true,
     "function-url-quotes": "always",
-    "max-empty-lines": 2,
+    "max-empty-lines": 1,
     "max-line-length": null,
     "media-feature-name-no-vendor-prefix": true,
     "no-descending-specificity": null,

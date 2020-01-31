@@ -10,9 +10,15 @@ rcd-design:
         - name: rcd-design-guidelines-color
           title: 颜色
           url: rcd-design/guidelines/color
+        - name: rcd-design-guidelines-grid
+          title: 排版
+          url: rcd-design/guidelines/grid
         - name: rcd-design-guidelines-typography
           title: 字体
           url: rcd-design/guidelines/typography
+        - name: rcd-design-guidelines-code-guide
+          title: 代码规范
+          url: rcd-design/guidelines/code-guide
     - name: components
       title: 组件
       url: rcd-design/components

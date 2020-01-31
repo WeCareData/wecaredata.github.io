@@ -19,7 +19,7 @@ toc: false
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-01">RCD Design</h1>
-    <p class="lead mb-32">RCD Design 设计体系基于 Bootstrap 和 Ant Design 等 CSS 框架，服务于 RobotCareData 产品的开发，基于确定和自然的设计价值观上的模块化解决方案，专注于更好的用户体验。</p>
+    <p class="lead mb-32">RCD Design 设计体系基于 Bootstrap 和 Ant Design 等主流 CSS 框架，并在此基础上做了一些修改，服务于 RobotCareData 产品的开发，基于确定和自然的设计价值观上的模块化解决方案，专注于更好的用户体验。</p>
     <p class="lead">
       <a class="btn btn-md btn-primary" href="{{ site.baseurl }}/rcd-design/guidelines/color" role="button">了解更多</a>
     </p>

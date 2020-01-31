@@ -63,7 +63,7 @@ $(function () {
 {% capture example %}
 <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Four directions
 
@@ -119,7 +119,7 @@ For proper cross-browser and cross-platform behavior, you must use the `<a>` tag
 {% capture example %}
 <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% highlight js %}
 $('.popover-dismiss').popover({
@@ -138,7 +138,7 @@ For disabled popover triggers, you may also prefer `data-trigger="hover"` so tha
   <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Usage
 

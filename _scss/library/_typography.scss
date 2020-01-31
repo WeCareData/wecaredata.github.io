@@ -1,7 +1,7 @@
 // 计算字体大小
 @function calc-font-size($step) {
   @if $step == 1 {
-    @return $font-size-base;
+    @return $base-font-size;
   } @else {
     @return calc-font-size($step - 1) + (floor(($step - 2) / 4) + 1) * 2 / 16; // Yn = Yn-1 + {INT[(n-2)/4] + 1} * 2
   }
@@ -10,7 +10,7 @@
 // 计算行高大小
 @function calc-line-height($step) {
   @if $step == 1 {
-    @return $line-height-base;
+    @return $base-line-height;
   } @else {
     @return calc-line-height($step - 1) + (floor(($step - 2) / 4) + 1) * 2 / 16; // Yn = Yn-1 + {INT[(n-2)/4] + 1} * 2
   }
@@ -67,17 +67,17 @@ $lib-text-property: (
   // 字体粗细
   font-weight:(
     lighter: lighter,
-    light: $font-weight-base * .75,
-    regular: $font-weight-base * 1,
-    bold: $font-weight-base * 1.5,
+    light: $base-font-weight * .75,
+    regular: $base-font-weight * 1,
+    bold: $base-font-weight * 1.5,
     bolder: bolder
   ),
   // 字符间距
   letter-spacing:(
-    sm: $letter-spacing-rem-base * -4,
-    md: $letter-spacing-rem-base * 0,
-    lg: $letter-spacing-rem-base * 1,
-    xl: $letter-spacing-rem-base * 2
+    sm: $base-letter-spacing-rem * -4,
+    md: $base-letter-spacing-rem * 0,
+    lg: $base-letter-spacing-rem * 1,
+    xl: $base-letter-spacing-rem * 2
   ),
   // 行高
   line-height:(

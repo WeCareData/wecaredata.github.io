@@ -1,0 +1,19 @@
+---
+project: rcd-design
+group: guidelines
+
+user-role: guest
+
+unique-name: rcd-design-guidelines-grid
+title: 栅格系统
+
+permalink: /rcd-design/guidelines/grid
+layout: ms-hbf-pg-hb-toc
+
+enable-multi-language: false
+enable-notification: false
+enable-user-menu: false
+toc: false
+---
+
+## 

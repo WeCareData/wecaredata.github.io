@@ -52,7 +52,7 @@ Any single `.btn` can be turned into a dropdown toggle with some markup changes.
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 And with `<a>` elements:
 
@@ -69,7 +69,7 @@ And with `<a>` elements:
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 The best part is you can do this with any button variant, too:
 
@@ -563,7 +563,7 @@ Historically dropdown menu contents *had* to be links, but that's no longer the 
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 You can also create non-interactive dropdown items with `.dropdown-item-text`. Feel free to style further with custom CSS or text utilities.
 
@@ -575,7 +575,7 @@ You can also create non-interactive dropdown items with `.dropdown-item-text`. F
   <a class="dropdown-item" href="#">Something else here</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Active
 
@@ -588,7 +588,7 @@ Add `.active` to items in the dropdown to **style them as active**.
   <a class="dropdown-item" href="#">Another link</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Disabled
 
@@ -601,7 +601,7 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
   <a class="dropdown-item" href="#">Another link</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Menu alignment
 
@@ -624,7 +624,7 @@ By default, a dropdown menu is automatically positioned 100% from the top and al
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Responsive alignment
 
@@ -644,7 +644,7 @@ To align **right** the dropdown menu with the given breakpoint or larger, add `.
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 To align **left** the dropdown menu with the given breakpoint or larger, add `.dropdown-menu-right` and `.dropdown-menu{-sm|-md|-lg|-xl}-left`.
 
@@ -660,7 +660,7 @@ To align **left** the dropdown menu with the given breakpoint or larger, add `.d
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Note that you don't need to add a `data-display="static"` attribute to dropdown buttons in navbars, since Popper.js isn't used in navbars.
 
@@ -677,7 +677,7 @@ Add a header to label sections of actions in any dropdown menu.
   <a class="dropdown-item" href="#">Another action</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Dividers
 
@@ -692,7 +692,7 @@ Separate groups of related menu items with a divider.
   <a class="dropdown-item" href="#">Separated link</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Text
 
@@ -708,7 +708,7 @@ Place any freeform text within a dropdown menu with text and use [spacing utilit
   </p>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ### Forms
 
@@ -740,7 +740,7 @@ Put a form within a dropdown menu, or make it into a dropdown menu, and use [mar
   <a class="dropdown-item" href="#">Forgot password?</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% capture example %}
 <form class="dropdown-menu p-4">
@@ -763,7 +763,7 @@ Put a form within a dropdown menu, or make it into a dropdown menu, and use [mar
   <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Dropdown options
 
@@ -796,7 +796,7 @@ Use `data-offset` or `data-reference` to change the location of the dropdown.
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Usage
 

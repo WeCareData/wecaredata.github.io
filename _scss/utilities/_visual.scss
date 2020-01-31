@@ -378,7 +378,7 @@ mark, .mark {
 }
 
 .blockquote {
-  margin-bottom: $size-base-space;
+  margin-bottom: $base-size-space;
   @include font-size(get-lib-value($lib-text-style, font-size, body-text-lg));
 }
 

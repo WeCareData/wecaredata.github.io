@@ -29,7 +29,7 @@ The most basic list group is an unordered list with list items and the proper cl
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Active items
 
@@ -44,7 +44,7 @@ Add `.active` to a `.list-group-item` to indicate the current active selection.
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Disabled items
 
@@ -59,7 +59,7 @@ Add `.disabled` to a `.list-group-item` to make it _appear_ disabled. Note that 
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Links and buttons
 
@@ -78,7 +78,7 @@ Be sure to **not use the standard `.btn` classes here**.
   <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 With `<button>`s, you can also make use of the `disabled` attribute instead of the `.disabled` class. Sadly, `<a>`s don't support the disabled attribute.
 
@@ -93,7 +93,7 @@ With `<button>`s, you can also make use of the `disabled` attribute instead of t
   <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Flush
 
@@ -108,7 +108,7 @@ Add `.list-group-flush` to remove some borders and rounded corners to render lis
   <li class="list-group-item">Vestibulum at eros</li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Horizontal
 
@@ -124,7 +124,7 @@ Add `.list-group-horizontal` to change the layout of list group items from verti
   <li class="list-group-item">Morbi leo risus</li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}{% endfor %}
+{% include partials/example.html content=example hide_markup=true %}{% endfor %}
 
 ## Contextual classes
 
@@ -138,7 +138,7 @@ Use contextual classes to style list items with a stateful background and color.
   <li class="list-group-item list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</li>{% endfor %}
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 Contextual classes also work with `.list-group-item-action`. Note the addition of the hover styles here not present in the previous example. Also supported is the `.active` state; apply it to indicate an active selection on a contextual list group item.
 
@@ -150,7 +150,7 @@ Contextual classes also work with `.list-group-item-action`. Note the addition o
   <a href="#" class="list-group-item list-group-item-action list-group-item-{{ color.name }}">A simple {{ color.name }} list group item</a>{% endfor %}
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 {% include partials/callout-warning-color-assistive-technologies.md %}
 
@@ -174,7 +174,7 @@ Add badges to any list group item to show unread counts, activity, and more with
   </li>
 </ul>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## Custom content
 
@@ -208,7 +208,7 @@ Add nearly any HTML within, even for linked list groups like the one below, with
   </a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 ## JavaScript behavior
 

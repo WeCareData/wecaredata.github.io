@@ -1,46 +1,42 @@
-// 尺寸单位
-$size-base-global: 1rem !default; // 1rem/16px
-$size-base-space: $size-base-global / 2 !default; // .5rem/8px
-// 元素大小
-$lib-size-element: ("sm", "md", "lg") !default;
-$size-element-current: "md" !default;
+// 最小长度单位
+$base-size-global:                          1rem !default;
+$base-size-space:                           $base-size-global / 2 !default;
 // 默认边框宽度
-$border-width-base: $size-base-global / 16 !default;
+$base-border-width:                         $base-size-global / 16 !default;
+// 元素大小
+$lib-size-element:                          ("sm", "md", "lg") !default;
+$size-element-current:                      "md" !default;
 // 主题
-$lib-theme: ("white", "light", "dark", "black") !default;
-$theme-current: "white" !default;
-// 绝对黑白色
-$color-absolute-white: #fff !default;
-$color-absolute-black: #000 !default;
+$lib-theme:                                 ("white", "light", "dark", "black") !default;
+$theme-current:                             "white" !default;
+// 绝对黑、白色
+$color-absolute-white:                      #fff !default;
+$color-absolute-black:                      #000 !default;
 // WCAG 元素对比
-$wcag-contrast-text: 4.5;
-$wcag-contrast-ui: 3.1;
+$wcag-contrast-text:                        4.5;
+$wcag-contrast-ui:                          3.1;
 // 文本
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default !default;
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, " Segoe UI ", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", " Helvetica Neue ", Helvetica, Arial, " Noto Sans ", sans-serif, " Apple Color Emoji ", " Segoe UI Emoji ", " Segoe UI Symbol ", "Noto Color Emoji" !default;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, " Liberation Mono ", " Courier New ", monospace !default;
-$font-size-base: $size-base-global * .625 !default;
-$font-weight-base: 400 !default;
-$letter-spacing-rem-base: $size-base-global / 100 !default;
-$line-height-base: $size-base-global * .75 !default;
+$base-font-family:                          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$base-font-size:                            $base-size-global * .625 !default;
+$base-font-weight:                          400 !default;
+$base-letter-spacing-rem:                   $base-size-global / 100 !default;
+$base-line-height:                          $base-size-global * .75 !default;
+$font-family-sans-serif:                    -apple-system, BlinkMacSystemFont, " Segoe UI ", "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", " Helvetica Neue ", Helvetica, Arial, " Noto Sans ", sans-serif, " Apple Color Emoji ", " Segoe UI Emoji ", " Segoe UI Symbol ", "Noto Color Emoji" !default;
+$font-family-monospace:                     SFMono-Regular, Menlo, Monaco, Consolas, " Liberation Mono ", " Courier New ", monospace !default;
 // 功能模块
-$enable-caret: true !default;
-$enable-rounded: true !default;
-$enable-shadows: true !default;
-$enable-gradients: false !default;
-$enable-transitions: true !default;
+$enable-caret:                              true !default;
+$enable-rounded:                            true !default;
+$enable-shadows:                            true !default;
+$enable-gradients:                          false !default;
+$enable-transitions:                        true !default;
 $enable-prefers-reduced-motion-media-query: true !default;
-$enable-hover-media-query: true !default;
-$enable-grid-classes: true !default;
-$enable-pointer-cursor-for-buttons: true !default;
-$enable-print-styles: true !default;
-$enable-responsive-font-sizes: true !default;
-$enable-validation-icons: true !default;
-$enable-deprecation-messages: false !default;
-$enable-component-sizing: true;
+$enable-hover-media-query:                  true !default;
+$enable-grid-classes:                       true !default;
+$enable-pointer-cursor-for-buttons:         true !default;
+$enable-print-styles:                       true !default;
+$enable-responsive-font-sizes:              true !default;
+$enable-validation-icons:                   true !default;
+$enable-deprecation-messages:               false !default;
+$enable-component-sizing:                   true !default;
 // SVG
-$escaped-characters: (
-  ("<", "%3c"),
-  (">", "%3e"),
-  ("#", "%23"),
-) !default;
+$escaped-characters:                        (("<", "%3c"), (">", "%3e"), ("#", "%23"),) !default;

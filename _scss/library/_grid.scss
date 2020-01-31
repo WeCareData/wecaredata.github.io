@@ -1,77 +1,77 @@
 // 页面宽度
-$width-page-xs: $size-base-global * 20 !default; // 320px
-$width-page-sm: $size-base-global * 42 !default; // 672px
-$width-page-md: $size-base-global * 66 !default; // 1056px
-$width-page-lg: $size-base-global * 82 !default; // 1312px
-$width-page-xl: $size-base-global * 99 !default; // 1584px
+$width-page-xs:               $base-size-global * 20 !default; // 320px
+$width-page-sm:               $base-size-global * 42 !default; // 672px
+$width-page-md:               $base-size-global * 66 !default; // 1056px
+$width-page-lg:               $base-size-global * 82 !default; // 1312px
+$width-page-xl:               $base-size-global * 99 !default; // 1584px
 
 // 页面边距
-$margin-x-page: $size-base-global !default; // 16px
-$padding-x-page: $size-base-global !default; // 16px
+$margin-x-page:               $base-size-global !default; // 16px
+$padding-x-page:              $base-size-global !default; // 16px
 
 // 间隔宽度
-$width-grid-gutter: get-lib-value($lib-spacing, spacing, 32);
+$width-grid-gutter:           get-lib-value($lib-spacing, spacing, 32);
 $width-grid-gutter-condensed: get-lib-value($lib-spacing, spacing, 2);
 
 // 库[屏幕宽度]
-$lib-screen-width: (
+$lib-screen-width:            (
   phone: (
-    320: $size-base-space * 40,
-    480: $size-base-space * 60,
-    540: $size-base-space * 67.5,
-    640: $size-base-space * 80,
-    720: $size-base-space * 90,
-    750: $size-base-space * 93.75,
-    768: $size-base-space * 96,
-    800: $size-base-space * 100,
-    828: $size-base-space * 103.5,
-    854: $size-base-space * 106.75,
-    960: $size-base-space * 120,
-    1080: $size-base-space * 135,
-    1125: $size-base-space * 140.625,
-    1242: $size-base-space * 155.25,
-    1280: $size-base-space * 160,
-    1440: $size-base-space * 180,
-    1920: $size-base-space * 240,
-    2560: $size-base-space * 320,
-    2960: $size-base-space * 370
+    320: $base-size-space * 40,
+    480: $base-size-space * 60,
+    540: $base-size-space * 67.5,
+    640: $base-size-space * 80,
+    720: $base-size-space * 90,
+    750: $base-size-space * 93.75,
+    768: $base-size-space * 96,
+    800: $base-size-space * 100,
+    828: $base-size-space * 103.5,
+    854: $base-size-space * 106.75,
+    960: $base-size-space * 120,
+    1080: $base-size-space * 135,
+    1125: $base-size-space * 140.625,
+    1242: $base-size-space * 155.25,
+    1280: $base-size-space * 160,
+    1440: $base-size-space * 180,
+    1920: $base-size-space * 240,
+    2560: $base-size-space * 320,
+    2960: $base-size-space * 370
   ),
   pad: (
-    600: $size-base-space * 75,
-    768: $size-base-space * 96,
-    800: $size-base-space * 100,
-    900: $size-base-space * 112.5,
-    1024: $size-base-space * 128,
-    1080: $size-base-space * 135,
-    1200: $size-base-space * 150,
-    1280: $size-base-space * 160,
-    1536: $size-base-space * 192,
-    1600: $size-base-space * 200,
-    1920: $size-base-space * 240,
-    2048: $size-base-space * 256,
-    2160: $size-base-space * 270,
-    2560: $size-base-space * 320,
-    2732: $size-base-space * 341.5,
-    2736: $size-base-space * 342
+    600: $base-size-space * 75,
+    768: $base-size-space * 96,
+    800: $base-size-space * 100,
+    900: $base-size-space * 112.5,
+    1024: $base-size-space * 128,
+    1080: $base-size-space * 135,
+    1200: $base-size-space * 150,
+    1280: $base-size-space * 160,
+    1536: $base-size-space * 192,
+    1600: $base-size-space * 200,
+    1920: $base-size-space * 240,
+    2048: $base-size-space * 256,
+    2160: $base-size-space * 270,
+    2560: $base-size-space * 320,
+    2732: $base-size-space * 341.5,
+    2736: $base-size-space * 342
   ),
   pc: (
-    768: $size-base-space * 96,
-    1080: $size-base-space * 135,
-    1280: $size-base-space * 160,
-    1366: $size-base-space * 170.75,
-    1440: $size-base-space * 180,
-    1600: $size-base-space * 200,
-    1680: $size-base-space * 210,
-    1920: $size-base-space * 240,
-    1921: $size-base-space * 240.125,
-    2160: $size-base-space * 270,
-    2304: $size-base-space * 288,
-    2560: $size-base-space * 320,
-    2880: $size-base-space * 360,
-    3000: $size-base-space * 375,
-    3840: $size-base-space * 480,
-    4096: $size-base-space * 512,
-    5120: $size-base-space * 640
+    768: $base-size-space * 96,
+    1080: $base-size-space * 135,
+    1280: $base-size-space * 160,
+    1366: $base-size-space * 170.75,
+    1440: $base-size-space * 180,
+    1600: $base-size-space * 200,
+    1680: $base-size-space * 210,
+    1920: $base-size-space * 240,
+    1921: $base-size-space * 240.125,
+    2160: $base-size-space * 270,
+    2304: $base-size-space * 288,
+    2560: $base-size-space * 320,
+    2880: $base-size-space * 360,
+    3000: $base-size-space * 375,
+    3840: $base-size-space * 480,
+    4096: $base-size-space * 512,
+    5120: $base-size-space * 640
   )
 ) !default;
 
@@ -176,11 +176,11 @@ $grid-columns: 16 !default;
 }
 
 @function grid-breakpoint-infix($name) {
-  @return '-#{$name}';
+  @return "-#{$name}";
 }
 
 @mixin grid-breakpoint-up($name, $breakpoints: $lib-grid-system) {
-  @if type-of($name) == 'number' {
+  @if type-of($name) == "number" {
     @media (min-width: $name) {
       @content;
     }
@@ -195,12 +195,12 @@ $grid-columns: 16 !default;
       }
     }
   } @else {
-    @error 'Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})';
+    @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})";
   }
 }
 
 @mixin grid-breakpoint-down($name, $breakpoints: $lib-grid-system) {
-  @if type-of($name) == 'number' {
+  @if type-of($name) == "number" {
     @media (max-width: $name) {
       @content;
     }
@@ -215,13 +215,13 @@ $grid-columns: 16 !default;
       }
     }
   } @else {
-    @error 'Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})';
+    @error "Unable to find a breakpoint with name `#{$name}`. Expected one of: (#{map-keys($breakpoints)})";
   }
 }
 
 @mixin grid-breakpoint-between($lower, $upper, $breakpoints: $lib-grid-system) {
-  $is-number-lower: type-of($lower) == 'number';
-  $is-number-upper: type-of($upper) == 'number';
+  $is-number-lower: type-of($lower) == "number";
+  $is-number-upper: type-of($upper) == "number";
   $min: if($is-number-lower, $lower, map-get($breakpoints, $lower));
   $max: if($is-number-upper, $upper, map-get($breakpoints, $upper));
 
@@ -241,7 +241,7 @@ $grid-columns: 16 !default;
       @content;
     }
   } @else {
-    @error 'Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map-keys($breakpoints)}).';
+    @error "Unable to find a breakpoint to satisfy: (#{$lower},#{$upper}). Expected both to be one of (#{map-keys($breakpoints)}).";
   }
 }
 
@@ -423,7 +423,7 @@ $grid-columns: 16 !default;
 
       // `$columns - 1` because offsetting by the width of an entire row isn't possible
       @for $i from 0 through ($columns - 1) {
-        @if not ($infix == '' and $i == 0) { // Avoid emitting useless .offset-0
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
           .offset#{$infix}-#{$i} {
             @include make-col-offset($i, $columns);
           }

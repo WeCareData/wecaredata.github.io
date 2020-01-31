@@ -27,7 +27,7 @@ A lightweight, flexible component that can optionally extend the entire viewport
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
 
 To make the jumbotron full width, and without rounded corners, add the `.jumbotron-fluid` modifier class and add a `.container` or `.container-fluid` within.
 
@@ -39,4 +39,4 @@ To make the jumbotron full width, and without rounded corners, add the `.jumbotr
   </div>
 </div>
 {% endcapture %}
-{% include partials/example.html content=example %}
+{% include partials/example.html content=example hide_markup=true %}
