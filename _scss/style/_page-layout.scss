@@ -26,8 +26,8 @@ body {
   }
 
   .page-header {
-    padding-top: get-lib-value($lib-spacing, layout, "sm");
-    padding-bottom: get-lib-value($lib-spacing, layout, "sm");
+    padding-top: get-lib-value($lib-spacing, layout, 1);
+    padding-bottom: get-lib-value($lib-spacing, layout, 1);
     border-bottom: get-lib-value($element-box-model, border-width, $size-element-current) solid get-lib-value($lib-theme-palette, $theme-current, ui-03);
     background-color: get-lib-value($lib-theme-palette, $theme-current, ui-01);
 
@@ -44,8 +44,8 @@ body {
   }
 
   .page-body {
-    padding-top: get-lib-value($lib-spacing, layout, "md");
-    padding-bottom: get-lib-value($lib-spacing, layout, "md");
+    padding-top: get-lib-value($lib-spacing, layout, 2);
+    padding-bottom: get-lib-value($lib-spacing, layout, 2);
     background-color: get-lib-value($lib-theme-palette, $theme-current, ui-02);
   }
 }

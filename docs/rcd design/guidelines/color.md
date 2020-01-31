@@ -43,20 +43,21 @@ toc: true
 // 通过 Sass Map 函数获取
 .beta { color: get-lib-value($lib-color-swatch, red, 20); }
 {% endhighlight %}
+
 <h2>灰色色板</h2>
 <p class="body-long-01">RCD 提供了3种可供选择的灰色基本色，以及灰色色板。</p>
 <div class="row no-gutters mb-16">
-  {% for color in site.data.colors.grays %}
+  {% for gray in site.data.colors.grays %}
   <div class="col-4">
-    <div class="py-4 px-8 swatch-{{ color.name | replace: " ", "-" }}">
-    {{ color.name | capitalize }}
-  </div>
-  {% for i in (1..10) %}
-  <div class="py-4 px-8 swatch-{{ color.name | replace: " ", "-" }}-{{ i }}0">
-  {{ color.name | capitalize }}-{{ i }}0
-</div>
-{% endfor %}
-</div>
+    <div class="py-4 px-8 swatch-{{ gray.name }}">
+    {{ gray.name | capitalize }}
+    </div>
+    {% for i in (1..10) %}
+    <div class="py-4 px-8 swatch-{{ gray.name | replace: " ", "-" }}-{{ i }}0">
+        {{ gray.name | capitalize }}-{{ i }}0
+    </div>
+    {% endfor %}
+    </div>
 {% endfor %}
 </div>
 <h2>主题交互颜色</h2>

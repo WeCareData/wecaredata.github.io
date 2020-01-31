@@ -2,18 +2,18 @@
 // Grid examples
 //
 
-$bd-purple: get-lib-value($lib-color-swatch, 'violet', 60);
-$bd-purple-bright: get-lib-value($lib-color-swatch, 'violet', 30);
-$blue: get-lib-value($lib-color-swatch, 'blue', 60);
-$border-color-bd-example: get-lib-value($lib-color-swatch, 'gray', 10);
-$gray-600: get-lib-value($lib-color-swatch, 'gray', 60);
-$gray-700: get-lib-value($lib-color-swatch, 'gray', 70);
-$text-color-code: get-lib-value($lib-color-swatch, 'gray', 90);
-$border-color-default: get-lib-value($lib-color-swatch, 'gray', 30);
-$bd-info: get-lib-value($lib-color-swatch, 'blue', 50);
-$bd-warning: get-lib-value($lib-color-swatch, 'yellow', 50);
-$bd-danger: get-lib-value($lib-color-swatch, 'red', 50);
-$white: get-lib-value($lib-color-swatch, 'white', 100);
+$bd-purple: get-lib-value($lib-color-swatch, violet, 60);
+$bd-purple-bright: get-lib-value($lib-color-swatch, violet, 30);
+$blue: get-lib-value($lib-color-swatch, blue, 60);
+$border-color-bd-example: get-lib-value($lib-color-swatch, gray, 10);
+$gray-600: get-lib-value($lib-color-swatch, gray, 60);
+$gray-700: get-lib-value($lib-color-swatch, gray, 70);
+$text-color-code: get-lib-value($lib-color-swatch, gray, 90);
+$border-color-default: get-lib-value($lib-color-swatch, gray, 30);
+$bd-info: get-lib-value($lib-color-swatch, blue, 50);
+$bd-warning: get-lib-value($lib-color-swatch, yellow, 50);
+$bd-danger: get-lib-value($lib-color-swatch, red, 50);
+$white: get-lib-value($lib-color-swatch, white, 100);
 
 .bd-example-row {
   .row {

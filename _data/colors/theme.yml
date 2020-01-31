@@ -1,0 +1,116 @@
+- name: ui-background
+  usage: 默认页面背景颜色
+- name: interactive-01
+  usage: 交互色-主要，主要按钮颜色
+- name: interactive-02
+  usage: 交互色-次要，次要按钮颜色
+- name: interactive-03
+  usage: 交互色-辅助，辅助按钮颜色，4.5:1 AA
+- name: interactive-04
+  usage: 交互色-，激活状态，3:1 AA
+- name: danger
+  usage: 危险操作按钮背景颜色，3:1 AA
+- name: ui-01
+  usage: 默认页面背景颜色上方容器背景色，次要页面背景颜色
+- name: ui-02
+  usage: UI色01上方容器背景颜色
+- name: ui-03
+  usage: 辅助背景颜色，不显著边框颜色
+- name: ui-04
+  usage: 中度对比边框颜色，3:1 AA
+- name: ui-05
+  usage: 高对比度边框颜色，强调元素，4.5:1 AA
+- name: text-01
+  usage: 主要文本颜色，标题颜色，text-02悬停文本颜色
+- name: text-02
+  usage: 次要文本颜色，表单标签颜色
+- name: text-03
+  usage: 占位文本颜色
+- name: text-04
+  usage: 交互色背景的文本颜色
+- name: text-05
+  usage: 辅助文本颜色，帮助提示文本颜色
+- name: link-01
+  usage: 主要超链接颜色，无框按钮文本颜色
+- name: inverse-link
+  usage: inverse-02背景的超链接颜色
+- name: icon-01
+  usage: 主要图标颜色
+- name: icon-02
+  usage: 次要图标颜色
+- name: icon-03
+  usage: 交互色背景的图标颜色，非UI背景色的图标颜色
+- name: field-01
+  usage: 默认表单元件背景色，ui-background上方控件背景颜色
+- name: field-02
+  usage: ui-02背景颜色上方控件背景颜色
+- name: inverse-01
+  usage: 反转文本色、图标色
+- name: inverse-02
+  usage: 高对比背景色，高对比元素
+- name: support-01
+  usage: 错误色
+- name: support-02
+  usage: 成功色
+- name: support-03
+  usage: 警告色
+- name: support-04
+  usage: 信息色
+- name: inverse-support-01
+  usage: 高对比时的错误色
+- name: inverse-support-02
+  usage: 高对比时的成功色
+- name: inverse-support-03
+  usage: 高对比时的警告色
+- name: inverse-support-04
+  usage: 高对比时的信息色
+- name: overlay-01
+  usage: 背景覆盖色
+- name: focus
+  usage: 聚焦边框色，聚焦下划线颜色
+- name: inverse-focus-ui
+  usage: 高对比时的聚焦色
+- name: hover-primary
+  usage: 主悬停色：interactive-01悬停色，Blue 60 hover
+- name: hover-primary-text
+  usage: 主要文本悬停色：interactive-01文本悬停色
+- name: hover-secondary
+  usage: 次要悬停色：interactive-02悬停色，Gray 80 hover
+- name: hover-tertiary
+  usage: 辅助悬停色：interactive-03、inverse-01悬停色，Blue 60 hover
+- name: hover-ui
+  usage: UI悬停色：ui-01、ui-02、透明背景悬停色，Gray 10 hover
+- name: hover-selected-ui
+  usage: 选中UI悬停色：选中表格行悬停色，Gray 20 hover
+- name: hover-danger
+  usage: 危险操作悬停色：危险操作悬停色，support-01悬停色，Red 60 hover
+- name: hover-row
+  usage: 表格行悬停色：表格行悬停色，Gray 10 hover
+- name: inverse-hover-ui
+  usage: 反转UI悬停色：inverse-02悬停色，Gray 80 hover
+- name: active-primary
+  usage: 主要激活色：interactive-01激活色
+- name: active-secondary
+  usage: 次要激活色：interactive-02、inverse-01激活色
+- name: active-tertiary
+  usage: 辅助激活色：interactive-03激活色
+- name: active-ui
+  usage: UI激活色：ui-01，ui-02激活色
+- name: active-danger
+  usage: 危险激活色：danger，support-01激活色
+- name: selected-ui
+  usage: UI选中色：选中的UI元素颜色
+- name: highlight
+  usage: 高亮色：interactive-01高亮色
+- name: skeleton-01
+  usage: 骨架色01：骨架状态的图像色，Gray 10 hover
+- name: skeleton-02
+  usage: 骨架色02：骨架状态的文本色
+- name: visited-link
+  usage: 已访问链接色：已访问的链接颜色
+- name: disabled-01
+  usage: 失活色01：失活控件，失活背景色，失活边框色
+- name: disabled-02
+  usage: 失活色02：disabled-01上方的失活元素，失活标签色，disabled-01上方失活文本色，失活图标色，失活边框色
+- name: disabled-03
+  usage: 失活色03：disabled-02上方失活文本色，disabled-02上方失活图标色

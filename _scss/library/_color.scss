@@ -340,28 +340,28 @@ $lib-theme-palette: (
           // 背景色
                 ui-background: get-lib-value($lib-color-swatch, white, 100), // 默认页面背景颜色;
           // 交互色
-                interactive-01: get-lib-value($lib-color-swatch, blue, 50), // 交互色01：交互色-主要，主要按钮颜色
+                interactive-01: get-lib-value($lib-color-swatch, azure, 60), // 交互色01：交互色-主要，主要按钮颜色
                 interactive-02: get-lib-value($lib-color-swatch, gray-cool, 60), // 交互色02：交互色-次要，次要按钮颜色
-                interactive-03: get-lib-value($lib-color-swatch, azure, 60), // 交互色03：交互色-辅助，辅助按钮颜色，4.5:1 AA
-                interactive-04: get-lib-value($lib-color-swatch, blue, 80), // 交互色04：交互色-，激活状态，3:1 AA
-                danger: get-lib-value($lib-color-swatch, red, 70), // 危险色：危险操作按钮背景颜色，3:1 AA
+                interactive-03: get-lib-value($lib-color-swatch, blue, 50), // 交互色03：交互色-辅助，辅助按钮颜色，4.5:1 AA
+                interactive-04: get-lib-value($lib-color-swatch, azure, 90), // 交互色04：交互色-，激活状态，3:1 AA
+                danger: get-lib-value($lib-color-swatch, red, 80), // 危险色：危险操作按钮背景颜色，3:1 AA
           // UI色
                 ui-01: get-lib-value($lib-color-swatch, gray, 10), // UI色01：默认页面背景颜色上方容器背景色，次要页面背景颜色
                 ui-02: get-lib-value($lib-color-swatch, white, 100), // UI色02：UI色01上方容器背景颜色
                 ui-03: get-lib-value($lib-color-swatch, gray, 30), // UI色03：辅助背景颜色，不显著边框颜色
-                ui-04: get-lib-value($lib-color-swatch, gray, 50), // UI色04：中度对比边框颜色，3:1 AA
-                ui-05: get-lib-value($lib-color-swatch, gray, 100), // UI色05：高对比度边框颜色，强调元素，4.5:1 AA
+                ui-04: get-lib-value($lib-color-swatch, gray, 60), // UI色04：中度对比边框颜色，3:1 AA
+                ui-05: get-lib-value($lib-color-swatch, gray, 90), // UI色05：高对比度边框颜色，强调元素，4.5:1 AA
           // 文本色
-                text-01: get-lib-value($lib-color-swatch, gray, 100), // 文本色01：主要文本颜色，标题颜色，text-02悬停文本颜色
-                text-02: get-lib-value($lib-color-swatch, gray, 80), // 文本色02：次要文本颜色，表单标签颜色
+                text-01: get-lib-value($lib-color-swatch, gray, 90), // 文本色01：主要文本颜色，标题颜色，text-02悬停文本颜色
+                text-02: get-lib-value($lib-color-swatch, gray, 70), // 文本色02：次要文本颜色，表单标签颜色
                 text-03: get-lib-value($lib-color-swatch, gray, 40), // 文本色03：占位文本颜色
                 text-04: get-lib-value($lib-color-swatch, white, 100), // 文本色04：交互色背景的文本颜色
-                text-05: get-lib-value($lib-color-swatch, gray, 60), // 文本色05：辅助文本颜色，帮助提示文本颜色
-                link-01: get-lib-value($lib-color-swatch, blue, 60), // 链接色01：主要超链接颜色，无框按钮文本颜色
-                inverse-link: get-lib-value($lib-color-swatch, blue, 40), // 反转链接色：inverse-02背景的超链接颜色
+                text-05: get-lib-value($lib-color-swatch, gray, 50), // 文本色05：辅助文本颜色，帮助提示文本颜色
+                link-01: get-lib-value($lib-color-swatch, azure, 60), // 链接色01：主要超链接颜色，无框按钮文本颜色
+                inverse-link: get-lib-value($lib-color-swatch, azure, 40), // 反转链接色：inverse-02背景的超链接颜色
           // 图标色
-                icon-01: get-lib-value($lib-color-swatch, gray, 100), // 图标色01：主要图标颜色
-                icon-02: get-lib-value($lib-color-swatch, gray, 80), // 图标色02：次要图标颜色
+                icon-01: get-lib-value($lib-color-swatch, gray, 90), // 图标色01：主要图标颜色
+                icon-02: get-lib-value($lib-color-swatch, gray, 70), // 图标色02：次要图标颜色
                 icon-03: get-lib-value($lib-color-swatch, white, 100), // 图标色03：交互色背景的图标颜色，非UI背景色的图标颜色
                 field-01: get-lib-value($lib-color-swatch, gray, 10), // 控件背景色01：默认表单元件背景色，ui-background上方控件背景颜色
                 field-02: get-lib-value($lib-color-swatch, white, 100), // 控件背景色02：ui-02背景颜色上方控件背景颜色
@@ -381,8 +381,8 @@ $lib-theme-palette: (
                 focus: get-lib-value($lib-color-swatch, blue, 60), // 聚焦色：聚焦边框色，聚焦下划线颜色
                 inverse-focus-ui: get-lib-value($lib-color-swatch, white, 100), // 高对比时的聚焦色
           // 鼠标悬停色
-                hover-primary: calc-color-hover(get-lib-value($lib-color-swatch, blue, 60)), // 主悬停色：interactive-01悬停色，Blue 60 hover
-                hover-primary-text: get-lib-value($lib-color-swatch, blue, 70), // 主要文本悬停色：interactive-01文本悬停色
+                hover-primary: calc-color-hover(get-lib-value($lib-color-swatch, azure, 60)), // 主悬停色：interactive-01悬停色，Blue 60 hover
+                hover-primary-text: get-lib-value($lib-color-swatch, azure, 70), // 主要文本悬停色：interactive-01文本悬停色
                 hover-secondary: calc-color-hover(get-lib-value($lib-color-swatch, gray, 80)), // 次要悬停色：interactive-02悬停色，Gray 80 hover
                 hover-tertiary: calc-color-hover(get-lib-value($lib-color-swatch, blue, 60)), // 辅助悬停色：interactive-03、inverse-01悬停色，Blue 60 hover
                 hover-ui: calc-color-hover(get-lib-value($lib-color-swatch, gray, 10)), // UI悬停色：ui-01、ui-02、透明背景悬停色，Gray 10 hover
@@ -391,21 +391,21 @@ $lib-theme-palette: (
                 hover-row: calc-color-hover(get-lib-value($lib-color-swatch, gray, 10)), // 表格行悬停色：表格行悬停色，Gray 10 hover
                 inverse-hover-ui: calc-color-hover(get-lib-value($lib-color-swatch, gray, 80)), // 反转UI悬停色：inverse-02悬停色，Gray 80 hover
           // 激活色
-                active-primary: get-lib-value($lib-color-swatch, blue, 80), // 主要激活色：interactive-01激活色
+                active-primary: get-lib-value($lib-color-swatch, azure, 80), // 主要激活色：interactive-01激活色
                 active-secondary: get-lib-value($lib-color-swatch, gray, 60), // 次要激活色：interactive-02、inverse-01激活色
-                active-tertiary: get-lib-value($lib-color-swatch, blue, 80), // 辅助激活色：interactive-03激活色
+                active-tertiary: get-lib-value($lib-color-swatch, blue, 70), // 辅助激活色：interactive-03激活色
                 active-ui: get-lib-value($lib-color-swatch, gray, 30), // UI激活色：ui-01，ui-02激活色
                 active-danger: get-lib-value($lib-color-swatch, red, 80), //危险激活色：danger，support-01激活色
                 selected-ui: get-lib-value($lib-color-swatch, gray, 20), // UI选中色：选中的UI元素颜色
-                highlight: get-lib-value($lib-color-swatch, blue, 20), // 高亮色：interactive-01高亮色
+                highlight: get-lib-value($lib-color-swatch, azure, 30), // 高亮色：interactive-01高亮色
           // 骨架系统色
                 skeleton-01: calc-color-hover(get-lib-value($lib-color-swatch, gray, 10)), // 骨架色01：骨架状态的图像色，Gray 10 hover
                 skeleton-02: get-lib-value($lib-color-swatch, gray, 30), // 骨架色02：骨架状态的文本色
           //
                 visited-link: get-lib-value($lib-color-swatch, violet, 60), // 已访问链接色：已访问的链接颜色
-                disabled-01: get-lib-value($lib-color-swatch, gray, 10), // 失活色01：失活控件，失活背景色，失活边框色
-                disabled-02: get-lib-value($lib-color-swatch, gray, 30), // 失活色02：disabled-01上方的失活元素，失活标签色，disabled-01上方失活文本色，失活图标色，失活边框色
-                disabled-03: get-lib-value($lib-color-swatch, gray, 50) // 失活色03：disabled-02上方失活文本色，disabled-02上方失活图标色
+                disabled-01: get-lib-value($lib-color-swatch, gray, 20), // 失活色01：失活控件，失活背景色，失活边框色
+                disabled-02: get-lib-value($lib-color-swatch, gray, 40), // 失活色02：disabled-01上方的失活元素，失活标签色，disabled-01上方失活文本色，失活图标色，失活边框色
+                disabled-03: get-lib-value($lib-color-swatch, gray, 60) // 失活色03：disabled-02上方失活文本色，disabled-02上方失活图标色
         ),
   // Theme Light
         light :(
@@ -626,4 +626,16 @@ $yiq-text-light: get-lib-value($lib-theme-palette, $theme-current, text-04); // 
   } @else {
     @return $light;
   }
+}
+
+// TODO
+
+// 混合颜色
+// 函数相关颜色变量 retrieve color form maps
+$theme-color-interval: 8% !default; // Set a specific jump point for requesting color jumps
+@function theme-color-level($color-name: primary, $level: 0) {
+  $color: get-interactive-colors($color-name);
+  $color-base: if($level > 0, map-get($lib-color-interactive, black), map-get($lib-color-interactive, white));
+  $level: abs($level);
+  @return mix($color-base, $color, $level * $theme-color-interval);
 }

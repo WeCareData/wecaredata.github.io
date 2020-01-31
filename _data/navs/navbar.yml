@@ -10,6 +10,9 @@ rcd-design:
         - name: rcd-design-guidelines-color
           title: 颜色
           url: rcd-design/guidelines/color
+        - name: rcd-design-guidelines-theme
+          title: 主题
+          url: rcd-design/guidelines/theme
         - name: rcd-design-guidelines-grid
           title: 排版
           url: rcd-design/guidelines/grid

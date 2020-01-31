@@ -1,9 +1,9 @@
 //
 // Callouts
 //
-$bd-info: get-lib-value($lib-color-swatch, 'blue', 50);
-$bd-warning: get-lib-value($lib-color-swatch, 'yellow', 50);
-$bd-danger: get-lib-value($lib-color-swatch, 'red', 50);
+$bd-info: get-lib-value($lib-color-swatch, blue, 50);
+$bd-warning: get-lib-value($lib-color-swatch, yellow, 50);
+$bd-danger: get-lib-value($lib-color-swatch, red, 50);
 
 .bd-callout {
   padding: 1.25rem;

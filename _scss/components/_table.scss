@@ -1,9 +1,5 @@
-//
-// Tables
-//
-
 // Parameters
-$margin-y-table: get-lib-value($lib-spacing, layout, "sm") !default;
+$margin-y-table: get-lib-value($lib-spacing, layout, 1) !default;
 $text-color-table: get-lib-value($lib-theme-palette, $theme-current, text-01) !default;
 
 $table-cell-padding-x: get-lib-value($element-box-model, padding-x, $size-element-current) !default;
@@ -180,7 +176,7 @@ $border-width-table: get-lib-value($element-box-model, border-width, $size-eleme
 // inheritance to nested tables.
 
 @each $color, $value in $lib-color-interactive {
-  @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+  @include table-row-variant($value, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
 }
 
 @include table-row-variant(active, $table-active-bg);
