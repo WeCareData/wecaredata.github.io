@@ -16889,7 +16889,7 @@ body {
   position: relative;
   padding: 1rem;
   margin: 1rem -1rem 0;
-  border: solid #ebebeb;
+  border: solid #c6c6c6;
   border-width: .125rem 0 0; }
   .bd-example::after {
     display: block;
@@ -17063,7 +17063,7 @@ body {
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: #ebebeb;
+  background-color: #c6c6c6;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
   @media (min-width: 42rem) {
     .highlight {

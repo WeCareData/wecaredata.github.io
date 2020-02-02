@@ -16,7 +16,9 @@ enable-user-menu: false
 toc: true
 ---
 
-## Example
+## 概览
+
+分隔符号是通过 [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) 和 [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content) 两个方法定义添加的。
 
 {% capture example %}
 <nav aria-label="breadcrumb">
@@ -42,9 +44,9 @@ toc: true
 {% endcapture %}
 {% include partials/example.html content=example hide_markup=true %}
 
-## Changing the separator
+## 更改分隔符
 
-分隔符号是通过 [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) 和 [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content) 两个方法定义添加的。可以通过改变 `$breadcrumb-divider` 来改变分隔符号。需要通过 [quote](https://sass-lang.com/documentation/functions/string#quote) 函数来生成分隔符号，如果你想使用 `>` 作为分隔符号，你可以使用下述方式：
+可以通过改变 `$breadcrumb-divider` 来改变分隔符号。需要通过 [quote](https://sass-lang.com/documentation/functions/string#quote) 函数来生成分隔符号，如果你想使用 `>` 作为分隔符号，你可以使用下述方式：
 
 ```scss
 $breadcrumb-divider: quote(">");
@@ -64,10 +66,6 @@ $breadcrumb-divider: none;
 
 ## 无障碍处理
 
-为了为障碍浏览提供方便，针对面包屑这样具备导航功能的模块，建议添加一个有意义的标签即aria-label="breadcrumb"來描述<nav>元素，以及使用 aria-current="page"到这组导航的最后一个项目，以标明当前页面名称（路径）
+为了为障碍浏览提供方便，针对面包屑这样具备导航功能的模块，建议添加一个有意义的标签即 `aria-label="breadcrumb"` 來描述 `<nav>` 元素，以及使用  `aria-current="page"` 到这组导航的最后一个项目，以标明当前页面名称（路径）
 
-更多信息，敬请参阅 WAI-ARIA Authoring Practices for the breadcrumb pattern（面包屑导航的无障碍研究）。
-
-Since breadcrumbs provide a navigation, it's a good idea to add a meaningful label such as `aria-label="breadcrumb"` to describe the type of navigation provided in the `<nav>` element, as well as applying an `aria-current="page"` to the last item of the set to indicate that it represents the current page.
-
-For more information, see the [WAI-ARIA Authoring Practices for the breadcrumb pattern](https://www.w3.org/TR/wai-aria-practices/#breadcrumb).
+更多信息，敬请参阅 [WAI-ARIA Authoring Practices for the breadcrumb pattern](https://www.w3.org/TR/wai-aria-practices/#breadcrumb)。

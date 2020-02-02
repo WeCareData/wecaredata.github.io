@@ -113,9 +113,9 @@ $('.alert').alert()
 
 # 事件
 
-Bootstrap's alert plugin exposes a few events for hooking into alert functionality.
+警报框插件提供额外的事件，可以直接取得调用方法和函式。
 
-| Event | Description |
+| 事件 | 描述 |
 | --- | --- |
 | `close.bs.alert` | This event fires immediately when the <code>close</code> instance method is called. |
 | `closed.bs.alert` | This event is fired when the alert has been closed (will wait for CSS transitions to complete). |

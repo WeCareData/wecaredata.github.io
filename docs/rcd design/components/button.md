@@ -49,9 +49,9 @@ If you don't want the button text to wrap, you can add the `.text-nowrap` class 
 {% endcapture %}
 {% include partials/example.html content=example hide_markup=true %}
 
-## Outline buttons
+## 轮廓按钮
 
-In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the `.btn-outline-*` ones to remove all background images and colors on any button.
+`.btn` 在引用中，如果需要一个按钮，但不需要带来的巨大的背景颜色（背景边框缩小）？用默认修饰符类替换 `.btn-outline-*` 任何按钮上的所有背景颜色和图像。
 
 {% capture example %}
 {% for color in site.data.colors.interactive %}
@@ -59,9 +59,9 @@ In need of a button, but not the hefty background colors they bring? Replace the
 {% endcapture %}
 {% include partials/example.html content=example hide_markup=true %}
 
-## Sizes
+## 尺寸规格与大小定义
 
-Fancy larger or smaller buttons? Add `.btn-lg` or `.btn-sm` for additional sizes.
+配合 `.btn-sm`、 `.btn-lg` 两个邻近元素，可分别实现大规格按钮、小规格按钮的定义。
 
 {% capture example %}
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
@@ -83,9 +83,9 @@ Create block level buttons—those that span the full width of a parent—by add
 {% endcapture %}
 {% include partials/example.html content=example hide_markup=true %}
 
-## Active state
+## 启用状态
 
-Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. **There's no need to add a class to `<button>`s as they use a pseudo-class**. However, you can still force the same active appearance with `.active` (and include the <code>aria-pressed="true"</code> attribute) should you need to replicate the state programmatically.
+`.btn` 样式定义的按钮，默认就是启用状态（背景较深、边框较暗、带内阴影），如果你一定要使按钮固定为启用状态、不需要点击反馈，可以增加 `.active` 样式，并包括 <code>aria-pressed="true"</code> 属性，则状态显示为启用状态。
 
 {% capture example %}
 <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
@@ -93,7 +93,7 @@ Buttons will appear pressed (with a darker background, darker border, and inset 
 {% endcapture %}
 {% include partials/example.html content=example hide_markup=true %}
 
-## Disabled state
+## 禁用状态
 
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element.
 
@@ -116,13 +116,13 @@ Disabled buttons using the `<a>` element behave a bit different:
 {% include partials/example.html content=example hide_markup=true %}
 
 {% capture callout %}
-##### Link functionality caveat
+## Link functionality caveat
 
 The `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s, but that CSS property is not yet standardized. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a `tabindex="-1"` attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.
 {% endcapture %}
 {% include partials/callout.html content=callout type="warning" %}
 
-## Button plugin
+## 按钮插件
 
 Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
 
