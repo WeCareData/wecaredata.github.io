@@ -1,0 +1,36 @@
+---
+layout: default
+title: "平台动态"
+description: ""
+category: news
+html_class: h-100
+body_class: d-flex flex-column h-100
+permalink: /news
+---
+
+<div class="list-group list-group-flush">
+    {% for post in paginator.posts %}
+    <a class="list-group-item list-group-item-action" href="{{ post.url }}">
+        <div class="d-flex w-100 justify-content-between">
+            <h5>{{ post.title }}</h5>
+            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+        </div>
+        <p>{{ post.content | strip_html | slice: 0,56 }}......</p>
+    </a>
+    {% endfor %}
+</div>
+
+<!-- 分页链接 -->
+<div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="/htdocs/blog/page{{ paginator.previous_page }}" class="previous">上一页</a>
+    {% else %}
+    <span class="previous">上一页</span>
+    {% endif %}
+    <span class="page_number ">第{{ paginator.page }}页，共{{ paginator.total_pages }}页</span>
+    {% if paginator.next_page %}
+    <a href="/htdocs/blog/page{{ paginator.next_page }}" class="next">下一页</a>
+    {% else %}
+    <span class="next">下一页</span>
+    {% endif %}
+</div>

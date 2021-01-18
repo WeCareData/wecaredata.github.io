@@ -1,0 +1,9 @@
+<!-- Core JS -->
+<script src="{{ "/assets/js/jquery.slim.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/popper.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/bootstrap.bundle.js" | relative_url }}"></script>
+
+<!-- Documentation Extras JS -->
+{%- for js in page.extra_js %}
+<script src="{{ site.assets.js }}{{ js }}"></script>
+{%- endfor %}

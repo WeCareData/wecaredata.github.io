@@ -1,0 +1,12 @@
+- id: 1
+  name: "黄翠"
+  title: "教授、博导、一级主任医师"
+  description: "现任武汉大学口腔医院口腔修复科主任<br>中华口腔医学会口腔修复专委会副主任委员<br>中华口腔医学会口腔美学专委会副主任委员"
+  thumb: expert-thumb-001
+  photo: expert-photo-001
+- id: 2
+  name: "王亚珂"
+  title: "博士，副主任医师"
+  description: "中华口腔医学会口腔美学专委会青年委员<br>湖北省口腔医学会口腔修复专委会常委<br>湖北省口腔医学会口腔美学专委会常委"
+  thumb: expert-thumb-002
+  photo: expert-photo-002

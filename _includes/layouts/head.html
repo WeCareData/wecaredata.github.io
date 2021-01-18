@@ -1,26 +1,28 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="{{ page.description | default: site.description | smartify }}">
-<meta name="author" content="{{ site.author }}">
-<meta name="generator" content="Jekyll v{{ jekyll.version }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ page.description | default: site.description | smartify }}">
+    <meta name="author" content="{{ site.authors }}">
+    <meta name="generator" content="Jekyll v{{ jekyll.version }}">
 
-<meta name="docsearch:language" content="en">
-<!-- <meta name="docsearch:version" content=""> -->
+    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:version" content="{{ site.docs_version }}">
 
-<title>
-  {%- if page.title != null -%}
-    {% if page.project != null %}
-      {{ page.title | smartify | capitalize }} | {{ page.project | smartify | capitalize }}
-    {% else %}
-      {{ page.title | smartify | capitalize }} | {{ site.title | smartify }}
-    {% endif %}
-  {% else %}
-    {{ site.title | smartify }} | {{ site.description | smartify }}
-  {%- endif -%}
-</title>
+    <title>
+        {%- if page.title -%}
+        {{ page.title | smartify }} · {{ site.title | smartify }} v{{ site.docs_version }}
+        {%- else -%}
+        {{ site.title | smartify }} · {{ site.description | smartify }}
+        {%- endif -%}
+    </title>
 
-<link rel="canonical" href="{{ site.url | append: page.url }}">
+    <link rel="canonical" href="{{ site.url | append: page.url }}">
 
-{% include layouts/favicons.html %}
-{% include layouts/stylesheets.html %}
-{% include layouts/javascripts.html %}
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/bootstrap.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <!-- Documentation Extras CSS -->
+    {%- for css in page.extra_css %}
+    <link href="{{ site.assets.css }}{{ css }}" rel="stylesheet">
+    {%- endfor %}
+</head>

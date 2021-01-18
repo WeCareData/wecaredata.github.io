@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="h-100 {%- if page.html_class %} {{ page.html_class }}{% endif %}">
+
+{% include layouts/head.html %}
+
+<body class="d-flex flex-column h-100 {%- if page.body_class %} {{ page.body_class }}{% endif %}">
+
+{% include layouts/header.html %}
+
+<main role="main" class="flex-shrink-0">
+    <section class="bg-light border-bottom">
+        <div class="container py-4">
+            <h3>{{ page.title }}</h3>
+        </div>
+    </section>
+    <section class="py-4">
+        <div class="container">
+            {{ content }}
+        </div>
+    </section>
+</main>
+
+{% include layouts/footer.html %}
+
+{%- if page.include_js != false -%}
+    {% include layouts/script.html %}
+{%- endif -%}
+
+</body>
+</html>

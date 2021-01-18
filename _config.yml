@@ -1,4 +1,4 @@
-# Jekyll Global
+## Jekyll Settings
 source: .
 destination: ./_site
 #collections_dir: .
@@ -30,11 +30,16 @@ profile: true
 # Plugins
 whitelist: []
 plugins:
-  - jekyll-redirect-from
+  - jekyll-feed
   - jekyll-sitemap
-  - jekyll-toc
-  - jekyll-seo-tag
-  - jekyll-sass-converter
+  - jekyll-redirect-from
+  - jekyll-paginate
+#  - jekyll-sass-converter
+#  - jemoji
+#  - jekyll-toc
+#  - jekyll-seo-tag
+#  - jekyll-mermaid
+  - jekyll-admin
 
 # Conversion
 markdown: kramdown
@@ -47,14 +52,13 @@ incremental: false
 detach: false
 livereload: true
 port: 4000
-host: 127.0.0.1
+host: localhost
 baseurl: ""
 url: "https://wecaredata.github.io"
 show_dir_listing: false
 
 # Outputting
 permalink: pretty
-paginate_path: /page:num
 timezone: Asia/Shanghai
 
 quiet: false
@@ -82,18 +86,15 @@ kramdown:
   show_warnings: true
 
 # Site
-title: up.Smart
-description: Connect digital dental world.
-organization: WeCareData
-author: James Sean
-email: james.sean.pro@gmail.com
+title: 3D打印平台
+description: Connect digital dental world
+organization: WHUSS
+author: WHUSS
+email: info@whuss.com
 lang: zh_CN
-logo: /logo-robotcaradata.svg
 
-# Theme
-#theme: jekyll-theme-robotcaredata
-
-# Plugins - TOC Settings
+## Plugins Settings
+# jekyll-toc
 toc:
   min_level: 2
   max_level: 4
@@ -101,6 +102,14 @@ toc:
     - "bd-callout"
     - "bd-example"
 
-# Version Control
-version_aligner: 1.0.0
-version_design_language: 1.0.0
+redirect_from:
+  json: false
+
+paginate: 10
+paginate_path: "/htdocs/blog/page:num"
+
+# Custom variables
+assets:
+  css:              "/assets/css/"
+  js:               "/assets/js/"
+  images:           "/assets/images/"

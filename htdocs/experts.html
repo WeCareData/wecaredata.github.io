@@ -1,0 +1,17 @@
+---
+PageID: experts-h
+title: 专家团队
+layout: default
+permalink: /experts
+---
+
+<div class="row">
+    {% for expert in site.data.expert %}
+    <div class="col-lg-4 text-center">
+        <img class="" src="{{ site.assets.images }}{{ expert.photo }}.jpg" alt="{{ expert.name }}个人照片" width="160" height="200">
+        <h4 class="mt-4 mb-1">{{ expert.name }}</h4>
+        <small class="text-primary">{{ expert.title }}</small>
+        <p class="text-secondary mt-2">{{ expert.description }}</p>
+    </div>
+    {% endfor %}
+</div>
