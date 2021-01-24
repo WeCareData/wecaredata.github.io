@@ -1,0 +1,42 @@
+---
+layout: default
+title: "新闻资讯"
+description: ""
+category: news
+redirect_from:
+  - "/news"
+---
+
+<div class="list-group list-group-flush border-top border-bottom mb-5">
+    {% for post in paginator.posts %}
+    <a class="list-group-item list-group-item-action" href="{{ post.url }}">
+        <div class="d-flex w-100 justify-content-between">
+            <h5>{{ post.title }}</h5>
+            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+        </div>
+        <p>{{ post.content | strip_html | slice: 0,56 }}......</p>
+    </a>
+    {% endfor %}
+</div>
+
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        <li class="page-item {% if paginator.previous_page == null %}disabled{% endif %}">
+            <a class="page-link" href="{%- if paginator.previous_page == 1 -%}{{ site.baseurl }}/blog{% else %}{{ site.baseurl }}/blog/page{{ paginator.previous_page }}{% endif %}">上一页</a>
+        </li>
+        <li class="page-item {% if paginator.page == 1 %}active{% endif %}" {% if paginator.page == page_number %}aria-current="page"{% endif %}>
+            <a class="page-link" href="{%- if paginator.page != 1 %}/blog{% endif %}">1</a>
+        </li>
+        {% for page_number in (2..paginator.total_pages) %}
+        <li class="page-item {%- if paginator.page == page_number %}active{% endif %}" {% if paginator.page == page_number %}aria-current="page"{% endif %}>
+            <a class="page-link" href="/blog/page{{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item {%- if paginator.next_page == null -%}disabled{% endif %}">
+            <a class="page-link" href="{%- if paginator.next_page -%}{{ site.baseurl }}/blog/page{{ paginator.next_page }}{% else %}#{% endif %}">下一页</a>
+        </li>
+    </ul>
+</nav>
+{% endif %}

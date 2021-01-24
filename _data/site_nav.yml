@@ -2,17 +2,14 @@
   name: 首页
   url: /
 - id: news
-  name: 平台动态
-  url: /news
-- id: intruduction
-  name: 平台介绍
-  url: /introduction
-- id: team
-  name: 团队介绍
-  url: /team
+  name: 新闻资讯
+  url: /blog
 - id: expert
   name: 专家介绍
   url: /experts
 - id: about
   name: 关于我们
   url: /about
+- id: entrance
+  name: 平台入口
+  url: /entrance

@@ -1,12 +1,22 @@
 - id: 1
   name: "黄翠"
   title: "教授、博导、一级主任医师"
-  description: "现任武汉大学口腔医院口腔修复科主任<br>中华口腔医学会口腔修复专委会副主任委员<br>中华口腔医学会口腔美学专委会副主任委员"
-  thumb: expert-thumb-001
-  photo: expert-photo-001
+  description: "现任武汉大学口腔医院口腔修复科主任</p><p>国际牙科研究会会员（2000年至今）</p><p>中华口腔医学会口腔修复专委会副主任委员</p><p>中华口腔医学会口腔美学专委会副主任委员"
+  skill: "前牙美学设计和粘接修复，各类活动义齿、固定义齿、种植修复"
+  resume: "1994年毕业于湖北医科大学口腔医学系，获口腔修复学硕士学位。</p><p>1999年至2001年赴香港大学牙学院学习，获保存齿科牙医学硕士学位（MDS），历任主治医师、副主任医师、副教授、硕士生导师、主任医师、教授、博士生导师。</p><p>一直致力于口腔修复学临床医疗、教学及科研工作, 主编人民卫生音像出版社教材一部，多次参加在美国、日本、马来西亚、台湾举行的国际性会议，在国外著名期刊如Journal of Dental Research, Journal of Dentistry等上发表论文6篇。"
+  thumb: expert-thumb-001.jpg
+  photo: expert-photo-001.jpg
 - id: 2
   name: "王亚珂"
   title: "博士，副主任医师"
-  description: "中华口腔医学会口腔美学专委会青年委员<br>湖北省口腔医学会口腔修复专委会常委<br>湖北省口腔医学会口腔美学专委会常委"
-  thumb: expert-thumb-002
-  photo: expert-photo-002
+  description: "中华口腔医学会口腔美学专委会青年委员</p><p>湖北省口腔医学会口腔修复专委会常委</p><p>湖北省口腔医学会口腔美学专委会常委"
+  skill: "种植牙、冠、全瓷贴面、嵌体修复"
+  thumb: expert-thumb-002.jpg
+  photo: expert-photo-002.jpg
+- id: 3
+  name: "蔡新杰"
+  title: "博士，副主任医师"
+  description: "中华口腔医学会口腔美学专委会青年委员</p><p>湖北省口腔医学会口腔修复专委会常委</p><p>湖北省口腔医学会口腔美学专委会常委"
+  skill: "数字化固定义齿修复、活动义齿修复、导板或导航引导下的精准种植"
+  thumb: expert-thumb-003.jpg
+  photo: expert-photo-003.jpg

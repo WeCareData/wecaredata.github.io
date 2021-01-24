@@ -1,0 +1,12 @@
+{%- assign s_bg_color = include.s_bg_color | default: "bg-white" -%}
+{%- assign s_title = include.s_title -%}
+{%- assign s_lead = include.s_lead -%}
+{%- assign s_content = include.s_content -%}
+
+<section class="{{ s_bg_color }} py-5">
+    <div class="container">
+        {% if s_title != null %}<h3 class="text-center">{{ s_title }}</h3>{% endif %}
+        {% if s_lead != null %}<p class="text-center lead text-secondary mb-5">{{ s_lead }}</p>{% endif %}
+        {{- s_content | markdownify -}}
+    </div>
+</section>

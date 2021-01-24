@@ -9,6 +9,14 @@
 
 <main role="main" class="flex-shrink-0">
     <div class="container py-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">主页</a></li>
+                <li class="breadcrumb-item"><a href="{{ site.baseurl }}/news">新闻资讯</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+            </ol>
+        </nav>
+
         <h2 class="text-center">{{ page.title }}</h2>
         <p class="text-center">
             <span class="me-2">发布日期：{{ page.date | date: "%Y-%m-%d" }}</span>

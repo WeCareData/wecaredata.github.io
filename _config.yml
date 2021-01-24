@@ -34,12 +34,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
+#  - jekyll-autoprefixer
 #  - jekyll-sass-converter
 #  - jemoji
 #  - jekyll-toc
 #  - jekyll-seo-tag
 #  - jekyll-mermaid
-  - jekyll-admin
+#  - jekyll-admin
+#  - jekyll-data
 
 # Conversion
 markdown: kramdown
@@ -54,7 +56,7 @@ livereload: true
 port: 4000
 host: localhost
 baseurl: ""
-url: "https://wecaredata.github.io"
+url: "https://james-sean.gitee.io"
 show_dir_listing: false
 
 # Outputting
@@ -95,18 +97,12 @@ lang: zh_CN
 
 ## Plugins Settings
 # jekyll-toc
-toc:
-  min_level: 2
-  max_level: 4
-  no_toc_selection_class:
-    - "bd-callout"
-    - "bd-example"
 
 redirect_from:
   json: false
 
 paginate: 10
-paginate_path: "/htdocs/blog/page:num"
+paginate_path: "blog/page:num"
 
 # Custom variables
 assets:

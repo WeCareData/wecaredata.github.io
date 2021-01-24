@@ -8,13 +8,20 @@
 {% include layouts/header.html %}
 
 <main role="main" class="flex-shrink-0">
-    <section class="bg-light border-bottom">
+    <section class="bg-light border-top border-bottom">
         <div class="container py-4">
             <h3>{{ page.title }}</h3>
         </div>
     </section>
     <section class="py-4">
         <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">主页</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                </ol>
+            </nav>
+
             {{ content }}
         </div>
     </section>
